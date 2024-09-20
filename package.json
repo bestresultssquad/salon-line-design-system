@@ -1,5 +1,5 @@
 {
-  "name": "salon-line-design-system",
+  "name": "@bestresultssquad/salon-line-design-system",
   "version": "0.1.0",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
@@ -60,7 +60,7 @@
   },
   "homepage": "https://github.com/bestresultssquad/salon-line-design-system/#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/bestresultssquad/salon-line-design-system"
+    "@bestresultssquad:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
