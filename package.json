@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -20,8 +20,9 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
+    "assets",
+    "!android",
+    "!ios",
     "cpp",
     "*.podspec",
     "!ios/build",
@@ -30,10 +31,12 @@
     "!android/gradlew",
     "!android/gradlew.bat",
     "!android/local.properties",
+    "!**/*.test.*",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
-    "!**/.*"
+    "!**/.*",
+    "!**/stories.*"
   ],
   "scripts": {
     "example": "yarn workspace @salon-line/design-system-example",
@@ -181,5 +184,8 @@
   "create-react-native-library": {
     "type": "library",
     "version": "0.41.2"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.13"
   }
 }

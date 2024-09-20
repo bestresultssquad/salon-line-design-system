@@ -1,3 +1,6 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+import { ThemeProvider } from 'styled-components';
+import themes from './themes';
+
+export * from './components';
+
+export { ThemeProvider, themes };

@@ -1,30 +1,16 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from '@salon-line/design-system';
+import { View } from 'react-native';
+import {
+  ThemeProvider,
+  themes,
+  Button,
+} from '@bestresultssquad/salon-line-design-system';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <ThemeProvider theme={themes.light}>
+      <View style={{ flex: 1 }}>
+        <Button />
+      </View>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
