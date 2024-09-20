@@ -59,11 +59,8 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Publish package
-        with:
-          registry: https://npm.pkg.github.com/
-          scope: 'bestresultssquad'
+      - name: Configure npm
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
 
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish package
+        run: yarn publish --registry https://npm.pkg.github.com/ --scope bestresultssquad
