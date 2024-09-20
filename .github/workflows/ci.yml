@@ -62,7 +62,7 @@ jobs:
       - uses: ./.github/actions/setup
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://npm.pkg.github.com/bestresultssquad
           scope: '@bestresultssquad'
       - run: npm publish
         env:
