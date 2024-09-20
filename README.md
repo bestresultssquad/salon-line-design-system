@@ -5,20 +5,18 @@ Salon Line Design System
 ## Installation
 
 ```sh
-npm install @salon-line/design-system
+npm install @bestresultssquad/salon-line-design-system
 ```
 
 ## Usage
 
-
 ```js
-import { multiply } from '@salon-line/design-system';
+import { multiply } from '@bestresultssquad/salon-line-design-system';
 
 // ...
 
 const result = await multiply(3, 7);
 ```
-
 
 ## Contributing
 
