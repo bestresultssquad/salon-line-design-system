@@ -27,6 +27,7 @@ jobs:
         run: yarn typecheck
 
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,6 +40,7 @@ jobs:
         run: yarn test --maxWorkers=2 --coverage
 
   build-library:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,14 +53,13 @@ jobs:
         run: yarn prepare
 
   publish-gpr:
-    needs: build-library
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
