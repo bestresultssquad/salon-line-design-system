@@ -2,10 +2,18 @@ import defaultTheme from '../default';
 
 const lightTheme = {
   colors: {
-    primary: '#333',
-    secondary: '#666',
-    background: '#f5f5f5',
-    text: '#333',
+    black: '#000000',
+    white: '#FFFFFF',
+    gray: {
+      100: '#F3F4F6',
+      400: '#9CA3AF',
+      500: '#6B7280',
+      600: '#4B5563',
+      900: '#111827',
+    },
+    green: {
+      700: '#008000',
+    },
   },
   ...defaultTheme,
 };

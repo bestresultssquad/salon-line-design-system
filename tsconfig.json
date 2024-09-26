@@ -4,6 +4,9 @@
     "paths": {
       "@bestresultssquad/salon-line-design-system": [
         "./src/index"
+      ],
+      "@/*": [
+        "./*"
       ]
     },
     "allowUnreachableCode": false,

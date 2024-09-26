@@ -11,7 +11,24 @@ const root = path.resolve(__dirname, '..');
  *
  * @type {import('metro-config').MetroConfig}
  */
-module.exports = getConfig(getDefaultConfig(__dirname), {
+
+const config = getDefaultConfig(__dirname);
+
+const { transformer, resolver } = config;
+
+// config.watchFolders = [monorepoRoot];
+
+config.transformer = {
+  ...transformer,
+  babelTransformerPath: require.resolve('react-native-svg-transformer/expo'),
+};
+config.resolver = {
+  ...resolver,
+  assetExts: resolver.assetExts.filter((ext) => ext !== 'svg'),
+  sourceExts: [...resolver.sourceExts, 'svg'],
+};
+
+module.exports = getConfig(config, {
   root,
   pkg,
   project: __dirname,
