@@ -1,4 +1,4 @@
-import { Animated, SafeAreaView } from 'react-native';
+import { Animated, SafeAreaView, View } from 'react-native';
 import {
   ThemeProvider,
   themes,
@@ -43,16 +43,18 @@ export default function App() {
           marginHorizontal: 3,
         }}
       >
-        <Paginator data={[1, 2, 3, 4]} scrollX={scrollX} />
+        <View style={{ flexDirection: 'row' }}>
+          <Paginator data={[1, 2, 3, 4]} scrollX={scrollX} />
 
-        <Button
-          variant="outline"
-          textSizeVariant="medium"
-          textVariant="base"
-          size="small"
-        >
-          Outline
-        </Button>
+          <Button
+            variant="outline"
+            textSizeVariant="medium"
+            textVariant="base"
+            size="small"
+          >
+            Outline
+          </Button>
+        </View>
         <Button
           variant="primary"
           textSizeVariant="medium"

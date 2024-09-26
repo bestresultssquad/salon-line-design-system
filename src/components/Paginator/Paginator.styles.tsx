@@ -2,7 +2,6 @@ import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
 export const PaginatorContainer = styled.View`
-  flex: 1;
   flex-direction: row;
   height: ${({ theme }) => theme.spacing.xxxxs}px;
 `;
