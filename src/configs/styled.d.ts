@@ -13,6 +13,9 @@ export type Colors = {
   green: {
     700: string;
   };
+  purple: {
+    500: string;
+  };
 };
 
 type Fonts = {
@@ -46,20 +49,20 @@ export type Typography = {
 };
 
 export type Spacing = {
-  quarck: number;
-  nano: number;
-  xxxxs: number;
-  xxxs: number;
-  xxs: number;
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
-  xl: number;
-  xxl: number;
-  xxxl: number;
-  huge: number;
-  giant: number;
+  quarck: 4;
+  nano: 8;
+  xxxxs: 12;
+  xxxs: 14;
+  xxs: 16;
+  xs: 20;
+  sm: 24;
+  md: 32;
+  lg: 40;
+  xl: 48;
+  xxl: 64;
+  xxxl: 80;
+  huge: 96;
+  giant: 112;
 };
 
 export interface DefaultThemeDesignSystem {

@@ -14,6 +14,9 @@ const lightTheme = {
     green: {
       700: '#008000',
     },
+    purple: {
+      500: '#BA4DDE',
+    },
   },
   ...defaultTheme,
 };

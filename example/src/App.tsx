@@ -1,12 +1,13 @@
-import { SafeAreaView } from 'react-native';
+import { Animated, SafeAreaView } from 'react-native';
 import {
   ThemeProvider,
   themes,
   Button,
+  Paginator,
 } from '@bestresultssquad/salon-line-design-system';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,6 +23,8 @@ export default function App() {
       SplashScreen.hideAsync();
     }
   }, [loaded, error]);
+
+  const scrollX = useRef(new Animated.Value(0)).current;
 
   if (!loaded && !error) {
     return null;
@@ -40,6 +43,8 @@ export default function App() {
           marginHorizontal: 3,
         }}
       >
+        <Paginator data={[1, 2, 3, 4]} scrollX={scrollX} />
+
         <Button
           variant="outline"
           textSizeVariant="medium"
@@ -91,6 +96,15 @@ export default function App() {
           onlyIcon
           iconStrokeColor="black"
         />
+        <Button
+          variant="outline"
+          textSizeVariant="semiBold"
+          textVariant="base"
+          size="quarck"
+          iconType="arrowLeft"
+        >
+          Pular
+        </Button>
       </SafeAreaView>
     </ThemeProvider>
   );

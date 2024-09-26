@@ -8,6 +8,7 @@ const paddingVerticalBySize = (theme: DefaultTheme) => ({
   medium: theme.spacing.xxxs,
   large: theme.spacing.xxs,
   cart: theme.spacing.nano,
+  quarck: theme.spacing.quarck,
 });
 
 const paddingHorizontalBySize = (theme: DefaultTheme) => ({
@@ -16,6 +17,7 @@ const paddingHorizontalBySize = (theme: DefaultTheme) => ({
   medium: theme.spacing.sm,
   large: theme.spacing.sm,
   cart: theme.spacing.sm,
+  quarck: theme.spacing.xxxxs,
 });
 
 const colorByVariant = (theme: DefaultTheme) => ({

@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -138,6 +138,7 @@
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
+      "react-native/no-inline-styles": "off",
       "prettier/prettier": [
         "error",
         {
