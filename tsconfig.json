@@ -5,9 +5,6 @@
       "@bestresultssquad/salon-line-design-system": [
         "./src/index"
       ],
-      "@/*": [
-        "./*"
-      ]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -18,7 +15,7 @@
       "ESNext"
     ],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
