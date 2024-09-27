@@ -13,6 +13,7 @@ const Button = ({
   onlyIcon = false,
   leftIcon = false,
   iconStrokeColor = 'white',
+  textColor,
   ...props
 }: Props) => {
   const { colors } = useTheme();
@@ -31,7 +32,13 @@ const Button = ({
       )}
       {!onlyIcon && children && (
         <Typography
-          color={variant !== 'outline' ? colors.white : colors.gray[900]}
+          color={
+            textColor
+              ? textColor
+              : variant !== 'outline'
+                ? colors.white
+                : colors.gray[900]
+          }
           sizeVariant={textSizeVariant ?? 'regular'}
           variant={textVariant ?? '3xs'}
         >

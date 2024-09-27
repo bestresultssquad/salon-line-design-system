@@ -24,6 +24,7 @@ export interface Props extends TouchableOpacityProps {
   textVariant?: TypographyVariants;
   children?: string;
   textSizeVariant?: SizeVariants;
+  textColor?: string;
   size: ButtonSize;
   variant: ButtonVariant;
   onlyIcon?: boolean;
