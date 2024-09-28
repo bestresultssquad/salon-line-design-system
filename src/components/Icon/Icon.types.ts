@@ -7,6 +7,6 @@ export interface Props extends SvgProps {
   type?: IconTypes;
   width: number;
   height: number;
-  stroke: string;
-  strokeWidth: number;
+  stroke?: string;
+  strokeWidth?: number;
 }

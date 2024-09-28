@@ -1,7 +1,13 @@
 import { TypographyContainer } from './Typography.styles';
 import type { Props } from './Typography.types';
 
-const Typography = ({ style, children, variant, color, ...props }: Props) => {
+const Typography = ({
+  style,
+  children,
+  variant,
+  color = 'black',
+  ...props
+}: Props) => {
   return (
     <TypographyContainer
       {...props}

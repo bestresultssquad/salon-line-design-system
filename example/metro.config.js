@@ -2,6 +2,7 @@ const path = require('path');
 const { getDefaultConfig } = require('@expo/metro-config');
 const { getConfig } = require('react-native-builder-bob/metro-config');
 const pkg = require('../package.json');
+const { generate } = require('@storybook/react-native/scripts/generate');
 
 const root = path.resolve(__dirname, '..');
 
@@ -11,6 +12,10 @@ const root = path.resolve(__dirname, '..');
  *
  * @type {import('metro-config').MetroConfig}
  */
+
+generate({
+  configPath: path.resolve(__dirname, './.storybook'),
+});
 
 const config = getDefaultConfig(__dirname);
 

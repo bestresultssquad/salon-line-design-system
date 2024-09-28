@@ -41,11 +41,17 @@ const colorByVariant = (theme: DefaultTheme) => ({
     backgroundColor: theme.colors.gray[100],
     borderColor: 'transparent',
   },
+
+  favorite: {
+    backgroundColor: theme.colors.gray[200],
+    borderColor: 'transparent',
+  },
 });
 
 export const ButtonContainer = styled.TouchableOpacity<{
   size: ButtonSize;
   variant: ButtonVariant;
+  fullRounded?: boolean;
 }>`
   background-color: ${({ theme, variant }) =>
     colorByVariant(theme)[variant].backgroundColor};
@@ -57,7 +63,7 @@ export const ButtonContainer = styled.TouchableOpacity<{
   padding-top: ${({ theme, size }) => paddingVerticalBySize(theme)[size]}px;
   padding-bottom: ${({ theme, size }) => paddingVerticalBySize(theme)[size]}px;
 
-  border-radius: 12px;
+  border-radius: ${({ fullRounded }) => (fullRounded ? 50 : 12)}px;
   align-items: center;
   justify-content: center;
 

@@ -5,6 +5,7 @@ export type Colors = {
   white: string;
   gray: {
     100: string;
+    200: string;
     400: string;
     500: string;
     600: string;
@@ -15,6 +16,9 @@ export type Colors = {
   };
   purple: {
     500: string;
+  };
+  pink: {
+    600: string;
   };
 };
 
@@ -65,10 +69,21 @@ export type Spacing = {
   giant: 112;
 };
 
+export type Elevation = {
+  md: {
+    x: number;
+    y: number;
+    blur: number;
+    spread: number;
+    color: string;
+  };
+};
+
 export interface DefaultThemeDesignSystem {
   colors: Colors;
   typography: Typography;
   spacing: Spacing;
+  elevation: Elevation;
 }
 
 declare module 'styled-components/native' {

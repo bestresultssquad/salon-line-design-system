@@ -8,5 +8,5 @@ export interface Props extends TextProps {
   variant: TypographyVariants;
   children: string;
   sizeVariant: SizeVariants;
-  color: string;
+  color?: string;
 }

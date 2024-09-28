@@ -18,7 +18,8 @@ export type ButtonVariant =
   | 'outline'
   | 'disabled'
   | 'cart'
-  | 'action';
+  | 'action'
+  | 'favorite';
 
 export interface Props extends TouchableOpacityProps {
   textVariant?: TypographyVariants;
@@ -31,4 +32,8 @@ export interface Props extends TouchableOpacityProps {
   iconType?: IconTypes;
   leftIcon?: boolean;
   iconStrokeColor?: string;
+  fullRounded?: boolean;
+  iconSize?: number;
+  iconFill?: string;
+  customIcon?: React.ReactNode;
 }

@@ -14,30 +14,46 @@ const Button = ({
   leftIcon = false,
   iconStrokeColor = 'white',
   textColor,
+  fullRounded,
+  iconSize,
+  iconFill = 'none',
+  customIcon,
   ...props
 }: Props) => {
   const { colors } = useTheme();
+
+  const renderIcon = () => {
+    if (customIcon) {
+      return customIcon;
+    }
+
+    return (
+      <CustomIcon
+        testID="custom-icon-left"
+        leftIcon={leftIcon}
+        type={iconType}
+        width={iconSize ?? 24}
+        height={iconSize ?? 24}
+        stroke={iconStrokeColor}
+        fill={iconFill}
+        strokeWidth={1.5}
+      />
+    );
+  };
+
   return (
-    <ButtonContainer {...props} size={size} variant={variant}>
-      {(onlyIcon || leftIcon) && (
-        <CustomIcon
-          testID="custom-icon-left"
-          leftIcon={leftIcon}
-          type={iconType}
-          width={24}
-          height={24}
-          stroke={iconStrokeColor}
-          strokeWidth={1.5}
-        />
-      )}
+    <ButtonContainer
+      {...props}
+      size={size}
+      variant={variant}
+      fullRounded={fullRounded}
+    >
+      {(onlyIcon || leftIcon) && renderIcon()}
       {!onlyIcon && children && (
         <Typography
           color={
-            textColor
-              ? textColor
-              : variant !== 'outline'
-                ? colors.white
-                : colors.gray[900]
+            textColor ??
+            (variant !== 'outline' ? colors.white : colors.gray[900])
           }
           sizeVariant={textSizeVariant ?? 'regular'}
           variant={textVariant ?? '3xs'}
