@@ -28,6 +28,8 @@ config.resolver = {
   sourceExts: [...resolver.sourceExts, 'svg'],
 };
 
+config.resolver.resolverMainFields.unshift('sbmodern');
+
 module.exports = getConfig(config, {
   root,
   pkg,
