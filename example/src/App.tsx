@@ -1,8 +1,10 @@
 import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native';
-import { Avatar, Icon, Input, ProductCard } from '../../src/components';
+import { Icon, Input, ProductCard } from '../../src/components';
 import { ThemeProvider } from 'styled-components/native';
 import light from '../../src/themes/light';
+import { useState } from 'react';
+import { Icons } from '../../src/components/Icon/Icons';
 
 function App() {
   const [loaded, error] = useFonts({
@@ -11,9 +13,16 @@ function App() {
     'Poppins-Regular': require('../../assets/fonts/Poppins-Regular.ttf'),
   });
 
+  const [favorited, setFavorited] = useState(false);
+  const [value, setValue] = useState('');
+
   if (!loaded && !error) {
     return null;
   }
+
+  const handleFavoritePress = () => {
+    setFavorited(!favorited);
+  };
 
   return (
     <SafeAreaView
@@ -25,7 +34,34 @@ function App() {
       }}
     >
       <ThemeProvider theme={light}>
-        <Avatar image={require('./influencer.jpeg')} label="Liso" />
+        <Input
+          value={value}
+          onChangeText={(masked) => setValue(masked)}
+          placeholder="Buscar produtos"
+          mask={[
+            '(',
+            /\d/,
+            /\d/,
+            ')',
+            ' ',
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            '-',
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+          ]}
+          leftIcon={
+            <Icon height={24} width={24} type="search" stroke="#6B7280" />
+          }
+          rightIcon={
+            <Icon height={24} width={24} type="share" stroke="black" />
+          }
+        />
       </ThemeProvider>
     </SafeAreaView>
   );
