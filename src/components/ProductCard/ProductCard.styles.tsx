@@ -47,8 +47,6 @@ export const PriceLeft = styled.View``;
 export const ButtonContainer = styled.View``;
 
 export const OldPrice = styled(Typography).attrs(({ theme }) => ({
-  variant: 'xs',
-  sizeVariant: 'medium',
   color: theme.colors.gray[500],
 }))`
   text-decoration-line: line-through;
