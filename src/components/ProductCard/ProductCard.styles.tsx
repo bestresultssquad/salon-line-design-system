@@ -1,7 +1,6 @@
 import { Platform, View } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
-import Button from '../Button';
 
 export const Container = styled.View`
   flex-direction: column;
