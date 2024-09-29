@@ -1,10 +1,13 @@
-import { Platform, View } from 'react-native';
+import { Dimensions, Platform, View } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 
+const DEVICE_WIDTH = Dimensions.get('window').width;
+const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
+
 export const Container = styled.View`
   flex-direction: column;
-  max-width: 158px;
+  width: ${CARD_WIDTH}px;
 `;
 export const ImageContainer = styled.View`
   position: relative;
@@ -13,7 +16,7 @@ export const ImageContainer = styled.View`
 
 export const ImageCustom = styled.Image`
   width: 100%;
-  max-width: 158px;
+  max-width: ${CARD_WIDTH}px;
   min-width: 158px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
