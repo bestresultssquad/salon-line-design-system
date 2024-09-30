@@ -1,6 +1,6 @@
 import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native';
-import { Icon, Input, ProductCard } from '../../src/components';
+import { BannerImage, Icon, Input, ProductCard } from '../../src/components';
 import { ThemeProvider } from 'styled-components/native';
 import light from '../../src/themes/light';
 import { useState } from 'react';
@@ -24,44 +24,30 @@ function App() {
     setFavorited(!favorited);
   };
 
+  const bannerImages = [
+    {
+      imageUrl: 'https://via.placeholder.com/327x320',
+      altText: 'Banner 1',
+    },
+    {
+      imageUrl: 'https://via.placeholder.com/327x320',
+      altText: 'Banner 2',
+    },
+    {
+      imageUrl: 'https://via.placeholder.com/327x320',
+      altText: 'Banner 3',
+    },
+  ];
+
   return (
     <SafeAreaView
       style={{
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginHorizontal: 24,
+        paddingLeft: 24,
       }}
     >
       <ThemeProvider theme={light}>
-        <Input
-          value={value}
-          onChangeText={(masked) => setValue(masked)}
-          placeholder="Buscar produtos"
-          mask={[
-            '(',
-            /\d/,
-            /\d/,
-            ')',
-            ' ',
-            /\d/,
-            /\d/,
-            /\d/,
-            /\d/,
-            /\d/,
-            '-',
-            /\d/,
-            /\d/,
-            /\d/,
-            /\d/,
-          ]}
-          leftIcon={
-            <Icon height={24} width={24} type="search" stroke="#6B7280" />
-          }
-          rightIcon={
-            <Icon height={24} width={24} type="share" stroke="black" />
-          }
-        />
+        <BannerImage bannerObject={bannerImages} />
       </ThemeProvider>
     </SafeAreaView>
   );
