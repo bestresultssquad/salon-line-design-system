@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -186,6 +186,7 @@
     "version": "0.41.2"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "^5.0.0-alpha.11",
     "moti": "^0.29.0",
     "react-native-mask-input": "^1.2.3",
     "react-native-svg": "^15.7.1",
