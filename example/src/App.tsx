@@ -1,10 +1,17 @@
 import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native';
-import { BannerImage, Icon, Input, ProductCard } from '../../src/components';
+import {
+  Avatar,
+  BannerImage,
+  Icon,
+  Input,
+  ProductCard,
+} from '../../src/components';
 import { ThemeProvider } from 'styled-components/native';
 import light from '../../src/themes/light';
 import { useState } from 'react';
 import { Icons } from '../../src/components/Icon/Icons';
+import { Text } from 'react-native-svg';
 
 function App() {
   const [loaded, error] = useFonts({
@@ -44,10 +51,11 @@ function App() {
       style={{
         flex: 1,
         paddingLeft: 24,
+        alignItems: 'center',
       }}
     >
       <ThemeProvider theme={light}>
-        <BannerImage bannerVariant="sm" bannerObject={bannerImages} />
+        <BannerImage.Skeleton bannerVariant="md" />
       </ThemeProvider>
     </SafeAreaView>
   );

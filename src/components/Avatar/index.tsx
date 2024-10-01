@@ -1,4 +1,5 @@
 import Typography from '../Typography';
+import AvatarSkeleton from './Avatar.skeleton';
 import { Container, Image } from './Avatar.styles';
 import type { AvatarProps } from './Avatar.types';
 
@@ -17,5 +18,7 @@ const Avatar = ({ image, label, rightLabel = false }: AvatarProps) => {
     </Container>
   );
 };
+
+Avatar.Skeleton = AvatarSkeleton;
 
 export default Avatar;

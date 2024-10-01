@@ -7,6 +7,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps } from './BannerImage.types';
+import BannerImageSkeleton from './BannerImage.skeleton';
 
 const BannerImage = ({
   bannerObject,
@@ -88,5 +89,7 @@ const BannerImage = ({
     </BannerImageContainer>
   );
 };
+
+BannerImage.Skeleton = BannerImageSkeleton;
 
 export default BannerImage;

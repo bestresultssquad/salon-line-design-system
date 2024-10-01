@@ -17,6 +17,7 @@ import Button from '../Button';
 import type { ProductCardProps } from './ProductCard.types';
 import Chip from '../ChipComponent';
 import FavoriteButton from '../FavoriteButton';
+import ProductCardSkeleton from './ProductCard.skeleton';
 
 const ProductCard = ({
   image,
@@ -80,5 +81,7 @@ const ProductCard = ({
     </Card>
   );
 };
+
+ProductCard.Skeleton = ProductCardSkeleton;
 
 export default ProductCard;
