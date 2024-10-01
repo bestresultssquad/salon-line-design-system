@@ -6,7 +6,8 @@ import styled from 'styled-components/native';
 const MotiCustom = styled(MotiView)`
   width: 70px;
   height: 70px;
-  gap: ${({ theme }) => theme.spacing.xxxxs}px;
+  gap: ${({ theme }) => theme.spacing.nano}px;
+  margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
 `;
 
 const AvatarSkeleton = () => {

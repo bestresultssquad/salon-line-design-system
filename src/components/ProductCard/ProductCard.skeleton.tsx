@@ -1,17 +1,19 @@
+import styled from 'styled-components/native';
 import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
-import { View } from 'react-native';
+import { Dimensions, View } from 'react-native';
 
-import styled from 'styled-components/native';
+const DEVICE_WIDTH = Dimensions.get('window').width;
+const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
 
 const MotiCustom = styled(MotiView)`
-  width: 158px;
+  width: ${CARD_WIDTH}px;
   height: 264px;
   gap: ${({ theme }) => theme.spacing.xxxxs}px;
 `;
 
 const DescriptionContainer = styled.View`
-  gap: ${({ theme }) => theme.spacing.xxxxs}px;
+  gap: ${({ theme }) => theme.spacing.quarck}px;
 `;
 
 const ButtonContainer = styled.View`
@@ -28,9 +30,14 @@ const ProductCardSkeleton = () => {
         duration: 2000,
       }}
     >
-      <Skeleton colorMode={'light'} radius={16} height={160} width={158} />
+      <Skeleton
+        colorMode={'light'}
+        radius={16}
+        height={160}
+        width={CARD_WIDTH}
+      />
       <DescriptionContainer>
-        <Skeleton colorMode={'light'} width={103} height={12} />
+        <Skeleton colorMode={'light'} width={103} height={14} />
         <Skeleton colorMode={'light'} width={141} height={15} />
         <Skeleton colorMode={'light'} width={100} height={15} />
         <ButtonContainer>
