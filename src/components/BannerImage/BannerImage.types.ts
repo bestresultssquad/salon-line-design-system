@@ -4,6 +4,9 @@ export type BannerObject = {
   action?: () => void;
 };
 
+export type BannerVariant = 'sm' | 'md';
+
 export interface BannerImageProps {
   bannerObject: BannerObject[];
+  bannerVariant?: BannerVariant;
 }

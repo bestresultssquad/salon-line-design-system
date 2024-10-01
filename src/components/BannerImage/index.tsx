@@ -8,7 +8,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps } from './BannerImage.types';
 
-const BannerImage = ({ bannerObject }: BannerImageProps) => {
+const BannerImage = ({
+  bannerObject,
+  bannerVariant = 'md',
+}: BannerImageProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -20,6 +23,7 @@ const BannerImage = ({ bannerObject }: BannerImageProps) => {
     return (
       <ImageContainer onPress={item.action}>
         <BannerImg
+          bannerVariant={bannerVariant}
           key={index}
           source={{ uri: item.imageUrl }}
           alt={item.altText}
@@ -57,7 +61,7 @@ const BannerImage = ({ bannerObject }: BannerImageProps) => {
   }, [autoRotate, currentIndex, isCarrousel]);
 
   return (
-    <BannerImageContainer>
+    <BannerImageContainer bannerVariant={bannerVariant}>
       <FlatList
         getItemLayout={getItemLayout}
         keyExtractor={(_, index) => index.toString()}

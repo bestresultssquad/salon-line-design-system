@@ -47,7 +47,7 @@ function App() {
       }}
     >
       <ThemeProvider theme={light}>
-        <BannerImage bannerObject={bannerImages} />
+        <BannerImage bannerVariant="sm" bannerObject={bannerImages} />
       </ThemeProvider>
     </SafeAreaView>
   );
