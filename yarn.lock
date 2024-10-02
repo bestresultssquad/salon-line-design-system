@@ -869,7 +869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-class-properties@npm:^7.24.1, @babel/plugin-transform-class-properties@npm:^7.25.4":
+"@babel/plugin-transform-class-properties@npm:^7.0.0-0, @babel/plugin-transform-class-properties@npm:^7.24.1, @babel/plugin-transform-class-properties@npm:^7.25.4":
   version: 7.25.4
   resolution: "@babel/plugin-transform-class-properties@npm:7.25.4"
   dependencies:
@@ -894,7 +894,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-classes@npm:^7.0.0, @babel/plugin-transform-classes@npm:^7.25.4":
+"@babel/plugin-transform-classes@npm:^7.0.0, @babel/plugin-transform-classes@npm:^7.0.0-0, @babel/plugin-transform-classes@npm:^7.25.4":
   version: 7.25.4
   resolution: "@babel/plugin-transform-classes@npm:7.25.4"
   dependencies:
@@ -1499,7 +1499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-unicode-regex@npm:^7.0.0, @babel/plugin-transform-unicode-regex@npm:^7.24.7":
+"@babel/plugin-transform-unicode-regex@npm:^7.0.0, @babel/plugin-transform-unicode-regex@npm:^7.0.0-0, @babel/plugin-transform-unicode-regex@npm:^7.24.7":
   version: 7.24.7
   resolution: "@babel/plugin-transform-unicode-regex@npm:7.24.7"
   dependencies:
@@ -1787,6 +1787,7 @@ __metadata:
     react-native: 0.74.5
     react-native-builder-bob: ^0.30.2
     react-native-mask-input: ^1.2.3
+    react-native-reanimated: ^3.15.4
     react-native-svg: ^15.7.1
     react-native-svg-transformer: ^1.5.0
     react-test-renderer: ^18.2.0
@@ -16135,6 +16136,29 @@ __metadata:
   dependencies:
     prop-types: ^15.5.10
   checksum: c7b00ebceb6fe15e025ef1655483bc98fdb150453fb27e71d17a282a87317c5b1e242a1108f5247fac99594e6778470513d19c21e02eb2ce81f80688dd616419
+  languageName: node
+  linkType: hard
+
+"react-native-reanimated@npm:^3.15.4":
+  version: 3.15.4
+  resolution: "react-native-reanimated@npm:3.15.4"
+  dependencies:
+    "@babel/plugin-transform-arrow-functions": ^7.0.0-0
+    "@babel/plugin-transform-class-properties": ^7.0.0-0
+    "@babel/plugin-transform-classes": ^7.0.0-0
+    "@babel/plugin-transform-nullish-coalescing-operator": ^7.0.0-0
+    "@babel/plugin-transform-optional-chaining": ^7.0.0-0
+    "@babel/plugin-transform-shorthand-properties": ^7.0.0-0
+    "@babel/plugin-transform-template-literals": ^7.0.0-0
+    "@babel/plugin-transform-unicode-regex": ^7.0.0-0
+    "@babel/preset-typescript": ^7.16.7
+    convert-source-map: ^2.0.0
+    invariant: ^2.2.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+    react: "*"
+    react-native: "*"
+  checksum: 42eea2344797a7a749ae77f1c32586ba21bfc2e0fe0e05ccbcf6d9fad16cd7ae3407568574130f008b66c56a439b147cbb387c2ec586b0ac5bfe14527293f286
   languageName: node
   linkType: hard
 

@@ -3,8 +3,10 @@ import { SafeAreaView } from 'react-native';
 import {
   Avatar,
   BannerImage,
+  Button,
   Icon,
   Input,
+  Link,
   ProductCard,
 } from '../../src/components';
 import { ThemeProvider } from 'styled-components/native';
@@ -55,7 +57,14 @@ function App() {
       }}
     >
       <ThemeProvider theme={light}>
-        <BannerImage.Skeleton bannerVariant="md" />
+        <Button
+          size="large"
+          variant="primary"
+          loading
+          style={{ width: '100%' }}
+        >
+          dwdqdq
+        </Button>
       </ThemeProvider>
     </SafeAreaView>
   );

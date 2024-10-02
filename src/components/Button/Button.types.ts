@@ -23,7 +23,7 @@ export type ButtonVariant =
 
 export interface Props extends TouchableOpacityProps {
   textVariant?: TypographyVariants;
-  children?: string;
+  children?: string | React.ReactNode;
   textSizeVariant?: SizeVariants;
   textColor?: string;
   size: ButtonSize;
@@ -36,4 +36,5 @@ export interface Props extends TouchableOpacityProps {
   iconSize?: number;
   iconFill?: string;
   customIcon?: React.ReactNode;
+  loading?: boolean;
 }

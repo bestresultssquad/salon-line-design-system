@@ -8,5 +8,6 @@ export { default as Chip } from './ChipComponent';
 export { default as Input } from './Input';
 export { default as Avatar } from './Avatar';
 export { default as BannerImage } from './BannerImage';
-export { default as ProductCardSkeleton } from './ProductCard/ProductCard.skeleton';
+export { default as Link } from './Link';
+
 export * as BottomSheet from '@gorhom/bottom-sheet';

@@ -10,6 +10,7 @@ describe('Input Component', () => {
     value: '',
     onChangeText: jest.fn(),
     inputLabel: 'Test Label',
+    mask: undefined,
   };
 
   beforeEach(() => {
@@ -23,7 +24,7 @@ describe('Input Component', () => {
 
   it('should call onChangeText when text changes', () => {
     const { getByPlaceholderText } = renderWithTheme(
-      <Input {...defaultProps} placeholder="Test Placeholder" />
+      <Input {...defaultProps} editable placeholder="Test Placeholder" />
     );
     const input = getByPlaceholderText('Test Placeholder');
     fireEvent.changeText(input, 'new text');

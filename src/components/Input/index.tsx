@@ -9,6 +9,8 @@ const Input = ({
   value,
   onChangeText,
   inputLabel,
+  mask,
+  editable = true,
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
@@ -36,11 +38,13 @@ const Input = ({
           {inputLabel}
         </Typography>
       )}
-      <InputContainer>
+      <InputContainer editable={editable}>
         {leftIcon && renderLeftIcon()}
         <TextInput
+          mask={mask}
           value={value}
           onChangeText={onChangeText}
+          editable={editable}
           {...props}
           leftIcon={!!leftIcon}
           rightIcon={!!rightIcon}

@@ -2,6 +2,7 @@ import { ButtonContainer, CustomIcon } from './Button.styles';
 import Typography from '../Typography';
 import type { Props } from './Button.types';
 import { useTheme } from 'styled-components/native';
+import { ActivityIndicator } from 'react-native';
 
 const Button = ({
   children,
@@ -18,6 +19,7 @@ const Button = ({
   iconSize,
   iconFill = 'none',
   customIcon,
+  loading = false,
   ...props
 }: Props) => {
   const { colors } = useTheme();
@@ -49,18 +51,22 @@ const Button = ({
       fullRounded={fullRounded}
     >
       {(onlyIcon || leftIcon) && renderIcon()}
-      {!onlyIcon && children && (
-        <Typography
-          color={
-            textColor ??
-            (variant !== 'outline' ? colors.white : colors.gray[900])
-          }
-          sizeVariant={textSizeVariant ?? 'regular'}
-          variant={textVariant ?? '3xs'}
-        >
-          {children}
-        </Typography>
-      )}
+      {!onlyIcon &&
+        children &&
+        (loading ? (
+          <ActivityIndicator size={'small'} />
+        ) : (
+          <Typography
+            color={
+              textColor ??
+              (variant !== 'outline' ? colors.white : colors.gray[900])
+            }
+            sizeVariant={textSizeVariant ?? 'regular'}
+            variant={textVariant ?? '3xs'}
+          >
+            {children}
+          </Typography>
+        ))}
     </ButtonContainer>
   );
 };
