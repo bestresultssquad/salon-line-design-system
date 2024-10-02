@@ -6,6 +6,7 @@ const Link = ({
   onPress,
   typographySizeVariant,
   typographyVariant,
+  children,
 }: LinkProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
@@ -13,7 +14,7 @@ const Link = ({
         sizeVariant={typographySizeVariant ?? 'medium'}
         variant={typographyVariant ?? 'base'}
       >
-        Link
+        {children}
       </Typography>
     </TouchableOpacity>
   );
