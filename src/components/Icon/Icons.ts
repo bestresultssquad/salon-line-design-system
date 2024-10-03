@@ -8,6 +8,12 @@ import search from '../../../assets/icons/search.svg';
 import password from '../../../assets/icons/password.svg';
 import bag from '../../../assets/icons/bag.svg';
 import menu from '../../../assets/icons/menu.svg';
+import checkbox from '../../../assets/icons/checkbox.svg';
+import checkboxFilled from '../../../assets/icons/checkboxFilled.svg';
+import check from '../../../assets/icons/check.svg';
+import error from '../../../assets/icons/error.svg';
+import helpCircle from '../../../assets/icons/help-circle.svg';
+import trash from '../../../assets/icons/trash.svg';
 
 export const Icons = {
   share,
@@ -20,4 +26,10 @@ export const Icons = {
   password,
   bag,
   menu,
+  checkbox,
+  checkboxFilled,
+  error,
+  check,
+  helpCircle,
+  trash,
 };

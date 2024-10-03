@@ -4,14 +4,18 @@ import { renderWithTheme } from '../../configs/testUtils';
 
 describe('Link Component', () => {
   it('renders correctly with default props', () => {
-    const { getByText } = renderWithTheme(<Link onPress={() => {}} />);
+    const { getByText } = renderWithTheme(
+      <Link onPress={() => {}} children={'Link'} />
+    );
     const linkText = getByText('Link');
     expect(linkText).toBeTruthy();
   });
 
   it('calls onPress when pressed', () => {
     const onPressMock = jest.fn();
-    const { getByText } = renderWithTheme(<Link onPress={onPressMock} />);
+    const { getByText } = renderWithTheme(
+      <Link onPress={onPressMock} children={'Link'} />
+    );
     const linkText = getByText('Link');
     fireEvent.press(linkText);
     expect(onPressMock).toHaveBeenCalledTimes(1);
@@ -19,7 +23,11 @@ describe('Link Component', () => {
 
   it('renders with custom typographySizeVariant', () => {
     const { getByText } = renderWithTheme(
-      <Link onPress={() => {}} typographySizeVariant="regular" />
+      <Link
+        onPress={() => {}}
+        typographySizeVariant="regular"
+        children={'Link'}
+      />
     );
     const linkText = getByText('Link');
     expect(linkText.props.sizeVariant).toBe('regular');
@@ -27,7 +35,7 @@ describe('Link Component', () => {
 
   it('renders with custom typographyVariant', () => {
     const { getByText } = renderWithTheme(
-      <Link onPress={() => {}} typographyVariant="base" />
+      <Link onPress={() => {}} typographyVariant="base" children={'Link'} />
     );
     const linkText = getByText('Link');
     expect(linkText.props.variant).toBe('base');
