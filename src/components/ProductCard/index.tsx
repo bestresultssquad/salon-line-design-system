@@ -21,6 +21,7 @@ import ProductCardSkeleton from './ProductCard.skeleton';
 
 const ProductCard = ({
   image,
+  imageUri,
   onFavoritePress,
   onPress,
   price,
@@ -37,7 +38,10 @@ const ProductCard = ({
         <ImageContainer>
           {chipText && <Chip label={chipText} />}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
-          <ImageCustom height={160} source={image} />
+          <ImageCustom
+            height={160}
+            source={imageUri ? { uri: imageUri } : image}
+          />
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>

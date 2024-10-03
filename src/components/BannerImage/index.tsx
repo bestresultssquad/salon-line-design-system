@@ -26,7 +26,7 @@ const BannerImage = ({
         <BannerImg
           bannerVariant={bannerVariant}
           key={index}
-          source={{ uri: item.imageUrl }}
+          source={item.imageUrl ? { uri: item.imageUrl } : item.imageFile}
           alt={item.altText}
           testID={`image-${index}`}
         />

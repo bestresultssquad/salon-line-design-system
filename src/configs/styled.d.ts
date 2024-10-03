@@ -9,9 +9,12 @@ export type Colors = {
     400: string;
     500: string;
     600: string;
+    800: string;
     900: string;
   };
   green: {
+    100: string;
+    200: string;
     700: string;
   };
   purple: {
@@ -19,6 +22,15 @@ export type Colors = {
   };
   pink: {
     600: string;
+    700: string;
+  };
+  yellow: {
+    100: string;
+    500: string;
+    700: string;
+  };
+  red: {
+    500: string;
   };
 };
 
@@ -41,6 +53,12 @@ type Fonts = {
     size: number;
     lineHeight: number;
   };
+  bold?: {
+    family: string;
+    weight: string;
+    size: number;
+    lineHeight: number;
+  };
 };
 
 export type Typography = {
@@ -50,6 +68,8 @@ export type Typography = {
   'sm': Fonts;
   'base': Fonts;
   'lg': Fonts;
+  '2xl': Omit<Fonts, 'regular', 'semiBold'>;
+  '3xl': Omit<Fonts, 'regular', 'semiBold', 'medium'>;
 };
 
 export type Spacing = {

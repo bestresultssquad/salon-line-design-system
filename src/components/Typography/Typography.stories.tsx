@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
-import Typography from './index';
+import Typography from '.';
 
-const Meta: Meta<typeof Typography> = {
+const Component: Meta<typeof Typography> = {
   title: 'Typography',
   component: Typography,
   argTypes: {
@@ -26,7 +26,7 @@ const Meta: Meta<typeof Typography> = {
   ],
 };
 
-export default Meta;
+export default Component;
 
 export const LgSemiBold: StoryObj<typeof Typography> = {};
 LgSemiBold.args = {

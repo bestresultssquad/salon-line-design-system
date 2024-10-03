@@ -1,31 +1,54 @@
 import { FlatList, View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
-import Icon from './index';
-import type { IconTypes } from './Icon.types';
+import Icon from '../Icon/index';
+import type { IconTypes } from '../Icon/Icon.types';
+import { Icons } from './Icons';
+import Typography from '../Typography';
 
-export const Icons = (): StoryObj<typeof Icon> => {
-  return (
+export const IconsList: StoryObj<typeof Icon> = {
+  render: () => (
     <View>
       <FlatList
-        columnWrapperStyle={{ flexWrap: 'wrap' }}
-        numColumns={8}
-        data={Object.keys(Icons).sort()}
+        contentContainerStyle={{ gap: 12 }}
+        columnWrapperStyle={{
+          flexWrap: 'wrap',
+          gap: 12,
+          justifyContent: 'center',
+        }}
+        numColumns={2}
+        data={Object.keys(Icons).sort() as IconTypes[]}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) => (
-          <Icon
-            height={24}
-            width={24}
-            type={item as IconTypes}
-            stroke="black"
-            strokeWidth={1.5}
-          />
+        renderItem={({ item }: { item: IconTypes }) => (
+          <View
+            style={{
+              padding: 24,
+              borderRadius: 16,
+              borderColor: 'black',
+              borderWidth: 1,
+              alignItems: 'center',
+              width: 150,
+              height: 100,
+              gap: 8,
+            }}
+          >
+            <Icon
+              height={24}
+              width={24}
+              type={item}
+              stroke="black"
+              strokeWidth={1.5}
+            />
+            <Typography sizeVariant="regular" variant="sm">
+              {item}
+            </Typography>
+          </View>
         )}
       />
     </View>
-  );
+  ),
 };
 
-const Meta: Meta<typeof Icon> = {
+const Component: Meta<typeof Icon> = {
   title: 'Icon',
   component: Icon,
   argTypes: {
@@ -46,4 +69,11 @@ const Meta: Meta<typeof Icon> = {
   ],
 };
 
-export default Meta;
+export const Primary: StoryObj<typeof Icon> = {};
+Primary.args = {
+  type: 'bag',
+  stroke: 'black',
+  strokeWidth: 1.5,
+};
+
+export default Component;

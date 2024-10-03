@@ -31,6 +31,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
             '../assets/fonts/Poppins-Medium.ttf',
             '../assets/fonts/Poppins-Regular.ttf',
             '../assets/fonts/Poppins-SemiBold.ttf',
+            '../assets/fonts/Poppins-Bold.ttf',
           ],
         },
       ],

@@ -1,0 +1,60 @@
+import { View } from 'react-native';
+import type { Meta, StoryObj } from '@storybook/react';
+import Input from './index';
+import { useState } from 'react';
+
+const InputDefault = (props: any) => {
+  const [value, setValue] = useState(props.value);
+
+  return (
+    <Input {...props} value={value} onChangeText={(text) => setValue(text)} />
+  );
+};
+
+const Component: Meta<typeof Input> = {
+  title: 'Input',
+  component: InputDefault,
+  argTypes: {
+    leftIcon: { control: { type: 'text' } },
+    rightIcon: { control: { type: 'text' } },
+    placeholder: { control: { type: 'text' } },
+    value: { control: { type: 'text' } },
+    secureTextEntry: { control: { type: 'boolean' } },
+    onChangeText: { action: 'changed' },
+    editable: { control: { type: 'boolean' } },
+  },
+
+  decorators: [
+    (Story: any) => (
+      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+        <Story />
+      </View>
+    ),
+  ],
+};
+
+export const Default: StoryObj<typeof Input> = {};
+Default.args = {
+  placeholder: 'Input',
+  value: '',
+  secureTextEntry: false,
+  editable: true,
+};
+
+export const Disabled: StoryObj<typeof Input> = {};
+Disabled.args = {
+  placeholder: 'Input',
+  value: '',
+  secureTextEntry: false,
+  editable: false,
+};
+
+export const Password: StoryObj<typeof Input> = {};
+Password.args = {
+  placeholder: 'Password',
+  value: '',
+  secureTextEntry: true,
+  editable: true,
+};
+
+export default Component;

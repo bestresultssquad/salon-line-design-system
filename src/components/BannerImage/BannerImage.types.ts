@@ -1,5 +1,6 @@
 export type BannerObject = {
-  imageUrl: string;
+  imageUrl?: string;
+  imageFile?: string;
   altText: string;
   action?: () => void;
 };

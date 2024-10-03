@@ -1,6 +1,6 @@
-import type { Preview } from '@storybook/react';
 import React from 'react';
-import { View } from 'react-native';
+import type { Preview } from '@storybook/react';
+import { View } from 'moti';
 import { ThemeProvider } from 'styled-components/native';
 import light from '../../src/themes/light';
 
@@ -13,7 +13,6 @@ const preview: Preview = {
       },
     },
   },
-
   decorators: [
     (Story, { parameters }) => (
       <View

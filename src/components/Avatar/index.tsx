@@ -3,10 +3,10 @@ import AvatarSkeleton from './Avatar.skeleton';
 import { Container, Image } from './Avatar.styles';
 import type { AvatarProps } from './Avatar.types';
 
-const Avatar = ({ image, label, rightLabel = false }: AvatarProps) => {
+const Avatar = ({ image, label, uri, rightLabel = false }: AvatarProps) => {
   return (
     <Container rightLabel={rightLabel}>
-      <Image source={image} />
+      <Image source={uri ? { uri: uri } : image} />
       {label && (
         <Typography
           sizeVariant={rightLabel ? 'semiBold' : 'medium'}

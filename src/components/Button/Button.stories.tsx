@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './index';
 
-const Meta: Meta<typeof Button> = {
+const Component: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
   argTypes: {
@@ -10,7 +10,7 @@ const Meta: Meta<typeof Button> = {
       options: ['primary', 'outline', 'disabled', 'cart', 'action'],
       control: { type: 'select' },
     },
-    sizeVariant: {
+    size: {
       options: ['small', 'medium', 'large', 'nano', 'cart', 'quarck'],
       control: { type: 'select' },
     },
@@ -34,13 +34,13 @@ const Meta: Meta<typeof Button> = {
   ],
 };
 
-export default Meta;
+export default Component;
 
 export const Primary: StoryObj<typeof Button> = {};
 Primary.args = {
   children: 'Primary',
   variant: 'primary',
-  sizeVariant: 'small',
+  size: 'small',
   textSizeVariant: 'medium',
 };
 
@@ -48,23 +48,25 @@ export const Outline: StoryObj<typeof Button> = {};
 Outline.args = {
   children: 'Outline',
   variant: 'outline',
-  sizeVariant: 'small',
+  size: 'small',
   textSizeVariant: 'medium',
+  textVariant: 'sm',
 };
 
 export const Disabled: StoryObj<typeof Button> = {};
 Disabled.args = {
   children: 'Disabled',
   variant: 'disabled',
-  sizeVariant: 'small',
+  size: 'small',
   textSizeVariant: 'semiBold',
   disabled: true,
+  textVariant: 'sm',
 };
 
 export const OnlyIcon: StoryObj<typeof Button> = {};
 OnlyIcon.args = {
   variant: 'primary',
-  sizeVariant: 'nano',
+  size: 'nano',
   onlyIcon: true,
 };
 
@@ -72,15 +74,17 @@ export const Cart: StoryObj<typeof Button> = {};
 Cart.args = {
   children: 'Adicionar',
   variant: 'cart',
-  sizeVariant: 'cart',
+  size: 'cart',
   textSizeVariant: 'semiBold',
   leftIcon: true,
+  textVariant: 'sm',
 };
 
 export const Action: StoryObj<typeof Button> = {};
 Action.args = {
   children: 'Action',
   variant: 'action',
-  sizeVariant: 'quarck',
+  size: 'quarck',
   textSizeVariant: 'semiBold',
+  textVariant: 'sm',
 };

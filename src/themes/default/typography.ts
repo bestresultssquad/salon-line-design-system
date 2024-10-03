@@ -121,6 +121,22 @@ const typography: Typography = {
       lineHeight: 28,
     },
   },
+  '2xl': {
+    medium: {
+      family: 'Poppins-Regular',
+      weight: '500',
+      size: 24,
+      lineHeight: 32,
+    },
+  },
+  '3xl': {
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
+      size: 30,
+      lineHeight: 36,
+    },
+  },
 };
 
 export default typography;

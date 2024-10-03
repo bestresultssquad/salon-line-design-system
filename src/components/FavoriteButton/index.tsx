@@ -1,7 +1,7 @@
 import { Animated, View } from 'react-native';
 import Icon from '../Icon';
 import { FavoriteCustomButton } from './FavoriteButton.styles';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import type { FavoriteButtonProps } from './FavoriteButton.types';
 
 const FavoriteButton = ({
@@ -22,21 +22,25 @@ const FavoriteButton = ({
     extrapolate: 'clamp',
   });
 
+  const animateToFavorited = useCallback(() => {
+    Animated.timing(animatedValue, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  }, [animatedValue]);
+
+  const animateToUnfavorited = useCallback(() => {
+    Animated.timing(animatedValue, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  }, [animatedValue]);
+
   useEffect(() => {
-    if (favorited) {
-      Animated.timing(animatedValue, {
-        toValue: 1,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-    } else {
-      Animated.timing(animatedValue, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-    }
-  }, [animatedValue, favorited]);
+    favorited ? animateToFavorited() : animateToUnfavorited();
+  }, [animateToFavorited, animateToUnfavorited, animatedValue, favorited]);
 
   return (
     <FavoriteCustomButton

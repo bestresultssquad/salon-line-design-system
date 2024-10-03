@@ -32,8 +32,7 @@ config.resolver = {
   assetExts: resolver.assetExts.filter((ext) => ext !== 'svg'),
   sourceExts: [...resolver.sourceExts, 'svg'],
 };
-
-config.resolver.resolverMainFields.unshift('sbmodern');
+config.transformer.unstable_allowRequireContext = true;
 
 module.exports = getConfig(config, {
   root,

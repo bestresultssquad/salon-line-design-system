@@ -4,7 +4,8 @@ export interface ProductCardProps {
   oldPrice?: string;
   price: string;
   title: string;
-  image: ImageSourcePropType;
+  image?: ImageSourcePropType;
+  imageUri?: string;
   onPress: () => void;
   onFavoritePress: () => void;
   rating: number;
