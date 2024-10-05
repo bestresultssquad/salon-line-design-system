@@ -2,6 +2,7 @@ import { View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 import Input from './index';
 import { useState } from 'react';
+import Icon from '../Icon';
 
 const InputDefault = (props: any) => {
   const [value, setValue] = useState(props.value);
@@ -55,6 +56,7 @@ Password.args = {
   value: '',
   secureTextEntry: true,
   editable: true,
+  rightIcon: <Icon type="password" width={24} height={24} color={'black'} />,
 };
 
 export default Component;

@@ -2,7 +2,6 @@ import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
 export const CheckboxContainer = styled.View`
-  flex: 1;
   flex-direction: row;
   gap: 8px;
   align-items: flex-start;
