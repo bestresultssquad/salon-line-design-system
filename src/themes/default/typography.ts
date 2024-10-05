@@ -122,14 +122,44 @@ const typography: Typography = {
     },
   },
   '2xl': {
+    regular: {
+      family: 'Poppins-Regular',
+      weight: '400',
+      size: 24,
+      lineHeight: 32,
+    },
     medium: {
       family: 'Poppins-Regular',
       weight: '500',
       size: 24,
       lineHeight: 32,
     },
+    semiBold: {
+      family: 'Poppins-SemiBold',
+      weight: '600',
+      size: 24,
+      lineHeight: 32,
+    },
   },
   '3xl': {
+    regular: {
+      family: 'Poppins-Regular',
+      weight: '400',
+      size: 30,
+      lineHeight: 36,
+    },
+    medium: {
+      family: 'Poppins-Regular',
+      weight: '500',
+      size: 30,
+      lineHeight: 36,
+    },
+    semiBold: {
+      family: 'Poppins-SemiBold',
+      weight: '600',
+      size: 30,
+      lineHeight: 36,
+    },
     bold: {
       family: 'Poppins-Bold',
       weight: '700',

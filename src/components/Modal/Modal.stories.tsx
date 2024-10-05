@@ -8,34 +8,38 @@ import Animated from 'react-native-reanimated';
 const ModalStory = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View>
-      <Button
-        size="medium"
-        variant="primary"
-        textSizeVariant="medium"
-        textVariant="base"
-        onPress={() => {
-          setModalVisible(true);
-        }}
-      >
-        Open Modal
-      </Button>
-      <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
-        <Animated.View>
-          <Button
-            size="medium"
-            variant="primary"
-            textSizeVariant="medium"
-            textVariant="base"
-            onPress={() => {
-              setModalVisible(false);
-            }}
-          >
-            Close Modal
-          </Button>
-        </Animated.View>
-      </Modal>
-    </View>
+    <>
+      <View>
+        <Button
+          size="medium"
+          variant="primary"
+          textSizeVariant="medium"
+          textVariant="base"
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        >
+          Open Modal
+        </Button>
+      </View>
+      {modalVisible && (
+        <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
+          <Animated.View>
+            <Button
+              size="medium"
+              variant="primary"
+              textSizeVariant="medium"
+              textVariant="base"
+              onPress={() => {
+                setModalVisible(false);
+              }}
+            >
+              Close Modal
+            </Button>
+          </Animated.View>
+        </Modal>
+      )}
+    </>
   );
 };
 

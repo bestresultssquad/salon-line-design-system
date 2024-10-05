@@ -11,3 +11,4 @@ export { default as BannerImage } from './BannerImage';
 export { default as Link } from './Link';
 export { default as InputBottomSheet } from './InputBottomSheet';
 export { default as Checkbox } from './Checkbox';
+export { default as Modal } from './Modal';

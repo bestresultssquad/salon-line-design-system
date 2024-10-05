@@ -61,6 +61,10 @@ type Fonts = {
   };
 };
 
+type OptionalForKeys<T, K extends keyof any> = {
+  [P in keyof T]: P extends K ? Partial<T[P]> : T[P];
+};
+
 export type Typography = {
   '3xs': Fonts;
   '2xs': Fonts;
@@ -68,8 +72,8 @@ export type Typography = {
   'sm': Fonts;
   'base': Fonts;
   'lg': Fonts;
-  '2xl': Omit<Fonts, 'regular', 'semiBold'>;
-  '3xl': Omit<Fonts, 'regular', 'semiBold', 'medium'>;
+  '2xl': Fonts;
+  '3xl': Fonts;
 };
 
 export type Spacing = {

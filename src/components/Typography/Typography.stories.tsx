@@ -7,7 +7,7 @@ const Component: Meta<typeof Typography> = {
   component: Typography,
   argTypes: {
     variant: {
-      options: ['3xs', '2xs', 'xs', 'sm', 'base', 'lg'],
+      options: ['3xs', '2xs', 'xs', 'sm', 'base', 'lg', '2xl', '3xl'],
       control: { type: 'select' },
     },
     sizeVariant: {
