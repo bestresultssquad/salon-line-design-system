@@ -1,10 +1,10 @@
-import type { ImageSourcePropType } from 'react-native';
+import type { ImageRequireSource } from 'react-native';
 
 export interface ProductCardProps {
   oldPrice?: string;
   price: string;
   title: string;
-  image?: ImageSourcePropType;
+  image?: ImageRequireSource;
   imageUri?: string;
   onPress: () => void;
   onFavoritePress: () => void;

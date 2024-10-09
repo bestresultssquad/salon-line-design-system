@@ -38,10 +38,7 @@ const ProductCard = ({
         <ImageContainer>
           {chipText && <Chip label={chipText} />}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
-          <ImageCustom
-            height={160}
-            source={imageUri ? { uri: imageUri } : image}
-          />
+          <ImageCustom source={imageUri ? { uri: imageUri } : image} />
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>

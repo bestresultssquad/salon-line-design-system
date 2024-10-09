@@ -16,7 +16,6 @@ export const ImageContainer = styled.View`
 
 export const ImageCustom = styled.Image`
   max-width: ${CARD_WIDTH}px;
-  min-width: 158px;
   height: 160px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
