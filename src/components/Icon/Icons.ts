@@ -14,6 +14,14 @@ import check from '../../../assets/icons/check.svg';
 import error from '../../../assets/icons/error.svg';
 import helpCircle from '../../../assets/icons/help-circle.svg';
 import trash from '../../../assets/icons/trash.svg';
+import calendar from '../../../assets/icons/calendar.svg';
+import creditCard from '../../../assets/icons/credit-card.svg';
+import discountTag from '../../../assets/icons/discount-tag.svg';
+import location from '../../../assets/icons/location.svg';
+import user from '../../../assets/icons/user.svg';
+import menuSquare from '../../../assets/icons/menu-square.svg';
+import notification from '../../../assets/icons/notification.svg';
+import home from '../../../assets/icons/home.svg';
 
 export const Icons = {
   share,
@@ -32,4 +40,12 @@ export const Icons = {
   check,
   helpCircle,
   trash,
+  calendar,
+  home,
+  creditCard,
+  discountTag,
+  location,
+  user,
+  menuSquare,
+  notification,
 };
