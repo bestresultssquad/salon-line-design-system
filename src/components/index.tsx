@@ -12,3 +12,4 @@ export { default as Link } from './Link';
 export { default as InputBottomSheet } from './InputBottomSheet';
 export { default as Checkbox } from './Checkbox';
 export { default as Modal } from './Modal';
+export { default as Switch } from './Switch';

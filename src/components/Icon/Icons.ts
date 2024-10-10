@@ -22,6 +22,9 @@ import user from '../../../assets/icons/user.svg';
 import menuSquare from '../../../assets/icons/menu-square.svg';
 import notification from '../../../assets/icons/notification.svg';
 import home from '../../../assets/icons/home.svg';
+import chevronRight from '../../../assets/icons/chevron-right.svg';
+import discountTag2 from '../../../assets/icons/discount-tag2.svg';
+import ia from '../../../assets/icons/ia.svg';
 
 export const Icons = {
   share,
@@ -48,4 +51,7 @@ export const Icons = {
   user,
   menuSquare,
   notification,
+  chevronRight,
+  discountTag2,
+  ia,
 };
