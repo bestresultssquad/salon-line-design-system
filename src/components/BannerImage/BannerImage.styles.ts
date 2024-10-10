@@ -20,6 +20,5 @@ export const BannerImg = styled.Image<{ bannerVariant: BannerVariant }>`
   height: ${({ bannerVariant }) => (bannerVariant === 'md' ? 320 : 128)}px;
   width: 100%;
   border-radius: ${({ theme }) => theme.spacing.sm}px;
-  background-color: red;
   margin-bottom: ${({ theme }) => theme.spacing.nano}px;
 `;
