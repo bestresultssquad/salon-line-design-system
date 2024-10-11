@@ -72,7 +72,7 @@ const ProductCard = ({
                 onlyIcon
                 variant="primary"
                 size="nano"
-                iconType="arrowRight"
+                iconType="bag"
                 iconSize={16}
               />
             </ButtonContainer>

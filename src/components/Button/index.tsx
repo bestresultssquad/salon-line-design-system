@@ -54,7 +54,7 @@ const Button = ({
       {!onlyIcon &&
         children &&
         (loading ? (
-          <ActivityIndicator size={'small'} />
+          <ActivityIndicator size={'small'} style={{ height: 24 }} />
         ) : (
           <Typography
             color={
