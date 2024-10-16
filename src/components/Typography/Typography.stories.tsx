@@ -11,7 +11,7 @@ const Component: Meta<typeof Typography> = {
       control: { type: 'select' },
     },
     sizeVariant: {
-      options: ['regular', 'medium', 'semiBold'],
+      options: ['regular', 'medium', 'semiBold', 'bold'],
       control: { type: 'select' },
     },
     color: { control: { type: 'color' } },

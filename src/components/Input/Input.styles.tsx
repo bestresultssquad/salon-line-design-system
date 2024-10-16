@@ -3,15 +3,22 @@ import MaskInput from 'react-native-mask-input';
 
 export const Container = styled.View``;
 
-export const InputContainer = styled.View<{ editable: boolean }>`
+export const InputContainer = styled.View<{
+  editable: boolean;
+  error: boolean;
+}>`
   padding: ${({ theme }) => `${theme.spacing.xxxs}px ${theme.spacing.xxxxs}px`};
   background-color: ${({ theme, editable }) =>
     editable ? theme.colors.white : theme.colors.gray[100]};
   border-radius: 12px;
   width: 100%;
   flex-direction: row;
-  border: ${({ theme, editable }) =>
-    !editable ? 'none' : `1px solid  ${theme.colors.gray[200]}`};
+  border: ${({ theme, editable, error }) =>
+    !editable
+      ? 'none'
+      : error
+        ? `1px solid ${theme.colors.red[500]}`
+        : `1px solid  ${theme.colors.gray[200]}`};
 `;
 
 export const TextInput = styled(MaskInput)<{

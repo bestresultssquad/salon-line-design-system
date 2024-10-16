@@ -2,6 +2,7 @@ import { useTheme } from 'styled-components/native';
 import { Container, InputContainer, TextInput } from './Input.styles';
 import type { InputProps } from './Input.types';
 import Typography from '../Typography';
+import Icon from '../Icon';
 
 const Input = ({
   leftIcon,
@@ -11,6 +12,7 @@ const Input = ({
   inputLabel,
   mask,
   editable = true,
+  error,
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
@@ -38,7 +40,7 @@ const Input = ({
           {inputLabel}
         </Typography>
       )}
-      <InputContainer editable={editable}>
+      <InputContainer editable={editable} error={!!error}>
         {leftIcon && renderLeftIcon()}
         <TextInput
           mask={mask}
@@ -50,8 +52,21 @@ const Input = ({
           rightIcon={!!rightIcon}
           placeholderTextColor={colors.gray[500]}
         />
-        {rightIcon && renderRightIcon()}
+        {error && (
+          <Icon height={24} width={24} stroke={colors.red[500]} type="alert" />
+        )}
+        {!error && rightIcon && renderRightIcon()}
       </InputContainer>
+      {error && (
+        <Typography
+          sizeVariant="medium"
+          variant="xs"
+          color={colors.red[500]}
+          style={{ marginTop: 4 }}
+        >
+          {error}
+        </Typography>
+      )}
     </Container>
   );
 };

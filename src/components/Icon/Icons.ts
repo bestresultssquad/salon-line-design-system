@@ -25,6 +25,7 @@ import home from '../../../assets/icons/home.svg';
 import chevronRight from '../../../assets/icons/chevron-right.svg';
 import discountTag2 from '../../../assets/icons/discount-tag2.svg';
 import ia from '../../../assets/icons/ia.svg';
+import alert from '../../../assets/icons/alert.svg';
 
 export const Icons = {
   share,
@@ -54,4 +55,5 @@ export const Icons = {
   chevronRight,
   discountTag2,
   ia,
+  alert,
 };

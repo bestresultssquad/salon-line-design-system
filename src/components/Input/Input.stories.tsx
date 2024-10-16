@@ -59,4 +59,14 @@ Password.args = {
   rightIcon: <Icon type="password" width={24} height={24} color={'black'} />,
 };
 
+export const ErrorState: StoryObj<typeof Input> = {};
+ErrorState.args = {
+  placeholder: 'Error',
+  value: '',
+  secureTextEntry: false,
+  editable: true,
+  error: 'Error message',
+  rightIcon: <Icon type="password" width={24} height={24} color={'black'} />,
+};
+
 export default Component;

@@ -20,6 +20,12 @@ const typography: Typography = {
       size: 8,
       lineHeight: 12,
     },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
+      size: 8,
+      lineHeight: 12,
+    },
   },
   '2xs': {
     regular: {
@@ -37,6 +43,12 @@ const typography: Typography = {
     semiBold: {
       family: 'Poppins-SemiBold',
       weight: '600',
+      size: 10,
+      lineHeight: 14,
+    },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
       size: 10,
       lineHeight: 14,
     },
@@ -60,6 +72,12 @@ const typography: Typography = {
       size: 12,
       lineHeight: 16,
     },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
+      size: 12,
+      lineHeight: 16,
+    },
   },
   'sm': {
     regular: {
@@ -77,6 +95,12 @@ const typography: Typography = {
     semiBold: {
       family: 'Poppins-SemiBold',
       weight: '600',
+      size: 14,
+      lineHeight: 20,
+    },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
       size: 14,
       lineHeight: 20,
     },
@@ -100,6 +124,12 @@ const typography: Typography = {
       size: 16,
       lineHeight: 24,
     },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
+      size: 16,
+      lineHeight: 24,
+    },
   },
   'lg': {
     regular: {
@@ -120,6 +150,12 @@ const typography: Typography = {
       size: 18,
       lineHeight: 28,
     },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
+      size: 18,
+      lineHeight: 28,
+    },
   },
   '2xl': {
     regular: {
@@ -137,6 +173,12 @@ const typography: Typography = {
     semiBold: {
       family: 'Poppins-SemiBold',
       weight: '600',
+      size: 24,
+      lineHeight: 32,
+    },
+    bold: {
+      family: 'Poppins-Bold',
+      weight: '700',
       size: 24,
       lineHeight: 32,
     },

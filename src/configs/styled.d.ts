@@ -53,7 +53,7 @@ type Fonts = {
     size: number;
     lineHeight: number;
   };
-  bold?: {
+  bold: {
     family: string;
     weight: string;
     size: number;

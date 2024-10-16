@@ -4,7 +4,7 @@ import type { Typography } from '../../configs/styled';
 
 export type TypographyVariants = keyof Typography;
 
-export type SizeVariants = 'regular' | 'medium' | 'semiBold';
+export type SizeVariants = 'regular' | 'medium' | 'semiBold' | 'bold';
 
 export interface Props extends TextProps {
   variant: TypographyVariants;
