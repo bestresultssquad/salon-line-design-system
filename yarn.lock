@@ -1790,11 +1790,11 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.5
     react-native-builder-bob: ^0.30.2
-    react-native-fast-image: ^8.6.3
     react-native-mask-input: ^1.2.3
     react-native-reanimated: ~3.10.1
     react-native-svg: ^15.7.1
     react-native-svg-transformer: ^1.5.0
+    react-native-toast-notifications: ^3.4.0
     react-test-renderer: ^18.2.0
     release-it: ^15.0.0
     styled-components: ^5.3.11
@@ -16606,16 +16606,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-fast-image@npm:^8.6.3":
-  version: 8.6.3
-  resolution: "react-native-fast-image@npm:8.6.3"
-  peerDependencies:
-    react: ^17 || ^18
-    react-native: ">=0.60.0"
-  checksum: 29289cb6b2eae0983c8922b22e2d9de3be07322bb7991c5def19f95eadefaedb0e308ff0b38cc1d0444e8bd4fe94a7621a99a2d3d9298100bcb60b3144677234
-  languageName: node
-  linkType: hard
-
 "react-native-fit-image@npm:^1.5.5":
   version: 1.5.5
   resolution: "react-native-fit-image@npm:1.5.5"
@@ -16763,6 +16753,16 @@ __metadata:
   version: 1.0.5
   resolution: "react-native-swipe-gestures@npm:1.0.5"
   checksum: d637bc40baa50fa0ce3b6cf2b494efeceaea03cc3875cb7cf7d76922914a21d5e6b098d4a084fb291ce61bfbb0a241c03cff24b15bebf0cfae1c146f4ad10d92
+  languageName: node
+  linkType: hard
+
+"react-native-toast-notifications@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "react-native-toast-notifications@npm:3.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 734a54111e3657859d3cca9505a197bc6eb486e473e655d8aa087157de8f5e8b819083963f28e5e9155110be9a17774296bbfd721749f670c5f4e093557bd88f
   languageName: node
   linkType: hard
 

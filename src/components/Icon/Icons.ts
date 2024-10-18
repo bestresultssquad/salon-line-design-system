@@ -1,59 +1,63 @@
-import share from '../../../assets/icons/share.svg';
-import arrowLeft from '../../../assets/icons/arrow-left.svg';
-import arrowRight from '../../../assets/icons/arrow-right.svg';
-import star from '../../../assets/icons/star.svg';
-import favorite from '../../../assets/icons/favorite.svg';
-import favoriteFilled from '../../../assets/icons/favourite-filled.svg';
-import search from '../../../assets/icons/search.svg';
-import password from '../../../assets/icons/password.svg';
-import bag from '../../../assets/icons/bag.svg';
-import menu from '../../../assets/icons/menu.svg';
-import checkbox from '../../../assets/icons/checkbox.svg';
-import checkboxFilled from '../../../assets/icons/checkboxFilled.svg';
-import check from '../../../assets/icons/check.svg';
-import error from '../../../assets/icons/error.svg';
-import helpCircle from '../../../assets/icons/help-circle.svg';
-import trash from '../../../assets/icons/trash.svg';
-import calendar from '../../../assets/icons/calendar.svg';
-import creditCard from '../../../assets/icons/credit-card.svg';
-import discountTag from '../../../assets/icons/discount-tag.svg';
-import location from '../../../assets/icons/location.svg';
-import user from '../../../assets/icons/user.svg';
-import menuSquare from '../../../assets/icons/menu-square.svg';
-import notification from '../../../assets/icons/notification.svg';
-import home from '../../../assets/icons/home.svg';
-import chevronRight from '../../../assets/icons/chevron-right.svg';
-import discountTag2 from '../../../assets/icons/discount-tag2.svg';
-import ia from '../../../assets/icons/ia.svg';
-import alert from '../../../assets/icons/alert.svg';
+import { ShareIcon } from './IconComponents/Share.icon';
+import { ArrowRightIcon } from './IconComponents/ArrowRight.icon';
+import { StarIcon } from './IconComponents/Star.icon';
+import { FavoriteIcon } from './IconComponents/Favorite.icon';
+import { FavoriteFilledIcon } from './IconComponents/FavoriteFilled.icon';
+import { SearchIcon } from './IconComponents/Search.icon';
+import { PasswordIcon } from './IconComponents/Password.icon';
+import { BagIcon } from './IconComponents/Bag.icon';
+import { MenuIcon } from './IconComponents/Menu.icon';
+import { CheckboxFilledIcon } from './IconComponents/CheckboxFilled.icon';
+import { AlertIcon } from './IconComponents/Alert.icon';
+import { AlertCircleIcon } from './IconComponents/AlertCircle.icon';
+import { CheckboxIcon } from './IconComponents/Checkbox.icon';
+import { CheckIcon } from './IconComponents/Check.icon';
+import { ErrorIcon } from './IconComponents/Error.icon';
+import { HelpCircleIcon } from './IconComponents/HelpCircle.icon';
+import { TrashIcon } from './IconComponents/Trash.icon';
+import { CalendarIcon } from './IconComponents/Calendar.icon';
+import { CreditCardIcon } from './IconComponents/CreditCard.icon';
+import { DiscountTagIcon } from './IconComponents/DiscountTag.icon';
+import { LocationIcon } from './IconComponents/Location.icon';
+import { UserIcon } from './IconComponents/User.icon';
+import { MenuSquareIcon } from './IconComponents/MenuSquare.icon';
+import { NotificationIcon } from './IconComponents/Notification.icon';
+import { HomeIcon } from './IconComponents/Home.icon';
+import { ChevronRightIcon } from './IconComponents/ChevronRight.icon';
+import { DiscountTag2Icon } from './IconComponents/DiscountTag2.icon';
+import { IAIcon } from './IconComponents/IA.icon';
+import { PasswordLockIcon } from './IconComponents/PasswordLock.icon';
+import { CancelIcon } from './IconComponents/Cancel.icon';
 
-export const Icons = {
-  share,
-  arrowLeft,
-  star,
-  arrowRight,
-  favorite,
-  favoriteFilled,
-  search,
-  password,
-  bag,
-  menu,
-  checkbox,
-  checkboxFilled,
-  error,
-  check,
-  helpCircle,
-  trash,
-  calendar,
-  home,
-  creditCard,
-  discountTag,
-  location,
-  user,
-  menuSquare,
-  notification,
-  chevronRight,
-  discountTag2,
-  ia,
-  alert,
+export const IconsComponent = {
+  AlertIcon,
+  AlertCircleIcon,
+  CheckboxIcon,
+  CheckIcon,
+  ErrorIcon,
+  HelpCircleIcon,
+  TrashIcon,
+  CalendarIcon,
+  IAIcon,
+  DiscountTag2Icon,
+  CreditCardIcon,
+  DiscountTagIcon,
+  LocationIcon,
+  UserIcon,
+  MenuSquareIcon,
+  NotificationIcon,
+  HomeIcon,
+  ChevronRightIcon,
+  PasswordLockIcon,
+  CancelIcon,
+  ShareIcon,
+  ArrowRightIcon,
+  StarIcon,
+  FavoriteIcon,
+  FavoriteFilledIcon,
+  SearchIcon,
+  PasswordIcon,
+  BagIcon,
+  MenuIcon,
+  CheckboxFilledIcon,
 };

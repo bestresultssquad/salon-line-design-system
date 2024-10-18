@@ -53,7 +53,12 @@ const Input = ({
           placeholderTextColor={colors.gray[500]}
         />
         {error && (
-          <Icon height={24} width={24} stroke={colors.red[500]} type="alert" />
+          <Icon
+            height={24}
+            width={24}
+            stroke={colors.red[500]}
+            type="AlertIcon"
+          />
         )}
         {!error && rightIcon && renderRightIcon()}
       </InputContainer>

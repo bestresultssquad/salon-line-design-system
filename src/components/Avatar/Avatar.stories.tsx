@@ -36,8 +36,8 @@ Default.args = {
   rightLabel: false,
 };
 
-export const IconRight: StoryObj<typeof Avatar> = {};
-Default.args = {
+export const LabelRight: StoryObj<typeof Avatar> = {};
+LabelRight.args = {
   uri: 'https://picsum.photos/200/300',
   label: 'Avatar',
   rightLabel: true,

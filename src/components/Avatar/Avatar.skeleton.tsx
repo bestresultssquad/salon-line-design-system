@@ -3,16 +3,18 @@ import { Skeleton } from 'moti/skeleton';
 
 import styled from 'styled-components/native';
 
-const MotiCustom = styled(MotiView)`
+const MotiCustom = styled(MotiView)<{ rightLabel: boolean }>`
   width: 70px;
   height: 70px;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme, rightLabel }) =>
+    rightLabel ? theme.spacing.xxxxs : theme.spacing.nano}px;
   margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
 `;
 
-const AvatarSkeleton = () => {
+const AvatarSkeleton = ({ rightLabel = false }) => {
   return (
     <MotiCustom
+      rightLabel={rightLabel}
       transition={{
         type: 'timing',
         duration: 2000,

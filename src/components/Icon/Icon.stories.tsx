@@ -2,7 +2,7 @@ import { FlatList, View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 import Icon from '../Icon/index';
 import type { IconTypes } from '../Icon/Icon.types';
-import { Icons } from './Icons';
+import { IconsComponent } from './Icons';
 import Typography from '../Typography';
 
 export const IconsList: StoryObj<typeof Icon> = {
@@ -16,7 +16,7 @@ export const IconsList: StoryObj<typeof Icon> = {
           justifyContent: 'center',
         }}
         numColumns={2}
-        data={Object.keys(Icons).sort() as IconTypes[]}
+        data={Object.keys(IconsComponent).sort() as IconTypes[]}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }: { item: IconTypes }) => (
           <View
@@ -53,7 +53,7 @@ const Component: Meta<typeof Icon> = {
   component: Icon,
   argTypes: {
     type: {
-      options: Object.keys(Icons),
+      options: Object.keys(IconsComponent),
       control: { type: 'select' },
     },
     stroke: { control: { type: 'color' } },

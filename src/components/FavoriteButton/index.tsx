@@ -61,7 +61,7 @@ const FavoriteButton = ({
           >
             <Icon
               testID="custom-icon-left"
-              type={'favoriteFilled'}
+              type={'FavoriteFilledIcon'}
               width={16}
               height={16}
               stroke="black"
@@ -78,7 +78,7 @@ const FavoriteButton = ({
           >
             <Icon
               testID="custom-icon-left"
-              type={'favorite'}
+              type={'FavoriteIcon'}
               width={16}
               height={16}
               stroke="black"

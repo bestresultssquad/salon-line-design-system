@@ -56,7 +56,9 @@ Password.args = {
   value: '',
   secureTextEntry: true,
   editable: true,
-  rightIcon: <Icon type="password" width={24} height={24} color={'black'} />,
+  rightIcon: (
+    <Icon type="PasswordIcon" width={24} height={24} color={'black'} />
+  ),
 };
 
 export const ErrorState: StoryObj<typeof Input> = {};
@@ -66,7 +68,9 @@ ErrorState.args = {
   secureTextEntry: false,
   editable: true,
   error: 'Error message',
-  rightIcon: <Icon type="password" width={24} height={24} color={'black'} />,
+  rightIcon: (
+    <Icon type="PasswordIcon" width={24} height={24} color={'black'} />
+  ),
 };
 
 export default Component;

@@ -42,7 +42,7 @@ const ProductCard = ({
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>
-            <Icon width={12} height={12} type="star" />
+            <Icon width={12} height={12} type="StarIcon" />
             <Typography variant="2xs" sizeVariant="semiBold">
               {rating.toString()}
             </Typography>
@@ -72,7 +72,7 @@ const ProductCard = ({
                 onlyIcon
                 variant="primary"
                 size="nano"
-                iconType="bag"
+                iconType="BagIcon"
                 iconSize={16}
               />
             </ButtonContainer>

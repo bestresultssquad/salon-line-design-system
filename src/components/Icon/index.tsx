@@ -1,15 +1,15 @@
 import type { Props } from './Icon.types';
-import { Icons } from './Icons';
+import { IconsComponent } from './Icons';
 
 const Icon = ({
-  type = 'share',
+  type = 'ShareIcon',
   width,
   height,
   stroke,
   strokeWidth,
   ...props
 }: Props) => {
-  const IconComponent = Icons[type];
+  const IconComponent = IconsComponent[type];
 
   return (
     <IconComponent

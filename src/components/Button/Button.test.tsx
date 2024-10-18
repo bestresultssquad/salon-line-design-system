@@ -21,14 +21,14 @@ describe('Button Component', () => {
   });
   it('renders correctly with only icon', () => {
     const { getByTestId } = renderWithTheme(
-      <Button size="nano" variant="cart" onlyIcon iconType="arrowLeft" />
+      <Button size="nano" variant="cart" onlyIcon iconType="ChevronRightIcon" />
     );
     expect(getByTestId('custom-icon-left')).toBeTruthy();
   });
 
   it('renders correctly with left icon and children', () => {
     const { getByText, getByTestId } = renderWithTheme(
-      <Button leftIcon iconType="share" size="cart" variant="outline">
+      <Button leftIcon iconType="ShareIcon" size="cart" variant="outline">
         Click Me
       </Button>
     );
@@ -41,7 +41,7 @@ describe('Button Component', () => {
     const { getByText } = renderWithTheme(
       <Button
         leftIcon
-        iconType="share"
+        iconType="ShareIcon"
         size="cart"
         variant="outline"
         onPress={() => mockFn()}

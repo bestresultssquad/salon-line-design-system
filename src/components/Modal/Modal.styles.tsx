@@ -9,9 +9,9 @@ export const ModalBackground = styled(Animated.View)`
 `;
 
 export const ModalContainer = styled(Animated.View)`
-  width: 80%;
+  width: 90%;
   background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.spacing.sm}px;
   elevation: 20;
   padding: ${({ theme }) => theme.spacing.xxxxs}px;
   gap: ${({ theme }) => theme.spacing.sm}px;

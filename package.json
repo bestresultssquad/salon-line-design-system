@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.1.54",
+  "version": "0.1.59",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -195,6 +195,7 @@
     "react-native-reanimated": "~3.10.1",
     "react-native-svg": "^15.7.1",
     "react-native-svg-transformer": "^1.5.0",
+    "react-native-toast-notifications": "^3.4.0",
     "styled-components": "^5.3.11"
   }
 }
