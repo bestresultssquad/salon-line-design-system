@@ -28,6 +28,9 @@ import { DiscountTag2Icon } from './IconComponents/DiscountTag2.icon';
 import { IAIcon } from './IconComponents/IA.icon';
 import { PasswordLockIcon } from './IconComponents/PasswordLock.icon';
 import { CancelIcon } from './IconComponents/Cancel.icon';
+import { ChevronDownIcon } from './IconComponents/ChevronDown.icon';
+import { MinusIcon } from './IconComponents/Minus.icon';
+import { PlusIcon } from './IconComponents/Plus.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -60,4 +63,7 @@ export const IconsComponent = {
   BagIcon,
   MenuIcon,
   CheckboxFilledIcon,
+  ChevronDownIcon,
+  MinusIcon,
+  PlusIcon,
 };

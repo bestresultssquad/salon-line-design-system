@@ -8,6 +8,7 @@ export interface ProductCardProps {
   imageUri?: string;
   onPress: () => void;
   onFavoritePress: () => void;
+  onCardPress: () => void;
   rating: number;
   ratingCount: number;
   chipText?: string;

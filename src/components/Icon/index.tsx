@@ -7,6 +7,7 @@ const Icon = ({
   height,
   stroke,
   strokeWidth,
+  fill,
   ...props
 }: Props) => {
   const IconComponent = IconsComponent[type];
@@ -18,7 +19,7 @@ const Icon = ({
       stroke={stroke}
       strokeWidth={strokeWidth}
       viewBox="0 0 24 24"
-      fill="none"
+      fill={fill ?? 'none'}
       {...props}
     />
   );

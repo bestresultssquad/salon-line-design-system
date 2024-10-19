@@ -1,4 +1,4 @@
-import { Dimensions, Platform, View } from 'react-native';
+import { Dimensions, Platform, TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 
@@ -69,6 +69,6 @@ const cardStyle = css<{
   `}
 `;
 
-export const Card = styled(View)<{ elevation?: 'md' }>`
+export const Card = styled(TouchableOpacity)<{ elevation?: 'md' }>`
   ${cardStyle}
 `;

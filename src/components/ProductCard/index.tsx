@@ -18,6 +18,7 @@ import type { ProductCardProps } from './ProductCard.types';
 import Chip from '../ChipComponent';
 import FavoriteButton from '../FavoriteButton';
 import ProductCardSkeleton from './ProductCard.skeleton';
+import { useTheme } from 'styled-components/native';
 
 const ProductCard = ({
   image,
@@ -31,9 +32,12 @@ const ProductCard = ({
   oldPrice,
   chipText,
   favorited = false,
+  onCardPress,
 }: ProductCardProps) => {
+  const { colors } = useTheme();
+
   return (
-    <Card>
+    <Card onPress={onCardPress}>
       <Container>
         <ImageContainer>
           {chipText && <Chip label={chipText} />}
@@ -42,7 +46,12 @@ const ProductCard = ({
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>
-            <Icon width={12} height={12} type="StarIcon" />
+            <Icon
+              width={12}
+              height={12}
+              type="StarIcon"
+              fill={colors.yellow[500]}
+            />
             <Typography variant="2xs" sizeVariant="semiBold">
               {rating.toString()}
             </Typography>

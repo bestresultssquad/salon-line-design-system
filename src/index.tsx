@@ -4,6 +4,7 @@ import type { DefaultThemeDesignSystem } from './configs/styled';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
+import type { ToastType } from './components/Toast/Toast.types';
 
 export * from './components';
 import * as bottomSheetModule from '@gorhom/bottom-sheet';
@@ -19,4 +20,4 @@ export {
   MotiView,
   Skeleton,
 };
-export type { DefaultThemeDesignSystem };
+export type { DefaultThemeDesignSystem, ToastType };
