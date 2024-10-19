@@ -1764,6 +1764,7 @@ __metadata:
   resolution: "@bestresultssquad/salon-line-design-system@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
+    "@date-fns/tz": ^1.1.2
     "@evilmartians/lefthook": ^1.5.0
     "@gorhom/bottom-sheet": ^5.0.0-alpha.11
     "@react-native/babel-preset": 0.75.2
@@ -1780,6 +1781,8 @@ __metadata:
     "@types/react": ^18.2.44
     "@types/styled-components-react-native": ^5.2.5
     commitlint: ^17.0.2
+    date-fns: ^4.1.0
+    date-fns-tz: ^3.2.0
     del-cli: ^5.1.0
     eslint: ^8.51.0
     eslint-config-prettier: ^9.0.0
@@ -2015,6 +2018,13 @@ __metadata:
   dependencies:
     "@jridgewell/trace-mapping": 0.3.9
   checksum: 5718f267085ed8edb3e7ef210137241775e607ee18b77d95aa5bd7514f47f5019aa2d82d96b3bf342ef7aa890a346fa1044532ff7cc3009e7d24fce3ce6200fa
+  languageName: node
+  linkType: hard
+
+"@date-fns/tz@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@date-fns/tz@npm:1.1.2"
+  checksum: 4b2b3d3f062e456c51d5dec5332266c27d9a136352f75fdfd5769be25bcd02ababd9b5e809ae3f9c5e8c3fad1831d11a79a03c87b0f566a48bf9fec084df7665
   languageName: node
   linkType: hard
 
@@ -8852,6 +8862,22 @@ __metadata:
     es-errors: ^1.3.0
     is-data-view: ^1.0.1
   checksum: 7f0bf8720b7414ca719eedf1846aeec392f2054d7af707c5dc9a753cc77eb8625f067fa901e0b5127e831f9da9056138d894b9c2be79c27a21f6db5824f009c2
+  languageName: node
+  linkType: hard
+
+"date-fns-tz@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "date-fns-tz@npm:3.2.0"
+  peerDependencies:
+    date-fns: ^3.0.0 || ^4.0.0
+  checksum: c49289a3944fc1eacaa08649c2c1adc1652456d405841f2093fdd365596dac46553a303629b5d528c3f5e4c49919fc3d3ff98da93ad32a1a193243aa04cc0987
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "date-fns@npm:4.1.0"
+  checksum: fb681b242cccabed45494468f64282a7d375ea970e0adbcc5dcc92dcb7aba49b2081c2c9739d41bf71ce89ed68dd73bebfe06ca35129490704775d091895710b
   languageName: node
   linkType: hard
 

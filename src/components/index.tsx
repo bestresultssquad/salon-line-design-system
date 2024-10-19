@@ -16,3 +16,5 @@ export { default as Switch } from './Switch';
 export { default as Toast } from './Toast';
 export { default as MenuItem } from './MenuItem';
 export { default as Accordion } from './Accordion';
+export { default as ProductReviewCard } from './ProductReviewCard';
+export { default as FavoriteButton } from './FavoriteButton';

@@ -7,6 +7,7 @@ import type { FavoriteButtonProps } from './FavoriteButton.types';
 const FavoriteButton = ({
   onPress,
   favorited = false,
+  ...props
 }: FavoriteButtonProps) => {
   const animatedValue = useRef(new Animated.Value(0)).current;
 
@@ -49,6 +50,7 @@ const FavoriteButton = ({
       size="nano"
       fullRounded
       onPress={onPress}
+      {...props}
       customIcon={
         <View>
           <Animated.View

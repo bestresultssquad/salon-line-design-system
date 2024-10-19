@@ -31,6 +31,11 @@ import { CancelIcon } from './IconComponents/Cancel.icon';
 import { ChevronDownIcon } from './IconComponents/ChevronDown.icon';
 import { MinusIcon } from './IconComponents/Minus.icon';
 import { PlusIcon } from './IconComponents/Plus.icon';
+import { StarCircleIcon } from './IconComponents/StarCircle.icon';
+import { LikeIcon } from './IconComponents/Like.icon';
+import { DeslikeIcon } from './IconComponents/Deslike.icon';
+import { BoxIcon } from './IconComponents/Box.icon';
+import { VoucherIcon } from './IconComponents/Voucher.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -66,4 +71,9 @@ export const IconsComponent = {
   ChevronDownIcon,
   MinusIcon,
   PlusIcon,
+  StarCircleIcon,
+  LikeIcon,
+  DeslikeIcon,
+  BoxIcon,
+  VoucherIcon,
 };

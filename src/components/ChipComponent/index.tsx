@@ -5,7 +5,11 @@ import { ChipContainer } from './Chip.styles';
 const Chip = ({ label, ...props }: ChipProps) => {
   return (
     <ChipContainer {...props}>
-      <Typography sizeVariant={'semiBold'} variant={'3xs'} color={'white'}>
+      <Typography
+        sizeVariant={props.textSizeVariant ?? 'semiBold'}
+        variant={props.textVariant ?? '3xs'}
+        color={'white'}
+      >
         {label}
       </Typography>
     </ChipContainer>
