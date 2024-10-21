@@ -36,5 +36,6 @@ export interface Props extends TouchableOpacityProps {
   iconSize?: number;
   iconFill?: string;
   customIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   loading?: boolean;
 }

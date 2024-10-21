@@ -18,3 +18,5 @@ export { default as MenuItem } from './MenuItem';
 export { default as Accordion } from './Accordion';
 export { default as ProductReviewCard } from './ProductReviewCard';
 export { default as FavoriteButton } from './FavoriteButton';
+export { default as Counter } from './Counter';
+export { default as ProductExibition } from './ProductExibitions';

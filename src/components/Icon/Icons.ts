@@ -36,6 +36,10 @@ import { LikeIcon } from './IconComponents/Like.icon';
 import { DeslikeIcon } from './IconComponents/Deslike.icon';
 import { BoxIcon } from './IconComponents/Box.icon';
 import { VoucherIcon } from './IconComponents/Voucher.icon';
+import { ChevronLeftIcon } from './IconComponents/ChevronLeft.icon';
+import { CarouselHorizontalIcon } from './IconComponents/CarouselHorizontal.icon';
+import { RdViewIcon } from './IconComponents/RdView.icon';
+import { PlayCircleIcon } from './IconComponents/PlayCircle.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -76,4 +80,8 @@ export const IconsComponent = {
   DeslikeIcon,
   BoxIcon,
   VoucherIcon,
+  ChevronLeftIcon,
+  CarouselHorizontalIcon,
+  RdViewIcon,
+  PlayCircleIcon,
 };

@@ -8,6 +8,7 @@ const Paginator = ({
   scrollX,
   testID,
   variant = 'onboarding',
+  ...props
 }: Props) => {
   const { width } = useWindowDimensions();
   const { colors, spacing } = useTheme();
@@ -17,9 +18,9 @@ const Paginator = ({
       widthNormal: 12,
       widthActive: 25,
       colorNormal: colors.white,
-      colorActive: colors.purple[500],
-      borderNormal: colors.black,
-      borderActive: colors.purple[500],
+      colorActive: colors.pink[700],
+      borderNormal: colors.gray[600],
+      borderActive: colors.pink[700],
     },
     default: {
       widthNormal: spacing.nano,
@@ -32,7 +33,7 @@ const Paginator = ({
   };
 
   return (
-    <PaginatorContainer variant={variant} testID={testID}>
+    <PaginatorContainer variant={variant} testID={testID} {...props}>
       {data.map((_: any, i: number) => {
         const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
 

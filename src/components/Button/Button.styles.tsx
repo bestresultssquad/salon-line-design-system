@@ -70,7 +70,12 @@ export const ButtonContainer = styled.TouchableOpacity<{
   flex-direction: row;
 `;
 
-export const CustomIcon = styled(Icon)<{ leftIcon: boolean }>`
+export const CustomIcon = styled(Icon)<{
+  leftIcon: boolean;
+  rightIcon: boolean;
+}>`
   margin-right: ${({ theme, leftIcon }) =>
     leftIcon ? theme.spacing.nano : 0}px;
+  margin-left: ${({ theme, rightIcon }) =>
+    rightIcon ? theme.spacing.nano : 0}px;
 `;
