@@ -83,6 +83,7 @@ const ProductCard = ({
                 size="nano"
                 iconType="BagIcon"
                 iconSize={16}
+                iconStrokeColor={colors.white}
               />
             </ButtonContainer>
           </PriceContainer>

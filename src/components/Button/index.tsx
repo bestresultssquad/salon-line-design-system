@@ -1,4 +1,4 @@
-import { ButtonContainer } from './Button.styles';
+import { ButtonContainer, CustomIcon } from './Button.styles';
 import Typography from '../Typography';
 import type { Props } from './Button.types';
 import { useTheme } from 'styled-components/native';
@@ -17,6 +17,10 @@ const Button = ({
   customIcon,
   loading = false,
   rightIcon,
+  iconType,
+  iconSize,
+  iconStrokeColor = 'white',
+  iconFill = 'none',
   ...props
 }: Props) => {
   const { colors } = useTheme();
@@ -26,14 +30,38 @@ const Button = ({
       return customIcon;
     }
 
-    return null;
+    return (
+      <CustomIcon
+        testID="custom-icon-left"
+        leftIcon={leftIcon}
+        rightIcon={false}
+        type={iconType}
+        width={iconSize ?? 24}
+        height={iconSize ?? 24}
+        stroke={iconStrokeColor}
+        fill={iconFill}
+        strokeWidth={1.5}
+      />
+    );
   };
 
   const renderRightIcon = () => {
     if (rightIcon) {
       return rightIcon;
     }
-    return null;
+    return (
+      <CustomIcon
+        testID="custom-icon-left"
+        leftIcon={leftIcon}
+        rightIcon={true}
+        type={iconType}
+        width={iconSize ?? 24}
+        height={iconSize ?? 24}
+        stroke={iconStrokeColor}
+        fill={iconFill}
+        strokeWidth={1.5}
+      />
+    );
   };
 
   return (
@@ -57,10 +85,6 @@ const Button = ({
               }
               sizeVariant={textSizeVariant ?? 'regular'}
               variant={textVariant ?? '3xs'}
-              style={{
-                marginRight: rightIcon ? 8 : 0,
-                marginLeft: leftIcon ? 8 : 0,
-              }}
             >
               {children}
             </Typography>

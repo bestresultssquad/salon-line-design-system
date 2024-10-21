@@ -9,6 +9,8 @@ const MotiCustom = styled(MotiView)<{ rightLabel: boolean }>`
   gap: ${({ theme, rightLabel }) =>
     rightLabel ? theme.spacing.xxxxs : theme.spacing.nano}px;
   margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
+  flex-direction: ${({ rightLabel }) => (rightLabel ? 'row' : 'column')};
+  align-items: center;
 `;
 
 const AvatarSkeleton = ({ rightLabel = false }) => {
@@ -21,7 +23,12 @@ const AvatarSkeleton = ({ rightLabel = false }) => {
       }}
     >
       <Skeleton colorMode={'light'} radius={'round'} height={70} width={70} />
-      <Skeleton colorMode={'light'} radius={16} height={20} width={71} />
+      <Skeleton
+        colorMode={'light'}
+        radius={16}
+        height={20}
+        width={rightLabel ? 140 : 71}
+      />
     </MotiCustom>
   );
 };

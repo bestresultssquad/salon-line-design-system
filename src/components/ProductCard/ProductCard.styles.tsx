@@ -33,7 +33,9 @@ export const StarContainer = styled.View`
   align-items: center;
 `;
 
-export const TitleContainer = styled.View``;
+export const TitleContainer = styled.View`
+  min-height: 35.2px;
+`;
 
 export const PriceContainer = styled.View`
   flex-direction: row;

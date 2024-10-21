@@ -11,7 +11,8 @@ export type ButtonSize =
   | 'large'
   | 'nano'
   | 'cart'
-  | 'quarck';
+  | 'quarck'
+  | 'onboarding';
 
 export type ButtonVariant =
   | 'primary'
@@ -19,7 +20,8 @@ export type ButtonVariant =
   | 'disabled'
   | 'cart'
   | 'action'
-  | 'favorite';
+  | 'favorite'
+  | 'onboarding';
 
 export interface Props extends TouchableOpacityProps {
   textVariant?: TypographyVariants;
