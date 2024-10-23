@@ -40,7 +40,12 @@ const ProductCard = ({
     <Card onPress={onCardPress}>
       <Container>
         <ImageContainer>
-          {chipText && <Chip label={chipText} />}
+          {chipText && (
+            <Chip
+              label={chipText}
+              style={{ position: 'absolute', top: 12, left: 5 }}
+            />
+          )}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
           <ImageCustom source={imageUri ? { uri: imageUri } : image} />
         </ImageContainer>

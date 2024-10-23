@@ -21,6 +21,7 @@ const darkTheme = {
     },
     purple: {
       500: '#BA4DDE',
+      800: '#804FE8',
     },
     pink: {
       600: '#DB2777',

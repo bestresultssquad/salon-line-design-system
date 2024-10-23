@@ -15,6 +15,7 @@ export const Container = styled.View<{ variant: ProductCardHorizontalVariant }>`
   padding: ${({ theme, variant }) =>
     variant === 'cart' ? `${theme.spacing.nano}px` : 0};
   border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  width: 327px;
 `;
 
 export const ImageContainer = styled.View`

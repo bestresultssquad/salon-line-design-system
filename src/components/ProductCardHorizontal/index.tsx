@@ -57,6 +57,7 @@ const ProductCardHorizontal = ({
             style={{
               paddingVertical: variant === 'search' ? spacing.xxxxs : 0,
               gap: variant === 'search' ? spacing.xxs : 0,
+              flex: 1,
             }}
           >
             {variant === 'cart' && (

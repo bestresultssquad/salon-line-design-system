@@ -1,13 +1,25 @@
 import styled from 'styled-components/native';
-import type { ChipVariant } from './Chip.types';
+import type { ChipSize, ChipVariant } from './Chip.types';
+import type { DefaultTheme } from 'styled-components/native';
 
-export const ChipContainer = styled.View<{ variant: ChipVariant }>`
-  position: absolute;
-  top: 12px;
-  left: 5px;
+const getStyleBySize = (theme: DefaultTheme) => ({
+  small: {
+    paddingHorizontal: theme.spacing.nano,
+    paddingVertical: 2,
+  },
+  medium: {
+    paddingHorizontal: theme.spacing.nano,
+    paddingVertical: theme.spacing.quarck,
+  },
+});
+
+export const ChipContainer = styled.View<{
+  variant: ChipVariant;
+  size: ChipSize;
+}>`
   z-index: 1;
-  padding: ${({ theme }) =>
-    `${theme.spacing.quarck}px ${theme.spacing.nano}px`};
+  padding: ${({ theme, size }) =>
+    `${getStyleBySize(theme)[size].paddingVertical}px ${getStyleBySize(theme)[size].paddingHorizontal}px`};
   background-color: ${({ theme, variant }) =>
     variant === 'outlined' ? theme.colors.white : theme.colors.pink[600]};
   border-radius: 50px;
