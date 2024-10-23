@@ -9,6 +9,7 @@ describe('Checkbox Component', () => {
     onPress: jest.fn(),
     checked: false,
     children: null,
+    variant: 'default',
   };
 
   it('should render correctly', () => {

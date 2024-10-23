@@ -20,3 +20,6 @@ export { default as ProductReviewCard } from './ProductReviewCard';
 export { default as FavoriteButton } from './FavoriteButton';
 export { default as Counter } from './Counter';
 export { default as ProductExibition } from './ProductExibitions';
+export { default as ProductCardHorizontal } from './ProductCardHorizontal';
+export { default as Categories } from './Categories';
+export { default as TabSwitch } from './TabSwitch';

@@ -18,7 +18,10 @@ const Component: Meta<typeof AccordionCustom> = {
   argTypes: {
     title: { control: { type: 'text' } },
     buttonTitle: { control: { type: 'text' } },
-    variant: { control: { type: 'select' }, options: ['default', 'reviews'] },
+    variant: {
+      control: { type: 'select' },
+      options: ['default', 'reviews', 'recurringPurchase'],
+    },
   },
 
   decorators: [
@@ -42,6 +45,15 @@ Reviews.args = {
   title: 'Reviews',
   buttonTitle: 'Button Title',
   variant: 'reviews',
+};
+
+export const RecurringPurchase: StoryObj<typeof AccordionCustom> = {};
+RecurringPurchase.args = {
+  title: 'RecurringPurchase',
+  buttonTitle: 'Button Title',
+  variant: 'recurringPurchase',
+  textColor: 'purple',
+  textRight: '+10% OFF',
 };
 
 export default Component;

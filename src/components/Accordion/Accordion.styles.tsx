@@ -1,16 +1,50 @@
 import styled from 'styled-components/native';
 import type { AccordionVariant } from './Accordion.types';
+import type { DefaultTheme } from 'styled-components/native';
+
+const getStylesByVariant = (theme: DefaultTheme) => ({
+  default: {
+    padding: theme.spacing.xxxxs,
+    borderWidth: 1,
+    radius: 0,
+    paddingHorizontal: 0,
+    borderColor: theme.colors.white,
+  },
+  reviews: {
+    padding: 0,
+    borderWidth: 0,
+    radius: 0,
+    paddingHorizontal: 0,
+    borderColor: '',
+  },
+  recurringPurchase: {
+    padding: theme.spacing.xxxs,
+    borderWidth: 1,
+    radius: theme.spacing.xxxxs,
+    paddingHorizontal: theme.spacing.nano,
+    borderColor: theme.colors.gray[200],
+  },
+});
 
 export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
   width: 100%;
   padding: ${({ theme, variant }) =>
-    variant === 'default' ? `${theme.spacing.xxxxs}px 0` : 0};
+    `${getStylesByVariant(theme)[variant].padding}px ${getStylesByVariant(theme)[variant].paddingHorizontal}px`};
   border-bottom-color: ${({ theme, variant }) =>
-    variant === 'default' ? `${theme.colors.gray[200]} ` : 0};
-  border-bottom-width: ${({ variant }) => (variant === 'default' ? `1px` : 0)};
+    variant === 'default' || variant === 'recurringPurchase'
+      ? `${theme.colors.gray[200]} `
+      : 0};
+  border-color: ${({ theme, variant }) =>
+    getStylesByVariant(theme)[variant].borderColor};
+  border-bottom-width: ${({ variant, theme }) =>
+    getStylesByVariant(theme)[variant].borderWidth}px;
+  border-width: ${({ variant, theme }) =>
+    getStylesByVariant(theme)[variant].borderWidth}px;
+  border-radius: ${({ variant, theme }) =>
+    getStylesByVariant(theme)[variant].radius}px;
 `;
 
-export const TitleContainer = styled.View`
+export const TitleContainer = styled.TouchableWithoutFeedback`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

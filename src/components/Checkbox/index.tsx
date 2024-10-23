@@ -8,7 +8,7 @@ import {
 } from './Checkbox.styles';
 import { useTheme } from 'styled-components/native';
 
-const Checkbox = ({ onPress, checked, children }: CheckboxProps) => {
+const Checkbox = ({ onPress, checked, children, variant }: CheckboxProps) => {
   const { colors } = useTheme();
 
   const animatedValue = useRef(new Animated.Value(0)).current;
@@ -41,9 +41,10 @@ const Checkbox = ({ onPress, checked, children }: CheckboxProps) => {
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>
-      <CheckboxContainer testID="checkbox-container">
-        <CheckboxComponent>
+      <CheckboxContainer variant={variant} testID="checkbox-container">
+        <CheckboxComponent variant={variant ?? 'default'}>
           <CheckboxChecked
+            variant={variant ?? 'default'}
             testID={'checkbox-checked'}
             style={[
               {
@@ -51,11 +52,27 @@ const Checkbox = ({ onPress, checked, children }: CheckboxProps) => {
                 backgroundColor: colors.black,
                 width: '100%',
                 height: '100%',
-                borderRadius: 3,
+                alignItems: 'center',
+                justifyContent: 'center',
                 display: checked ? 'flex' : 'none',
               },
             ]}
-          />
+          >
+            {variant === 'rounded' && (
+              <Animated.View
+                style={[
+                  {
+                    transform: [{ scale: displayIcon }],
+                    width: 6,
+                    height: 6,
+                    padding: 3.5,
+                    backgroundColor: colors.white,
+                    borderRadius: 100,
+                  },
+                ]}
+              />
+            )}
+          </CheckboxChecked>
         </CheckboxComponent>
         {children}
       </CheckboxContainer>

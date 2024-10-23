@@ -40,6 +40,7 @@ import { ChevronLeftIcon } from './IconComponents/ChevronLeft.icon';
 import { CarouselHorizontalIcon } from './IconComponents/CarouselHorizontal.icon';
 import { RdViewIcon } from './IconComponents/RdView.icon';
 import { PlayCircleIcon } from './IconComponents/PlayCircle.icon';
+import { MoreHorizontalIcon } from './IconComponents/MoreHorizontal.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -84,4 +85,5 @@ export const IconsComponent = {
   CarouselHorizontalIcon,
   RdViewIcon,
   PlayCircleIcon,
+  MoreHorizontalIcon,
 };

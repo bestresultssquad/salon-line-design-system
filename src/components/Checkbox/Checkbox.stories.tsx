@@ -15,6 +15,7 @@ const Component: Meta<typeof Checkbox> = {
   argTypes: {
     checked: { control: { type: 'boolean' } },
     children: { control: { type: 'text' } },
+    variant: { control: { type: 'select' }, options: ['default', 'rounded'] },
   },
 
   decorators: [

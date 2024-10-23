@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useDerivedValue,
@@ -16,18 +16,19 @@ import {
 import Typography from '../Typography';
 import Icon from '../Icon';
 import type { IconTypes } from '../Icon/Icon.types';
+import Checkbox from '../Checkbox';
 
 function AccordionItem({
   isExpanded,
   children,
   viewKey,
-  duration = 500,
+  duration,
 }: AccordionItemProps) {
   const height = useSharedValue(0);
 
   const derivedHeight = useDerivedValue(() =>
     withTiming(height.value * Number(isExpanded.value), {
-      duration,
+      duration: duration ?? 500,
     })
   );
   const bodyStyle = useAnimatedStyle(() => ({
@@ -55,14 +56,18 @@ function Accordion({
   children,
   title,
   buttonTitle,
-  variant = 'default',
+  variant,
+  textRight,
+  textColor,
+  checked,
+  handlePress,
 }: AccordionProps) {
   const derivedOpacityOpen = useDerivedValue(() =>
-    withTiming(Number(!open.value), { duration: 0 })
+    withTiming(Number(!open?.value), { duration: 0 })
   );
 
   const derivedOpacityClose = useDerivedValue(() =>
-    withTiming(Number(open.value), { duration: 0 })
+    withTiming(Number(open?.value ?? false), { duration: 0 })
   );
 
   const iconStyleOpen = useAnimatedStyle(() => ({
@@ -81,6 +86,10 @@ function Accordion({
       open: IconTypes;
       close: IconTypes;
     };
+    recurringPurchase: {
+      open: IconTypes;
+      close: IconTypes;
+    };
   };
 
   const getIcon = (): IconVariant => {
@@ -93,43 +102,82 @@ function Accordion({
         open: 'ChevronRightIcon',
         close: 'ChevronDownIcon',
       },
+      recurringPurchase: {
+        open: 'ChevronRightIcon',
+        close: 'ChevronDownIcon',
+      },
     };
   };
 
   return (
     <AccordionContainer variant={variant}>
-      <TitleContainer>
-        <Typography
-          variant="sm"
-          sizeVariant={variant === 'default' ? 'medium' : 'semiBold'}
-        >
-          {title}
-        </Typography>
-        <TouchableOpacity
-          onPress={() => {
+      <TitleContainer
+        onPress={() => {
+          if (open) {
             open.value = !open.value;
+          }
+          handlePress && handlePress();
+        }}
+      >
+        <View
+          style={{
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
           }}
         >
-          <IconContainer>
-            {variant === 'reviews' && (
-              <Typography variant="xs" sizeVariant="medium">
-                {buttonTitle}
-              </Typography>
+          <View style={{ alignItems: 'center', flexDirection: 'row', gap: 12 }}>
+            {variant === 'recurringPurchase' && (
+              <Checkbox
+                variant="rounded"
+                onPress={() => {}}
+                checked={checked}
+              />
             )}
-            <Animated.View style={[iconStyleOpen]}>
-              <Icon height={24} width={24} type={getIcon()[variant].open} />
-            </Animated.View>
-            <Animated.View style={[iconStyleClose]}>
-              <Icon height={24} width={24} type={getIcon()[variant].close} />
-            </Animated.View>
-          </IconContainer>
-        </TouchableOpacity>
+            <Typography
+              variant="sm"
+              sizeVariant={variant === 'default' ? 'medium' : 'semiBold'}
+            >
+              {title}
+            </Typography>
+          </View>
+          {variant !== 'recurringPurchase' && (
+            <IconContainer>
+              {variant === 'reviews' && (
+                <Typography variant="xs" sizeVariant="medium">
+                  {buttonTitle}
+                </Typography>
+              )}
+              <Animated.View style={[iconStyleOpen]}>
+                <Icon
+                  height={24}
+                  width={24}
+                  type={getIcon()[variant ?? 'default'].open}
+                />
+              </Animated.View>
+              <Animated.View style={[iconStyleClose]}>
+                <Icon
+                  height={24}
+                  width={24}
+                  type={getIcon()[variant ?? 'default'].close}
+                />
+              </Animated.View>
+            </IconContainer>
+          )}
+          {textRight && (
+            <Typography variant="sm" sizeVariant="semiBold" color={textColor}>
+              {textRight}
+            </Typography>
+          )}
+        </View>
       </TitleContainer>
-      <AccordionItemContainer>
-        <AccordionItem isExpanded={open} viewKey="Accordion">
-          {children}
-        </AccordionItem>
-      </AccordionItemContainer>
+      {children && open && (
+        <AccordionItemContainer>
+          <AccordionItem isExpanded={open} viewKey="Accordion">
+            {children}
+          </AccordionItem>
+        </AccordionItemContainer>
+      )}
     </AccordionContainer>
   );
 }

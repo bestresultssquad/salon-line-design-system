@@ -8,11 +8,15 @@ export interface AccordionItemProps {
   viewKey: string;
 }
 
-export type AccordionVariant = 'default' | 'reviews';
+export type AccordionVariant = 'default' | 'reviews' | 'recurringPurchase';
 
 export interface AccordionProps extends PropsWithChildren {
   title: string;
-  buttonTitle: string;
+  buttonTitle?: string;
   variant: AccordionVariant;
-  open: SharedValue<boolean>;
+  open?: SharedValue<boolean>;
+  textRight?: string;
+  textColor?: string;
+  checked?: boolean;
+  handlePress?: () => void;
 }
