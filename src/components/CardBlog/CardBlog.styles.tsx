@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components/native';
-import { Platform } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import type { CardBlogVariant } from './CardBlog.types';
+
+const DEVICE_WIDTH = Dimensions.get('window').width;
+const CARD_WIDTH = DEVICE_WIDTH / 2 - 24;
+const CARD_WIDTH_HORIZONTAL = DEVICE_WIDTH - 24;
 
 const cardStyle = css<{
   elevation?: 'md';
@@ -27,21 +31,21 @@ export const Card = styled.View`
 const getSizeByVariant = () => ({
   horizontal: {
     flexDirection: 'row',
-    width: 327,
+    width: CARD_WIDTH_HORIZONTAL - 12,
     imgWidth: 104,
     imgHeight: 104,
-    textContainerWidth: 223,
+    textContainerWidth: CARD_WIDTH_HORIZONTAL - 116,
   },
   vertical: {
     flexDirection: 'column',
-    width: 158,
-    imgWidth: 158,
+    width: CARD_WIDTH,
+    imgWidth: CARD_WIDTH,
     imgHeight: 144,
-    textContainerWidth: 158,
+    textContainerWidth: CARD_WIDTH,
   },
 });
 
-export const Container = styled.View<{ variant: CardBlogVariant }>`
+export const Container = styled.TouchableOpacity<{ variant: CardBlogVariant }>`
   flex-direction: ${({ variant }) => getSizeByVariant()[variant].flexDirection};
   width: ${({ variant }) => getSizeByVariant()[variant].width}px;
 `;

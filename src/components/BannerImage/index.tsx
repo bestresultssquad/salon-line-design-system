@@ -58,14 +58,16 @@ const BannerImage = ({
             testID={`image-${index}`}
           >
             <TextBlogContainer>
-              <Chip
-                label="Beleza"
-                size="small"
-                style={{
-                  position: 'relative',
-                  backgroundColor: colors.purple[500],
-                }}
-              />
+              <View style={{ flexDirection: 'row' }}>
+                <Chip
+                  label="Beleza"
+                  size="small"
+                  style={{
+                    position: 'relative',
+                    backgroundColor: colors.purple[500],
+                  }}
+                />
+              </View>
               <Typography
                 sizeVariant="medium"
                 variant="base"

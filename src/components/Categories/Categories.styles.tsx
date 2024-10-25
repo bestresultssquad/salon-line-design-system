@@ -38,7 +38,6 @@ export const Container = styled.TouchableOpacity<{
       : getStylesByVariant(theme)[variant].backgroundColor};
   flex-direction: row;
   align-items: center;
-  flex: 1;
 `;
 
 export const Text = styled(Typography)<{

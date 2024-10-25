@@ -8,4 +8,5 @@ export interface CardBlogProps extends ViewProps {
   date: string;
   category: string;
   variant: CardBlogVariant;
+  onCardPress: () => void;
 }

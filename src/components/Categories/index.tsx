@@ -4,13 +4,13 @@ import { FlatList, View } from 'react-native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 const Categories = ({ categories, variant, onPress }: CategoriesProps) => {
-  const [selectedTab, setSelectedTab] = useState(1);
+  const [selectedTab, setSelectedTab] = useState(0);
   const ref = useRef<FlatList>(null);
 
   const scrollToItem = useCallback(() => {
     const index = categories.findIndex((item) => item.id === selectedTab);
     ref.current?.scrollToIndex({
-      index: index,
+      index: index === -1 ? 0 : index,
       animated: true,
       viewPosition: 0.8,
     });

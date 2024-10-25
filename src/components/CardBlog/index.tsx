@@ -22,11 +22,12 @@ const CardBlog = ({
   image,
   title,
   variant,
+  onCardPress,
 }: CardBlogProps) => {
   const { colors, spacing } = useTheme();
   return (
     <Card>
-      <Container variant={variant}>
+      <Container activeOpacity={0.6} variant={variant} onPress={onCardPress}>
         <ImageContainer variant={variant}>
           <ImageCustom
             source={{ uri: image }}
