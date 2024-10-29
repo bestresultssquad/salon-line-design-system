@@ -10,7 +10,12 @@ import { useTheme } from 'styled-components/native';
 import Typography from '../Typography';
 import type { TabSwitchProps } from './TabSwitch.types';
 
-const TabSwitch = ({ onPress, tabs, ...props }: TabSwitchProps) => {
+const TabSwitch = ({
+  onPress,
+  tabs,
+  animatedStyleContainer,
+  ...props
+}: TabSwitchProps) => {
   const [selectedTab, setSelectedTab] = useState(1);
   const [dimensions, setDimensions] = useState({ height: 20, width: 160 });
   const { colors } = useTheme();
@@ -20,6 +25,7 @@ const TabSwitch = ({ onPress, tabs, ...props }: TabSwitchProps) => {
   const onTabLayout = (event: LayoutChangeEvent) => {
     const { width, height } = event.nativeEvent.layout;
     setDimensions({ width, height });
+    props?.onLayout?.(event);
   };
 
   const tabPositionX = useSharedValue(0);
@@ -30,7 +36,11 @@ const TabSwitch = ({ onPress, tabs, ...props }: TabSwitchProps) => {
     };
   });
   return (
-    <Container onLayout={onTabLayout} {...props}>
+    <Container
+      {...props}
+      onLayout={onTabLayout}
+      style={[...(animatedStyleContainer || []), props.style]}
+    >
       <Animated.View
         style={[
           animatedStyled,

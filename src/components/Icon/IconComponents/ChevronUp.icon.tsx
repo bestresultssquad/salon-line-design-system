@@ -1,17 +1,10 @@
 import Svg, { type SvgProps, Path } from 'react-native-svg';
 export const ChevronUpIcon = (props: SvgProps) => (
-  <Svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"
-    {...props}
-  >
+  <Svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
     <Path
-      d="M17.9985 9L12.7056 14.2929C12.3723 14.6262 12.2056 14.7929 11.9985 14.7929C11.7914 14.7929 11.6248 14.6262 11.2914 14.2929L5.99854 9"
+      d="M18 15L12.5893 9.58926C12.3115 9.31148 12.1726 9.17259 12 9.17259C11.8274 9.17259 11.6885 9.31148 11.4107 9.58926L6 15"
       stroke={props.stroke || '#000'}
-      strokeWidth={1.5}
+      strokeWidth={props.strokeWidth || 1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

@@ -8,4 +8,5 @@ export type TabSwitchOnPressCallback = {
 export interface TabSwitchProps extends ViewProps {
   onPress: (callback: TabSwitchOnPressCallback) => void;
   tabs: Array<{ id: number; text: string }>;
+  animatedStyleContainer?: Array<any>;
 }

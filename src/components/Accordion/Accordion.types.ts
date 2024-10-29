@@ -8,7 +8,11 @@ export interface AccordionItemProps {
   viewKey: string;
 }
 
-export type AccordionVariant = 'default' | 'reviews' | 'recurringPurchase';
+export type AccordionVariant =
+  | 'default'
+  | 'reviews'
+  | 'recurringPurchase'
+  | 'categories';
 
 export interface AccordionProps extends PropsWithChildren {
   title: string;

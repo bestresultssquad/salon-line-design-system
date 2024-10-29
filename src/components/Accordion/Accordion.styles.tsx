@@ -24,6 +24,13 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     paddingHorizontal: theme.spacing.nano,
     borderColor: theme.colors.gray[200],
   },
+  categories: {
+    padding: theme.spacing.xxxxs,
+    borderWidth: 0,
+    radius: 0,
+    paddingHorizontal: 0,
+    borderColor: 0,
+  },
 });
 
 export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`

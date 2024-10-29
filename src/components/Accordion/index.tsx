@@ -52,7 +52,6 @@ function AccordionItem({
 }
 
 function Accordion({
-  open,
   children,
   title,
   buttonTitle,
@@ -61,7 +60,11 @@ function Accordion({
   textColor,
   checked,
   handlePress,
+  ...props
 }: AccordionProps) {
+  const openInternal = useSharedValue(false);
+  const open = props.open ?? openInternal;
+
   const derivedOpacityOpen = useDerivedValue(() =>
     withTiming(Number(!open?.value), { duration: 0 })
   );
@@ -90,6 +93,10 @@ function Accordion({
       open: IconTypes;
       close: IconTypes;
     };
+    categories: {
+      open: IconTypes;
+      close: IconTypes;
+    };
   };
 
   const getIcon = (): IconVariant => {
@@ -105,6 +112,10 @@ function Accordion({
       recurringPurchase: {
         open: 'ChevronRightIcon',
         close: 'ChevronDownIcon',
+      },
+      categories: {
+        open: 'ChevronDownIcon',
+        close: 'ChevronUpIcon',
       },
     };
   };
