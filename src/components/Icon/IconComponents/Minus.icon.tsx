@@ -5,7 +5,7 @@ export const MinusIcon = (props: SvgProps) => (
     <Path
       d="M20 12L4 12"
       stroke={props.stroke || '#000'}
-      strokeWidth={1.25}
+      strokeWidth={props.strokeWidth || 1.25}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

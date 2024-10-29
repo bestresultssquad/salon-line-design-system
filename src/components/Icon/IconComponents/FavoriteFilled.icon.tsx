@@ -7,6 +7,7 @@ export const FavoriteFilledIcon = (props: SvgProps) => (
       fill="#DB2777"
       stroke="#DB2777"
       strokeLinecap="round"
+      strokeWidth={props.strokeWidth || 1.5}
     />
   </Svg>
 );

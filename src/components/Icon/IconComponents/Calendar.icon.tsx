@@ -6,7 +6,7 @@ export const CalendarIcon = (props: SvgProps) => (
     <Path
       d="M11.996 13h.008m-.008 4h.008m3.987-4H16m-8 0h.009M8 17h.009"
       stroke={props.stroke || '#000'}
-      strokeWidth={1.667}
+      strokeWidth={props.strokeWidth || 1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

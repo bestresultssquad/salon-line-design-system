@@ -17,7 +17,7 @@ const TabSwitch = ({
   ...props
 }: TabSwitchProps) => {
   const [selectedTab, setSelectedTab] = useState(1);
-  const [dimensions, setDimensions] = useState({ height: 20, width: 160 });
+  const [dimensions, setDimensions] = useState({ height: 55, width: 365 });
   const { colors } = useTheme();
 
   const buttonWidth = dimensions.width / 2;

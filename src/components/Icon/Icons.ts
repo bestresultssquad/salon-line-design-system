@@ -42,6 +42,11 @@ import { RdViewIcon } from './IconComponents/RdView.icon';
 import { PlayCircleIcon } from './IconComponents/PlayCircle.icon';
 import { MoreHorizontalIcon } from './IconComponents/MoreHorizontal.icon';
 import { ChevronUpIcon } from './IconComponents/ChevronUp.icon';
+import { BubbleChatIcon } from './IconComponents/BubbleChat.icon';
+import { LiveIcon } from './IconComponents/Live.icon';
+import { MessageFavouriteIcon } from './IconComponents/MessageFavourite.icon';
+import { QuizIcon } from './IconComponents/Quiz.icon';
+import { TermsIcon } from './IconComponents/Terms.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -88,4 +93,9 @@ export const IconsComponent = {
   PlayCircleIcon,
   MoreHorizontalIcon,
   ChevronUpIcon,
+  BubbleChatIcon,
+  LiveIcon,
+  MessageFavouriteIcon,
+  QuizIcon,
+  TermsIcon,
 };
