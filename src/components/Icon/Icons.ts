@@ -47,6 +47,7 @@ import { LiveIcon } from './IconComponents/Live.icon';
 import { MessageFavouriteIcon } from './IconComponents/MessageFavourite.icon';
 import { QuizIcon } from './IconComponents/Quiz.icon';
 import { TermsIcon } from './IconComponents/Terms.icon';
+import { FilterHorizontalIcon } from './IconComponents/FilterHorizontal.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -98,4 +99,5 @@ export const IconsComponent = {
   MessageFavouriteIcon,
   QuizIcon,
   TermsIcon,
+  FilterHorizontalIcon,
 };

@@ -60,6 +60,7 @@ function Accordion({
   textColor,
   checked,
   handlePress,
+  withoutOpen,
   ...props
 }: AccordionProps) {
   const openInternal = useSharedValue(false);
@@ -124,7 +125,7 @@ function Accordion({
     <AccordionContainer variant={variant}>
       <TitleContainer
         onPress={() => {
-          if (open) {
+          if (open && !withoutOpen) {
             open.value = !open.value;
           }
           handlePress && handlePress();
@@ -159,20 +160,31 @@ function Accordion({
                   {buttonTitle}
                 </Typography>
               )}
-              <Animated.View style={[iconStyleOpen]}>
+              {withoutOpen ? (
                 <Icon
                   height={24}
                   width={24}
-                  type={getIcon()[variant ?? 'default'].open}
+                  type={'ArrowRightIcon'}
+                  strokeWidth={1.5}
                 />
-              </Animated.View>
-              <Animated.View style={[iconStyleClose]}>
-                <Icon
-                  height={24}
-                  width={24}
-                  type={getIcon()[variant ?? 'default'].close}
-                />
-              </Animated.View>
+              ) : (
+                <>
+                  <Animated.View style={[iconStyleOpen]}>
+                    <Icon
+                      height={24}
+                      width={24}
+                      type={getIcon()[variant ?? 'default'].open}
+                    />
+                  </Animated.View>
+                  <Animated.View style={[iconStyleClose]}>
+                    <Icon
+                      height={24}
+                      width={24}
+                      type={getIcon()[variant ?? 'default'].close}
+                    />
+                  </Animated.View>
+                </>
+              )}
             </IconContainer>
           )}
           {textRight && (

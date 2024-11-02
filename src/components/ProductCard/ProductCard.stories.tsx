@@ -46,7 +46,7 @@ Primary.args = {
   price: 'R$100',
   oldPrice: 'R$200',
   discount: '50%',
-  ratingCount: 5,
+  ratingCount: 0,
   rating: 4,
   favorited: false,
   chipText: '10% OFF',

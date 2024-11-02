@@ -18,6 +18,7 @@ const Component: Meta<typeof AccordionCustom> = {
   argTypes: {
     title: { control: { type: 'text' } },
     buttonTitle: { control: { type: 'text' } },
+    withoutOpen: { control: { type: 'boolean' } },
     variant: {
       control: { type: 'select' },
       options: ['default', 'reviews', 'recurringPurchase'],

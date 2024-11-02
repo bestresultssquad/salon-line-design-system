@@ -10,6 +10,7 @@ const paddingVerticalBySize = (theme: DefaultTheme) => ({
   cart: theme.spacing.nano,
   quarck: theme.spacing.quarck,
   onboarding: theme.spacing.nano,
+  filter: theme.spacing.xxxxs,
 });
 
 const paddingHorizontalBySize = (theme: DefaultTheme) => ({
@@ -20,6 +21,7 @@ const paddingHorizontalBySize = (theme: DefaultTheme) => ({
   cart: theme.spacing.sm,
   quarck: theme.spacing.xxxxs,
   onboarding: theme.spacing.xxxxs,
+  filter: theme.spacing.xxxxs,
 });
 
 const colorByVariant = (theme: DefaultTheme) => ({
@@ -50,6 +52,10 @@ const colorByVariant = (theme: DefaultTheme) => ({
   },
   onboarding: {
     backgroundColor: theme.colors.gray[100],
+    borderColor: 'transparent',
+  },
+  filter: {
+    backgroundColor: theme.colors.gray[900],
     borderColor: 'transparent',
   },
 });

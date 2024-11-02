@@ -23,4 +23,5 @@ export interface AccordionProps extends PropsWithChildren {
   textColor?: string;
   checked?: boolean;
   handlePress?: () => void;
+  withoutOpen?: boolean;
 }
