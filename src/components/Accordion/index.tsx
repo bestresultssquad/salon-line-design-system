@@ -121,16 +121,16 @@ function Accordion({
     };
   };
 
+  const handlePressAccordion = () => {
+    if (open && !withoutOpen) {
+      open.value = !open.value;
+    }
+    handlePress && handlePress();
+  };
+
   return (
     <AccordionContainer variant={variant}>
-      <TitleContainer
-        onPress={() => {
-          if (open && !withoutOpen) {
-            open.value = !open.value;
-          }
-          handlePress && handlePress();
-        }}
-      >
+      <TitleContainer onPress={() => handlePressAccordion()}>
         <View
           style={{
             alignItems: 'center',
@@ -142,7 +142,7 @@ function Accordion({
             {variant === 'recurringPurchase' && (
               <Checkbox
                 variant="rounded"
-                onPress={() => {}}
+                onPress={() => handlePressAccordion()}
                 checked={checked}
               />
             )}

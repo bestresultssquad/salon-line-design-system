@@ -11,4 +11,5 @@ export interface CategoriesProps extends ViewProps {
   categories: Array<{ id: number; text: string }>;
   onPress: (callback: CategoriesOnPressCallback) => void;
   variant: CategoriesVariant;
+  disableSelection?: boolean;
 }

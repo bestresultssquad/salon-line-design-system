@@ -3,7 +3,12 @@ import type { CategoriesProps } from './Categories.types';
 import { FlatList, View } from 'react-native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const Categories = ({ categories, variant, onPress }: CategoriesProps) => {
+const Categories = ({
+  categories,
+  variant,
+  onPress,
+  disableSelection,
+}: CategoriesProps) => {
   const [selectedTab, setSelectedTab] = useState(undefined);
   const ref = useRef<FlatList>(null);
 
@@ -32,6 +37,7 @@ const Categories = ({ categories, variant, onPress }: CategoriesProps) => {
         renderItem={({ item }) => (
           <Container
             activeOpacity={0.4}
+            disableSelection={disableSelection ?? false}
             selected={selectedTab === item.id}
             variant={variant || 'default'}
             onPress={() => {
@@ -40,6 +46,7 @@ const Categories = ({ categories, variant, onPress }: CategoriesProps) => {
             }}
           >
             <Text
+              disableSelection={disableSelection ?? false}
               categoriesVariant={variant || 'default'}
               variant="sm"
               sizeVariant={variant === 'primary' ? 'semiBold' : 'medium'}

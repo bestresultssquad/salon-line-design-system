@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 import type { ProductCardHorizontalVariant } from './ProductCardHorizontal.type';
@@ -15,7 +15,7 @@ export const Container = styled.View<{ variant: ProductCardHorizontalVariant }>`
   padding: ${({ theme, variant }) =>
     variant === 'cart' ? `${theme.spacing.nano}px` : 0};
   border-radius: ${({ theme }) => theme.spacing.xxs}px;
-  width: 327px;
+  width: ${({}) => Dimensions.get('window').width - 48}px;
 `;
 
 export const ImageContainer = styled.View`

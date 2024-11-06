@@ -48,6 +48,11 @@ import { MessageFavouriteIcon } from './IconComponents/MessageFavourite.icon';
 import { QuizIcon } from './IconComponents/Quiz.icon';
 import { TermsIcon } from './IconComponents/Terms.icon';
 import { FilterHorizontalIcon } from './IconComponents/FilterHorizontal.icon';
+import { HairDryerIcon } from './IconComponents/HairDryer.icon';
+import { HairIcon } from './IconComponents/Hair.icon';
+import { ChatBotIcon } from './IconComponents/ChatBot.icon';
+import { TruckIcon } from './IconComponents/Truck.icon';
+import { CouponPercent } from './IconComponents/CouponPercent.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -100,4 +105,9 @@ export const IconsComponent = {
   QuizIcon,
   TermsIcon,
   FilterHorizontalIcon,
+  HairDryerIcon,
+  HairIcon,
+  ChatBotIcon,
+  TruckIcon,
+  CouponPercent,
 };

@@ -9,4 +9,5 @@ export interface Props extends SvgProps {
   height: number;
   stroke?: string;
   strokeWidth?: number;
+  chipValue?: number;
 }

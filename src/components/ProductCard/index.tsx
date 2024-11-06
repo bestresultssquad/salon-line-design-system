@@ -50,22 +50,20 @@ const ProductCard = ({
           <ImageCustom source={imageUri ? { uri: imageUri } : image} />
         </ImageContainer>
         <DescriptionContainer>
-          {ratingCount > 0 && (
-            <StarContainer>
-              <Icon
-                width={12}
-                height={12}
-                type="StarIcon"
-                fill={colors.yellow[500]}
-              />
-              <Typography variant="2xs" sizeVariant="semiBold">
-                {rating.toString()}
-              </Typography>
-              <Typography variant="3xs" sizeVariant="medium">
-                {`(${ratingCount}) Avaliações`}
-              </Typography>
-            </StarContainer>
-          )}
+          <StarContainer>
+            <Icon
+              width={12}
+              height={12}
+              type="StarIcon"
+              fill={colors.yellow[500]}
+            />
+            <Typography variant="2xs" sizeVariant="semiBold">
+              {rating.toString()}
+            </Typography>
+            <Typography variant="3xs" sizeVariant="medium">
+              {`(${ratingCount}) Avaliações`}
+            </Typography>
+          </StarContainer>
           <TitleContainer>
             <Typography variant="xs" sizeVariant="semiBold" numberOfLines={2}>
               {title}

@@ -20,4 +20,5 @@ export interface ProductCardHorizontalProps {
   onDecrement?: () => void;
   value?: number;
   variant?: ProductCardHorizontalVariant;
+  label?: string;
 }

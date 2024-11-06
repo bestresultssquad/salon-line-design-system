@@ -71,9 +71,12 @@ const Component: Meta<typeof Icon> = {
 
 export const Primary: StoryObj<typeof Icon> = {};
 Primary.args = {
-  type: 'bag',
+  type: 'BagIcon',
   stroke: 'black',
   strokeWidth: 1.5,
+  height: 24,
+  width: 24,
+  chipValue: 4,
 };
 
 export default Component;

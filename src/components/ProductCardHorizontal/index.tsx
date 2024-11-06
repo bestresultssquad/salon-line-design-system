@@ -28,6 +28,7 @@ const ProductCardHorizontal = ({
   onIncrement,
   value,
   variant,
+  label,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
@@ -37,7 +38,7 @@ const ProductCardHorizontal = ({
         {variant === 'cart' && (
           <TitleMainContainer>
             <Typography sizeVariant="medium" variant="sm">
-              Meu Liso
+              {label}
             </Typography>
             <Icon
               type="MoreHorizontalIcon"
@@ -48,9 +49,7 @@ const ProductCardHorizontal = ({
           </TitleMainContainer>
         )}
         <View style={{ flexDirection: 'row', gap: spacing.nano }}>
-          <ImageContainer
-            style={{ paddingVertical: variant === 'cart' ? spacing.xxxs : 0 }}
-          >
+          <ImageContainer>
             <ImageCustom source={imageUri ? { uri: imageUri } : image} />
           </ImageContainer>
           <View

@@ -25,6 +25,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
 export const Container = styled.TouchableOpacity<{
   variant: CategoriesVariant;
   selected: boolean;
+  disableSelection: boolean;
 }>`
   padding: ${({ theme }) => `${theme.spacing.nano}px ${theme.spacing.xxxxs}px`};
   border-width: ${({ theme, variant }) =>
@@ -32,8 +33,8 @@ export const Container = styled.TouchableOpacity<{
   border-color: ${({ theme, variant }) =>
     getStylesByVariant(theme)[variant].borderColor};
   border-radius: ${({ theme }) => theme.spacing.xxs}px;
-  background-color: ${({ theme, variant, selected }) =>
-    selected
+  background-color: ${({ theme, variant, selected, disableSelection }) =>
+    selected && !disableSelection
       ? getStylesByVariant(theme)[variant].selected
       : getStylesByVariant(theme)[variant].backgroundColor};
   flex-direction: row;
@@ -43,9 +44,10 @@ export const Container = styled.TouchableOpacity<{
 export const Text = styled(Typography)<{
   selected: boolean;
   categoriesVariant: CategoriesVariant;
+  disableSelection: boolean;
 }>`
-  color: ${({ theme, categoriesVariant, selected }) =>
-    selected
+  color: ${({ theme, categoriesVariant, selected, disableSelection }) =>
+    selected && !disableSelection
       ? getStylesByVariant(theme)[categoriesVariant].textColorSelected
       : getStylesByVariant(theme)[categoriesVariant].textColor};
 `;

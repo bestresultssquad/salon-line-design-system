@@ -10,8 +10,10 @@ const SectionTitle = ({ linkOnPress, linkText, title, ...props }: Props) => {
     <Container {...props}>
       <Typography
         sizeVariant={'semiBold'}
-        variant={'base'}
+        variant={'sm'}
         color={colors.black}
+        numberOfLines={1}
+        style={{ maxWidth: '80%' }}
       >
         {title}
       </Typography>
