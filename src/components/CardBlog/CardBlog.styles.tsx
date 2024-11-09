@@ -74,4 +74,6 @@ export const BottomContainer = styled.View<{ variant: CardBlogVariant }>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing.nano}px;
 `;

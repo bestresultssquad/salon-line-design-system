@@ -60,7 +60,7 @@ const BannerImage = ({
             <TextBlogContainer>
               <View style={{ flexDirection: 'row' }}>
                 <Chip
-                  label="Beleza"
+                  label={item.category ?? 'Beleza'}
                   size="small"
                   style={{
                     position: 'relative',

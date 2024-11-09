@@ -30,6 +30,8 @@ const ProductCardHorizontal = ({
   variant,
   label,
   disabled,
+  disableDecrement,
+  disableIncrement,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
@@ -116,7 +118,8 @@ const ProductCardHorizontal = ({
               <View>
                 {variant === 'cart' ? (
                   <Counter
-                    disabled={disabled}
+                    disableDecrement={disableDecrement}
+                    disableIncrement={disableIncrement}
                     onDecrement={onDecrement ?? (() => {})}
                     onIncrement={onIncrement ?? (() => {})}
                     value={value ?? 1}

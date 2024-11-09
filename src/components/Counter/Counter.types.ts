@@ -2,5 +2,6 @@ export interface CounterProps {
   value: number;
   onIncrement: () => void;
   onDecrement: () => void;
-  disabled?: boolean;
+  disableIncrement?: boolean;
+  disableDecrement?: boolean;
 }

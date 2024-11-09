@@ -9,17 +9,18 @@ const Counter = ({
   onDecrement,
   onIncrement,
   value,
-  disabled,
+  disableDecrement,
+  disableIncrement,
 }: CounterProps) => {
   const { colors } = useTheme();
   return (
     <Container>
-      <TouchableOpacity onPress={onDecrement} disabled={disabled}>
+      <TouchableOpacity onPress={onDecrement} disabled={disableDecrement}>
         <Icon
           type="MinusIcon"
           width={20}
           height={20}
-          stroke={disabled ? colors.gray[400] : colors.black}
+          stroke={disableDecrement ? colors.gray[400] : colors.black}
         />
       </TouchableOpacity>
 
@@ -29,12 +30,12 @@ const Counter = ({
         </Typography>
       </TextContainer>
 
-      <TouchableOpacity onPress={onIncrement} disabled={disabled}>
+      <TouchableOpacity onPress={onIncrement} disabled={disableIncrement}>
         <Icon
           type="PlusIcon"
           width={20}
           height={20}
-          stroke={disabled ? colors.gray[400] : colors.black}
+          stroke={disableIncrement ? colors.gray[400] : colors.black}
         />
       </TouchableOpacity>
     </Container>

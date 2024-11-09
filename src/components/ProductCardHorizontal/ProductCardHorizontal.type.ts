@@ -21,6 +21,7 @@ export interface ProductCardHorizontalProps {
   value?: number;
   variant?: ProductCardHorizontalVariant;
   label?: string;
-  quantity?: number;
   disabled?: boolean;
+  disableIncrement?: boolean;
+  disableDecrement?: boolean;
 }
