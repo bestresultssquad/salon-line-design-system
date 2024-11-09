@@ -53,6 +53,9 @@ import { HairIcon } from './IconComponents/Hair.icon';
 import { ChatBotIcon } from './IconComponents/ChatBot.icon';
 import { TruckIcon } from './IconComponents/Truck.icon';
 import { CouponPercent } from './IconComponents/CouponPercent.icon';
+import { DeleteIcon } from './IconComponents/Delete.icon';
+import { CheckMarkOkIcon } from './IconComponents/CheckMarkOk.icon';
+import { CheckMarkXIcon } from './IconComponents/CheckMarkX.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -110,4 +113,7 @@ export const IconsComponent = {
   ChatBotIcon,
   TruckIcon,
   CouponPercent,
+  DeleteIcon,
+  CheckMarkOkIcon,
+  CheckMarkXIcon,
 };

@@ -13,4 +13,5 @@ export interface ProductCardProps {
   ratingCount: number;
   chipText?: string;
   favorited?: boolean;
+  disabled?: boolean;
 }

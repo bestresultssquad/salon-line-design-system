@@ -28,8 +28,8 @@ export const BannerImageContainer = styled.View<{
 export const ImageContainer = styled.TouchableOpacity`
   flex: 1;
   width: ${Dimensions.get('window').width}px;
-  padding-left: ${({ theme }) => theme.spacing.xxxxs}px;
-  padding-right: ${({ theme }) => theme.spacing.xxxxs}px;
+  padding-left: ${({ theme }) => theme.spacing.sm}px;
+  padding-right: ${({ theme }) => theme.spacing.sm}px;
 `;
 
 export const BannerImg = styled.Image<{ bannerVariant: BannerVariant }>`

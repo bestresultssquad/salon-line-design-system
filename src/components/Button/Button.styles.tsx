@@ -64,9 +64,12 @@ export const ButtonContainer = styled.TouchableOpacity<{
   size: ButtonSize;
   variant: ButtonVariant;
   fullRounded?: boolean;
+  disabled?: boolean;
 }>`
-  background-color: ${({ theme, variant }) =>
-    colorByVariant(theme)[variant].backgroundColor};
+  background-color: ${({ theme, variant, disabled }) =>
+    disabled
+      ? theme.colors.gray[400]
+      : colorByVariant(theme)[variant].backgroundColor};
   border-color: ${({ theme, variant }) =>
     colorByVariant(theme)[variant].borderColor};
   border-width: ${({ variant }) => (variant === 'outline' ? 1 : 0)}px;

@@ -29,6 +29,7 @@ const ProductCardHorizontal = ({
   value,
   variant,
   label,
+  disabled,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
@@ -106,21 +107,23 @@ const ProductCardHorizontal = ({
                   variant="xs"
                   color={colors.gray[600]}
                 >
-                  {oldPrice}
+                  {disabled ? 'Produto' : oldPrice}
                 </OldPrice>
                 <Typography sizeVariant="semiBold" variant="xl">
-                  {price}
+                  {disabled ? 'Indisponível' : price}
                 </Typography>
               </View>
               <View>
                 {variant === 'cart' ? (
                   <Counter
+                    disabled={disabled}
                     onDecrement={onDecrement ?? (() => {})}
                     onIncrement={onIncrement ?? (() => {})}
                     value={value ?? 1}
                   />
                 ) : (
                   <Button
+                    disabled={disabled}
                     onlyIcon
                     size="nano"
                     onPress={onPress}

@@ -33,6 +33,7 @@ const ProductCard = ({
   chipText,
   favorited = false,
   onCardPress,
+  disabled,
 }: ProductCardProps) => {
   const { colors } = useTheme();
 
@@ -73,15 +74,16 @@ const ProductCard = ({
             <PriceLeft>
               {oldPrice && (
                 <OldPrice variant="xs" sizeVariant="semiBold">
-                  {oldPrice?.toString()}
+                  {disabled ? 'Produto' : oldPrice?.toString()}
                 </OldPrice>
               )}
               <Typography variant="sm" sizeVariant="semiBold">
-                {price}
+                {disabled ? 'Indisponível' : price}
               </Typography>
             </PriceLeft>
             <ButtonContainer>
               <Button
+                disabled={disabled}
                 onPress={onPress}
                 onlyIcon
                 variant="primary"
