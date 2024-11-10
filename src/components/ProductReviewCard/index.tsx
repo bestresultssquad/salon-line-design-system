@@ -1,4 +1,4 @@
-import { Image, Text } from 'react-native';
+import { Text } from 'react-native';
 import {
   ButtonContainer,
   Card,
@@ -16,6 +16,7 @@ import { View } from 'react-native';
 import Button from '../Button';
 import type { ProductReviewCardProps } from './ProductReviewCard.types';
 import { timeElapsed } from '../../utils/getTimeElapsed';
+import FastImage from 'react-native-fast-image';
 
 const ProductReviewCard = ({
   rating = 4.5,
@@ -47,11 +48,9 @@ const ProductReviewCard = ({
   return (
     <Card>
       {image && (
-        <Image
+        <FastImage
           source={{ uri: image }}
-          width={74}
-          height={162}
-          style={{ borderRadius: 8 }}
+          style={{ width: 74, height: 162, borderRadius: 8 }}
         />
       )}
       <LeftContainer>

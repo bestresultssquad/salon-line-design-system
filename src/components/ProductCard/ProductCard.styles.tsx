@@ -1,6 +1,7 @@
 import { Dimensions, Platform, TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
+import FastImage from 'react-native-fast-image';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
@@ -14,7 +15,7 @@ export const ImageContainer = styled.View`
   width: 100%;
 `;
 
-export const ImageCustom = styled.Image`
+export const ImageCustom = styled(FastImage)`
   max-width: ${CARD_WIDTH}px;
   height: 160px;
   border-top-left-radius: 16px;

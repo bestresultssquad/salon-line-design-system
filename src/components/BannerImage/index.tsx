@@ -12,7 +12,7 @@ import {
   ImageContainer,
   TextBlogContainer,
 } from './BannerImage.styles';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImage.types';
 import BannerImageSkeleton from './BannerImage.skeleton';
@@ -26,7 +26,7 @@ const BannerImage = ({
   bannerObject,
   bannerVariant = 'md',
 }: BannerImageProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [_, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
   const { colors } = useTheme();
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -44,8 +44,7 @@ const BannerImage = ({
           <BannerImg
             bannerVariant={bannerVariant}
             key={index}
-            source={item.imageUrl ? { uri: item.imageUrl } : item.imageFile}
-            alt={item.altText}
+            source={{ uri: item.imageUrl }}
             testID={`image-${index}`}
           />
         )}
@@ -108,44 +107,30 @@ const BannerImage = ({
     );
   };
 
-  const autoRotate = useCallback(() => {
-    const nextIndex = (currentIndex + 1) % bannerObject.length;
-
-    if (nextIndex >= 0 && nextIndex < bannerObject.length) {
-      const nextItemOffset = screenWidth * nextIndex;
-      flatListRef?.current?.scrollToOffset({
-        animated: true,
-        offset: nextItemOffset,
-      });
-      setCurrentIndex(nextIndex);
-    } else {
-      setCurrentIndex(0);
-    }
-  }, [bannerObject.length, currentIndex, screenWidth]);
-
   const getItemLayout = (_: any, index: any) => ({
     length: screenWidth,
     offset: screenWidth * index,
     index: index,
   });
 
-  useEffect(() => {
-    if (!isCarrousel) return;
-    const interval = setInterval(autoRotate, 6000);
-    return () => clearInterval(interval);
-  }, [autoRotate, currentIndex, isCarrousel]);
+  const viewableItemsChanged = useRef(({ viewableItems }: any) => {
+    if (viewableItems.length > 0) setCurrentIndex(viewableItems[0].index);
+  }).current;
+
+  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
   return (
     <BannerImageContainer bannerVariant={bannerVariant}>
       <FlatList
-        getItemLayout={getItemLayout}
         keyExtractor={(_, index) => index.toString()}
         ref={flatListRef}
         data={bannerObject}
         renderItem={renderBannerImage}
+        getItemLayout={getItemLayout}
+        onViewableItemsChanged={viewableItemsChanged}
         horizontal
         pagingEnabled={true}
-        snapToInterval={screenWidth}
+        viewabilityConfig={viewConfig}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: false }

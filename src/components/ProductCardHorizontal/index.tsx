@@ -17,7 +17,6 @@ import Button from '../Button';
 import ProductCardHorizontalSkeleton from './ProductCardHorizontal.skeleton';
 
 const ProductCardHorizontal = ({
-  image,
   imageUri,
   title,
   oldPrice,
@@ -53,7 +52,7 @@ const ProductCardHorizontal = ({
         )}
         <View style={{ flexDirection: 'row', gap: spacing.nano }}>
           <ImageContainer>
-            <ImageCustom source={imageUri ? { uri: imageUri } : image} />
+            <ImageCustom source={{ uri: imageUri }} />
           </ImageContainer>
           <View
             style={{

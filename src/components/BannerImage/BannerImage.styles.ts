@@ -1,6 +1,7 @@
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 import type { BannerVariant } from './BannerImage.types';
+import FastImage from 'react-native-fast-image';
 
 const getStyleByVariant = () => ({
   sm: {
@@ -32,7 +33,7 @@ export const ImageContainer = styled.TouchableOpacity`
   padding-right: ${({ theme }) => theme.spacing.sm}px;
 `;
 
-export const BannerImg = styled.Image<{ bannerVariant: BannerVariant }>`
+export const BannerImg = styled(FastImage)<{ bannerVariant: BannerVariant }>`
   height: ${({ bannerVariant }) =>
     getStyleByVariant()[bannerVariant].imgHeight}px;
   width: 100%;

@@ -2,6 +2,7 @@ import { Dimensions, Platform } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 import type { ProductCardHorizontalVariant } from './ProductCardHorizontal.type';
+import FastImage from 'react-native-fast-image';
 
 export const TitleMainContainer = styled.View`
   flex-direction: row;
@@ -23,7 +24,7 @@ export const ImageContainer = styled.View`
   justify-content: center;
 `;
 
-export const ImageCustom = styled.Image`
+export const ImageCustom = styled(FastImage)`
   width: ${({ theme }) => theme.spacing.huge}px;
   height: ${({ theme }) => theme.spacing.huge}px;
   border-radius: ${({ theme }) => theme.spacing.xxs}px;

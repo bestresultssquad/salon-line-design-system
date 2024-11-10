@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components/native';
 import { Dimensions, Platform } from 'react-native';
 import type { CardBlogVariant } from './CardBlog.types';
+import FastImage from 'react-native-fast-image';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 24;
@@ -56,7 +57,7 @@ export const ImageContainer = styled.View<{ variant: CardBlogVariant }>`
   border-radius: 16px;
 `;
 
-export const ImageCustom = styled.Image<{ variant: CardBlogVariant }>`
+export const ImageCustom = styled(FastImage)<{ variant: CardBlogVariant }>`
   width: 100%;
   height: 100%;
   border-radius: 16px;

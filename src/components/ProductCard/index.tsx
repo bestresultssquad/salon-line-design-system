@@ -21,7 +21,6 @@ import ProductCardSkeleton from './ProductCard.skeleton';
 import { useTheme } from 'styled-components/native';
 
 const ProductCard = ({
-  image,
   imageUri,
   onFavoritePress,
   onPress,
@@ -48,7 +47,7 @@ const ProductCard = ({
             />
           )}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
-          <ImageCustom source={imageUri ? { uri: imageUri } : image} />
+          <ImageCustom source={{ uri: imageUri }} />
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>
