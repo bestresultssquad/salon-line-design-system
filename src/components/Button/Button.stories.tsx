@@ -44,6 +44,15 @@ Primary.args = {
   textSizeVariant: 'medium',
 };
 
+export const Loading: StoryObj<typeof Button> = {};
+Loading.args = {
+  children: 'Primary',
+  variant: 'primary',
+  size: 'small',
+  textSizeVariant: 'medium',
+  loading: true,
+};
+
 export const Outline: StoryObj<typeof Button> = {};
 Outline.args = {
   children: 'Outline',

@@ -3,6 +3,7 @@ import Typography from '../Typography';
 import type { Props } from './Button.types';
 import { useTheme } from 'styled-components/native';
 import { ActivityIndicator } from 'react-native';
+import Loading from '../Loading';
 
 const Button = ({
   children,
@@ -75,7 +76,7 @@ const Button = ({
       {!onlyIcon &&
         children &&
         (loading ? (
-          <ActivityIndicator size={'small'} style={{ height: 24 }} />
+          <Loading size={24} color="white" />
         ) : (
           <>
             <Typography

@@ -56,6 +56,7 @@ import { CouponPercent } from './IconComponents/CouponPercent.icon';
 import { DeleteIcon } from './IconComponents/Delete.icon';
 import { CheckMarkOkIcon } from './IconComponents/CheckMarkOk.icon';
 import { CheckMarkXIcon } from './IconComponents/CheckMarkX.icon';
+import LoadingIcon from './IconComponents/Loading.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -116,4 +117,5 @@ export const IconsComponent = {
   DeleteIcon,
   CheckMarkOkIcon,
   CheckMarkXIcon,
+  LoadingIcon,
 };

@@ -24,3 +24,4 @@ export { default as ProductCardHorizontal } from './ProductCardHorizontal';
 export { default as Categories } from './Categories';
 export { default as TabSwitch } from './TabSwitch';
 export { default as CardBlog } from './CardBlog';
+export { default as Loading } from './Loading';

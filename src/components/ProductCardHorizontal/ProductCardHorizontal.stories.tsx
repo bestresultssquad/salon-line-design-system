@@ -21,6 +21,7 @@ const Component: Meta<typeof ProductCardHorizontal> = {
         type: 'text',
       },
     },
+    type: { control: { type: 'text' } },
     chipTexts: { control: { type: 'object' } },
     title: { control: { type: 'text' } },
     subtitle: { control: { type: 'text' } },
@@ -52,6 +53,25 @@ Cart.args = {
     { text: 'A cada 30 dias', variant: 'outlined' },
   ],
   variant: 'cart',
+  type: 'product',
+};
+
+export const CartGift: StoryObj<typeof ProductCardHorizontal> = {};
+CartGift.args = {
+  imageUri: 'https://picsum.photos/200/300',
+  title:
+    'Kit Kids com Shampoo + Condicionador + Creme para Pentear + Spray Desembaraçante Meu Lisinho Salon Line',
+  subtitle: 'Subtitle',
+  price: 'R$100',
+  oldPrice: 'R$200',
+  discount: '50%',
+  chipTexts: [
+    { text: 'Compra Recorrente', variant: 'primary' },
+    { text: 'A cada 30 dias', variant: 'outlined' },
+  ],
+  variant: 'cart',
+  value: 5,
+  type: 'gift',
 };
 export const Search: StoryObj<typeof ProductCardHorizontal> = {};
 Search.args = {

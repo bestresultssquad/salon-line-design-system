@@ -15,6 +15,7 @@ import { useTheme } from 'styled-components/native';
 import Counter from '../Counter';
 import Button from '../Button';
 import ProductCardHorizontalSkeleton from './ProductCardHorizontal.skeleton';
+import { TouchableOpacity } from '@gorhom/bottom-sheet';
 
 const ProductCardHorizontal = ({
   imageUri,
@@ -31,6 +32,7 @@ const ProductCardHorizontal = ({
   disabled,
   disableDecrement,
   disableIncrement,
+  type = 'product',
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
@@ -42,12 +44,14 @@ const ProductCardHorizontal = ({
             <Typography sizeVariant="medium" variant="sm">
               {label}
             </Typography>
-            <Icon
-              type="MoreHorizontalIcon"
-              width={24}
-              height={24}
-              strokeWidth={2}
-            />
+            <TouchableOpacity onPress={onPress}>
+              <Icon
+                type="MoreHorizontalIcon"
+                width={24}
+                height={24}
+                strokeWidth={2}
+              />
+            </TouchableOpacity>
           </TitleMainContainer>
         )}
         <View style={{ flexDirection: 'row', gap: spacing.nano }}>
@@ -116,13 +120,19 @@ const ProductCardHorizontal = ({
               </View>
               <View>
                 {variant === 'cart' ? (
-                  <Counter
-                    disableDecrement={disableDecrement}
-                    disableIncrement={disableIncrement}
-                    onDecrement={onDecrement ?? (() => {})}
-                    onIncrement={onIncrement ?? (() => {})}
-                    value={value ?? 1}
-                  />
+                  type === 'gift' ? (
+                    <Typography sizeVariant="medium" variant="sm">
+                      {value} Unidade(s)
+                    </Typography>
+                  ) : (
+                    <Counter
+                      disableDecrement={disableDecrement}
+                      disableIncrement={disableIncrement}
+                      onDecrement={onDecrement ?? (() => {})}
+                      onIncrement={onIncrement ?? (() => {})}
+                      value={value ?? 1}
+                    />
+                  )
                 ) : (
                   <Button
                     disabled={disabled}

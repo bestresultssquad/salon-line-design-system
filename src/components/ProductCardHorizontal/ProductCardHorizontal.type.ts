@@ -24,4 +24,5 @@ export interface ProductCardHorizontalProps {
   disabled?: boolean;
   disableIncrement?: boolean;
   disableDecrement?: boolean;
+  type?: 'gift' | 'product';
 }
