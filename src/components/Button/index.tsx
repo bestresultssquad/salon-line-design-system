@@ -2,7 +2,6 @@ import { ButtonContainer, CustomIcon } from './Button.styles';
 import Typography from '../Typography';
 import type { Props } from './Button.types';
 import { useTheme } from 'styled-components/native';
-import { ActivityIndicator } from 'react-native';
 import Loading from '../Loading';
 
 const Button = ({

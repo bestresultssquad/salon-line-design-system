@@ -57,6 +57,7 @@ import { DeleteIcon } from './IconComponents/Delete.icon';
 import { CheckMarkOkIcon } from './IconComponents/CheckMarkOk.icon';
 import { CheckMarkXIcon } from './IconComponents/CheckMarkX.icon';
 import LoadingIcon from './IconComponents/Loading.icon';
+import { GiftIcon } from './IconComponents/Gift.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -118,4 +119,5 @@ export const IconsComponent = {
   CheckMarkOkIcon,
   CheckMarkXIcon,
   LoadingIcon,
+  GiftIcon,
 };
