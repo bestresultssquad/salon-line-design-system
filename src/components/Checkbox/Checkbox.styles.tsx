@@ -4,6 +4,12 @@ import styled from 'styled-components/native';
 import type { CheckBoxVariant } from './Checkbox.types';
 
 const getStyleByVariant = (theme: DefaultTheme) => ({
+  sm: {
+    size: theme.spacing.sm,
+    borderRadius: 6.5,
+    padding: 3,
+    checkedRadius: 4,
+  },
   default: {
     size: theme.spacing.xs,
     borderRadius: 6.5,

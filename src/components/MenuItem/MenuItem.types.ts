@@ -6,4 +6,5 @@ export interface MenuItemProps {
   onPress: () => void;
   useSwitch?: boolean;
   strokeWidth?: number;
+  removeBorderBottom?: boolean;
 }

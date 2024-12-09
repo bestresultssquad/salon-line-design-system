@@ -33,12 +33,17 @@ const ProductCardHorizontal = ({
   disableDecrement,
   disableIncrement,
   type = 'product',
+  onPressCard,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
   return (
     <Card variant={variant ?? 'cart'}>
-      <Container variant={variant ?? 'cart'}>
+      <Container
+        variant={variant ?? 'cart'}
+        onPress={onPressCard}
+        activeOpacity={onPressCard ? 0.2 : 1}
+      >
         {variant === 'cart' && (
           <TitleMainContainer>
             <Typography sizeVariant="medium" variant="sm">

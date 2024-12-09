@@ -62,6 +62,8 @@ BannerSmall.args = {
       action: () => console.log('Banner Image Clicked'),
     },
   ],
+  removeBorder: true,
+  fullWidth: true,
 };
 export const BannerMedium: StoryObj<typeof BannerImage> = {};
 BannerMedium.args = {

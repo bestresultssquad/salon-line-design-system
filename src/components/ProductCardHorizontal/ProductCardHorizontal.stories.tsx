@@ -88,6 +88,7 @@ Search.args = {
   ratingCount: 5,
   rating: 4,
   onPress: () => console.log('ProductCard pressed'),
+  onPressCard: () => console.log('Card pressed'),
   variant: 'search',
 };
 

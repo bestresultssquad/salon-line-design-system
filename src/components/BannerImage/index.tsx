@@ -25,6 +25,8 @@ import { timeElapsed } from '../../utils/getTimeElapsed';
 const BannerImage = ({
   bannerObject,
   bannerVariant = 'md',
+  fullWidth = false,
+  removeBorder = false,
 }: BannerImageProps) => {
   const [_, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
@@ -39,9 +41,10 @@ const BannerImage = ({
     index,
   }: ListRenderItemInfo<BannerObject>) => {
     return (
-      <ImageContainer onPress={item.action}>
+      <ImageContainer onPress={item.action} fullWidth={fullWidth}>
         {bannerVariant !== 'blog' && (
           <BannerImg
+            removeBorder={removeBorder}
             bannerVariant={bannerVariant}
             key={index}
             source={{ uri: item.imageUrl }}

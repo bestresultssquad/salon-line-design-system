@@ -26,4 +26,5 @@ export const ToastContainer = styled.View<{ type: ToastType }>`
   gap: ${({ theme }) => theme.spacing.nano}px;
   margin-left: ${({ theme }) => theme.spacing.sm}px;
   margin-right: ${({ theme }) => theme.spacing.sm}px;
+  margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
 `;

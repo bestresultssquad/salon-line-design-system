@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
-export type CheckBoxVariant = 'default' | 'rounded';
+export type CheckBoxVariant = 'default' | 'rounded' | 'sm';
 
 export interface CheckboxProps extends PropsWithChildren {
   checked?: boolean;

@@ -25,4 +25,5 @@ export interface ProductCardHorizontalProps {
   disableIncrement?: boolean;
   disableDecrement?: boolean;
   type?: 'gift' | 'product';
+  onPressCard?: () => void;
 }

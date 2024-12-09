@@ -16,4 +16,6 @@ export type BannerVariant = 'sm' | 'md' | 'blog';
 export interface BannerImageProps {
   bannerObject: BannerObject[];
   bannerVariant?: BannerVariant;
+  fullWidth?: boolean;
+  removeBorder?: boolean;
 }

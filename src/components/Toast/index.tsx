@@ -5,6 +5,7 @@ import { useToast } from 'react-native-toast-notifications';
 import Icon from '../Icon';
 import Typography from '../Typography';
 import type { ToastType } from './Toast.types';
+import type { IconTypes } from '../Icon/Icon.types';
 
 const ToastCustom = ({
   type,
@@ -18,11 +19,17 @@ const ToastCustom = ({
   const theme = useTheme();
   const toast = useToast();
 
+  const iconByType = {
+    success: 'CheckIcon',
+    error: 'AlertCircleIcon',
+    warning: 'AlertIcon',
+  };
+
   return (
     <ToastContainer type={type}>
       <View>
         <Icon
-          type="AlertIcon"
+          type={iconByType[type] as IconTypes}
           width={20}
           height={20}
           stroke={stylesByType(theme)[type].titleColor}

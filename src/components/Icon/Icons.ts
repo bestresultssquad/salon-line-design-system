@@ -58,6 +58,7 @@ import { CheckMarkOkIcon } from './IconComponents/CheckMarkOk.icon';
 import { CheckMarkXIcon } from './IconComponents/CheckMarkX.icon';
 import LoadingIcon from './IconComponents/Loading.icon';
 import { GiftIcon } from './IconComponents/Gift.icon';
+import { EditIcon } from './IconComponents/Edit.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -120,4 +121,5 @@ export const IconsComponent = {
   CheckMarkXIcon,
   LoadingIcon,
   GiftIcon,
+  EditIcon,
 };

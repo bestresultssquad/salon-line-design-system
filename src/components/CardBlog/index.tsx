@@ -35,6 +35,14 @@ const CardBlog = ({
             resizeMode="cover"
           />
         </ImageContainer>
+        <BottomContainer variant={variant} style={{ paddingLeft: 8 }}>
+          <Chip
+            size="small"
+            label={category}
+            variant="primary"
+            style={{ backgroundColor: colors.purple[800] }}
+          />
+        </BottomContainer>
         <TextContainer variant={variant}>
           <Typography sizeVariant="semiBold" variant="xs" numberOfLines={2}>
             {title}
@@ -55,12 +63,6 @@ const CardBlog = ({
                 {timeElapsed(date)}
               </Typography>
             </View>
-            <Chip
-              size="small"
-              label={category}
-              variant="primary"
-              style={{ backgroundColor: colors.purple[800] }}
-            />
           </BottomContainer>
         </TextContainer>
       </Container>

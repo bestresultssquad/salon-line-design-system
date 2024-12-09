@@ -29,5 +29,8 @@ export function timeElapsed(dataString: string) {
   if (duration?.hours && duration.hours > 0) {
     return `${duration.hours} hora(s) atrás`;
   }
+  if (duration?.minutes && duration.minutes > 0) {
+    return `${duration.minutes} minutos(s) atrás`;
+  }
   return '';
 }

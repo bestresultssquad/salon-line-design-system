@@ -11,6 +11,7 @@ const MenuItem = ({
   title,
   useSwitch = false,
   strokeWidth = 1.5,
+  removeBorderBottom,
 }: MenuItemProps) => {
   const [switchActive, setSwitchActive] = useState(false);
   const [pressed, setPressed] = useState(false);
@@ -23,6 +24,7 @@ const MenuItem = ({
       onPressOut={() => setPressed(false)}
       pressed={pressed}
       disabled={useSwitch}
+      removeBorderBottom={removeBorderBottom ?? false}
     >
       <LeftContainer>
         <Icon

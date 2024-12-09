@@ -11,7 +11,9 @@ export const TitleMainContainer = styled.View`
   padding: ${({ theme }) => theme.spacing.nano}px;
 `;
 
-export const Container = styled.View<{ variant: ProductCardHorizontalVariant }>`
+export const Container = styled.TouchableOpacity<{
+  variant: ProductCardHorizontalVariant;
+}>`
   flex-direction: column;
   padding: ${({ theme, variant }) =>
     variant === 'cart' ? `${theme.spacing.nano}px` : 0};

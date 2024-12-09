@@ -26,18 +26,24 @@ export const BannerImageContainer = styled.View<{
   align-items: center;
 `;
 
-export const ImageContainer = styled.TouchableOpacity`
+export const ImageContainer = styled.TouchableOpacity<{ fullWidth: boolean }>`
   flex: 1;
   width: ${Dimensions.get('window').width}px;
-  padding-left: ${({ theme }) => theme.spacing.sm}px;
-  padding-right: ${({ theme }) => theme.spacing.sm}px;
+  padding-left: ${({ theme, fullWidth }) =>
+    fullWidth ? 0 : theme.spacing.sm}px;
+  padding-right: ${({ theme, fullWidth }) =>
+    fullWidth ? 0 : theme.spacing.sm}px;
 `;
 
-export const BannerImg = styled(FastImage)<{ bannerVariant: BannerVariant }>`
+export const BannerImg = styled(FastImage)<{
+  bannerVariant: BannerVariant;
+  removeBorder: boolean;
+}>`
   height: ${({ bannerVariant }) =>
     getStyleByVariant()[bannerVariant].imgHeight}px;
   width: 100%;
-  border-radius: ${({ theme }) => theme.spacing.sm}px;
+  border-radius: ${({ theme, removeBorder }) =>
+    removeBorder ? 0 : theme.spacing.sm}px;
   margin-bottom: ${({ theme }) => theme.spacing.nano}px;
 `;
 
