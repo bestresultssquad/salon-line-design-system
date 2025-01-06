@@ -13,6 +13,7 @@ const Input = ({
   mask,
   editable = true,
   error,
+  clickable = false,
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
@@ -40,7 +41,11 @@ const Input = ({
           {inputLabel}
         </Typography>
       )}
-      <InputContainer editable={editable} error={!!error}>
+      <InputContainer
+        editable={editable}
+        clickable={clickable ?? false}
+        error={!!error}
+      >
         {leftIcon && renderLeftIcon()}
         <TextInput
           mask={mask}

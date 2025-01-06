@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import type { AccordionVariant } from './Accordion.types';
+import type { AccordionVariant } from './AccordionPlayer.types';
 import type { DefaultTheme } from 'styled-components/native';
 
 const getStylesByVariant = (theme: DefaultTheme) => ({
@@ -37,18 +37,7 @@ export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
   width: 100%;
   padding: ${({ theme, variant }) =>
     `${getStylesByVariant(theme)[variant].padding}px ${getStylesByVariant(theme)[variant].paddingHorizontal}px`};
-  border-bottom-color: ${({ theme, variant }) =>
-    variant === 'default' || variant === 'recurringPurchase'
-      ? `${theme.colors.gray[200]} `
-      : 0};
-  border-color: ${({ theme, variant }) =>
-    getStylesByVariant(theme)[variant].borderColor};
-  border-bottom-width: ${({ variant, theme }) =>
-    getStylesByVariant(theme)[variant].borderWidth}px;
-  border-width: ${({ variant, theme }) =>
-    getStylesByVariant(theme)[variant].borderWidth}px;
-  border-radius: ${({ variant, theme }) =>
-    getStylesByVariant(theme)[variant].radius}px;
+  border-width: 0;
 `;
 
 export const TitleContainer = styled.TouchableWithoutFeedback`
@@ -57,7 +46,7 @@ export const TitleContainer = styled.TouchableWithoutFeedback`
   justify-content: space-between;
 `;
 
-export const IconContainer = styled.View`
+export const IconContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.nano}px;
@@ -69,4 +58,5 @@ export const Wrapper = styled.View`
   width: 100%;
   position: absolute;
   display: flex;
+  align-items: center;
 `;

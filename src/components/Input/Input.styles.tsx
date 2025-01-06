@@ -6,15 +6,16 @@ export const Container = styled.View``;
 export const InputContainer = styled.View<{
   editable: boolean;
   error: boolean;
+  clickable: boolean;
 }>`
   padding: ${({ theme }) => `${theme.spacing.xxxs}px ${theme.spacing.xxxxs}px`};
-  background-color: ${({ theme, editable }) =>
-    editable ? theme.colors.white : theme.colors.gray[100]};
+  background-color: ${({ theme, editable, clickable }) =>
+    editable || clickable ? theme.colors.white : theme.colors.gray[100]};
   border-radius: 12px;
   width: 100%;
   flex-direction: row;
-  border: ${({ theme, editable, error }) =>
-    !editable
+  border: ${({ theme, editable, error, clickable }) =>
+    !editable && !clickable
       ? 'none'
       : error
         ? `1px solid ${theme.colors.red[500]}`

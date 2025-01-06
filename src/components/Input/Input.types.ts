@@ -7,4 +7,5 @@ export interface InputProps extends MaskInputProps {
   rightIcon?: React.ReactNode;
   inputLabel?: string;
   error?: string;
+  clickable?: boolean;
 }

@@ -3,6 +3,7 @@ import {
   Dimensions,
   FlatList,
   View,
+  type ImageSourcePropType,
   type ListRenderItemInfo,
 } from 'react-native';
 import {
@@ -47,7 +48,12 @@ const BannerImage = ({
             removeBorder={removeBorder}
             bannerVariant={bannerVariant}
             key={index}
-            source={{ uri: item.imageUrl }}
+            //@ts-ignore
+            source={
+              item.imageFile
+                ? item.imageFile
+                : ({ uri: item.imageUrl } as ImageSourcePropType)
+            }
             testID={`image-${index}`}
           />
         )}

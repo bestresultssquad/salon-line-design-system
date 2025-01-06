@@ -138,7 +138,14 @@ function Accordion({
             justifyContent: 'space-between',
           }}
         >
-          <View style={{ alignItems: 'center', flexDirection: 'row', gap: 12 }}>
+          <View
+            style={{
+              alignItems: 'center',
+              flexDirection: 'row',
+              gap: 12,
+              flex: 1,
+            }}
+          >
             {variant === 'recurringPurchase' && (
               <Checkbox
                 variant="rounded"

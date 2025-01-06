@@ -59,6 +59,16 @@ import { CheckMarkXIcon } from './IconComponents/CheckMarkX.icon';
 import LoadingIcon from './IconComponents/Loading.icon';
 import { GiftIcon } from './IconComponents/Gift.icon';
 import { EditIcon } from './IconComponents/Edit.icon';
+import { VolumeHighIcon } from './IconComponents/VolumeHigh.icon';
+import { VolumeMutedIcon } from './IconComponents/VolumeMuted.icon';
+import { CopyIcon } from './IconComponents/Copy.icon';
+import { AnimalIcon } from './IconComponents/Animal.icon';
+import { FinalizingIcon } from './IconComponents/Finalizing.icon';
+import { HairGrowIcon } from './IconComponents/HairGrow.icon';
+import { NotFreeIcon } from './IconComponents/NotFree.icon';
+import { PlusTwelveIcon } from './IconComponents/PlustTwelve.icon';
+import { SadSmileyIcon } from './IconComponents/SadSmiley.icon';
+import { VeganIcon } from './IconComponents/Vegan.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -122,4 +132,14 @@ export const IconsComponent = {
   LoadingIcon,
   GiftIcon,
   EditIcon,
+  VolumeHighIcon,
+  VolumeMutedIcon,
+  CopyIcon,
+  AnimalIcon,
+  FinalizingIcon,
+  HairGrowIcon,
+  NotFreeIcon,
+  PlusTwelveIcon,
+  SadSmileyIcon,
+  VeganIcon,
 };

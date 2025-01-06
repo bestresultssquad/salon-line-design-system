@@ -23,6 +23,7 @@ const Component: Meta<typeof Input> = {
     secureTextEntry: { control: { type: 'boolean' } },
     onChangeText: { action: 'changed' },
     editable: { control: { type: 'boolean' } },
+    clickable: { control: { type: 'boolean' } },
   },
 
   decorators: [
@@ -48,6 +49,7 @@ Disabled.args = {
   value: '',
   secureTextEntry: false,
   editable: false,
+  clickable: true,
 };
 
 export const Password: StoryObj<typeof Input> = {};
