@@ -57,4 +57,11 @@ RecurringPurchase.args = {
   textRight: '+10% OFF',
 };
 
+export const SubCategory: StoryObj<typeof AccordionCustom> = {};
+SubCategory.args = {
+  title: 'SubCategory',
+  buttonTitle: 'Button Title',
+  variant: 'subCategory',
+};
+
 export default Component;

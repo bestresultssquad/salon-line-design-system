@@ -50,6 +50,9 @@ export const IconContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.nano}px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
 `;
 
 export const AccordionItemContainer = styled.View``;

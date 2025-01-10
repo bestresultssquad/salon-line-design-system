@@ -7,14 +7,17 @@ const getStyleByVariant = () => ({
   sm: {
     containerHeight: 128,
     imgHeight: 128,
+    imgWidth: Dimensions.get('window').width,
   },
   md: {
-    containerHeight: 340,
-    imgHeight: 320,
+    containerHeight: Dimensions.get('window').width + 20,
+    imgHeight: Dimensions.get('window').width,
+    imgWidth: Dimensions.get('window').width,
   },
   blog: {
     containerHeight: 340,
     imgHeight: 320,
+    imgWidth: Dimensions.get('window').width,
   },
 });
 
@@ -26,9 +29,14 @@ export const BannerImageContainer = styled.View<{
   align-items: center;
 `;
 
-export const ImageContainer = styled.TouchableOpacity<{ fullWidth: boolean }>`
+export const ImageContainer = styled.TouchableOpacity<{
+  fullWidth: boolean;
+  bannerVariant: BannerVariant;
+}>`
   flex: 1;
-  width: ${Dimensions.get('window').width}px;
+  width: ${({ bannerVariant }) =>
+    getStyleByVariant()[bannerVariant].imgWidth}px;
+  height: 100%;
   padding-left: ${({ theme, fullWidth }) =>
     fullWidth ? 0 : theme.spacing.sm}px;
   padding-right: ${({ theme, fullWidth }) =>
@@ -44,7 +52,6 @@ export const BannerImg = styled(FastImage)<{
   width: 100%;
   border-radius: ${({ theme, removeBorder }) =>
     removeBorder ? 0 : theme.spacing.sm}px;
-  margin-bottom: ${({ theme }) => theme.spacing.nano}px;
 `;
 
 export const BannerBgImg = styled.ImageBackground.attrs(() => ({

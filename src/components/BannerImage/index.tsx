@@ -42,7 +42,11 @@ const BannerImage = ({
     index,
   }: ListRenderItemInfo<BannerObject>) => {
     return (
-      <ImageContainer onPress={item.action} fullWidth={fullWidth}>
+      <ImageContainer
+        bannerVariant={bannerVariant}
+        onPress={item.action}
+        fullWidth={fullWidth}
+      >
         {bannerVariant !== 'blog' && (
           <BannerImg
             removeBorder={removeBorder}

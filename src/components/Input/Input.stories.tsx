@@ -43,6 +43,15 @@ Default.args = {
   editable: true,
 };
 
+export const Small: StoryObj<typeof Input> = {};
+Small.args = {
+  placeholder: 'Input',
+  value: '',
+  secureTextEntry: false,
+  editable: true,
+  variant: 'sm',
+};
+
 export const Disabled: StoryObj<typeof Input> = {};
 Disabled.args = {
   placeholder: 'Input',

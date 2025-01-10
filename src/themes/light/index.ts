@@ -19,6 +19,18 @@ const lightTheme = {
       200: '#BBF7D0',
       700: '#15803D',
     },
+    sky: {
+      100: '#e0f2fe',
+      700: '#0369a1',
+    },
+    blue: {
+      100: '#DBEAFE',
+      700: '#1D4ED8',
+    },
+    orange: {
+      100: '#FFEDD5',
+      700: '#C2410C',
+    },
     purple: {
       500: '#BA4DDE',
       800: '#804FE8',

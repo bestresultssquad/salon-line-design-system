@@ -69,6 +69,20 @@ import { NotFreeIcon } from './IconComponents/NotFree.icon';
 import { PlusTwelveIcon } from './IconComponents/PlustTwelve.icon';
 import { SadSmileyIcon } from './IconComponents/SadSmiley.icon';
 import { VeganIcon } from './IconComponents/Vegan.icon';
+import { PlusThreeIcon } from './IconComponents/PlusThree.icon';
+import { FlowerIcon } from './IconComponents/Flower.icon';
+import { CalendarGradientIcon } from './IconComponents/CalendarGradient.icon';
+import { ZeroThreeIcon } from './IconComponents/ZeroThree.icon';
+import { HandFanIcon } from './IconComponents/HandFan.icon';
+import { MelonIcon } from './IconComponents/Melon.icon';
+import { Hairt2Icon } from './IconComponents/Hair2.icon';
+import { ZeroTwelveIcon } from './IconComponents/ZeroTwelve.icon';
+import { NoChildsIcon } from './IconComponents/NoChilds.icon';
+import { NoVeganIcon } from './IconComponents/NoVegan.icon';
+import { WithoutSmell } from './IconComponents/WithoutSmell.icon';
+import { AllWashesIcon } from './IconComponents/AllWashes.icon';
+import { ResultIcon } from './IconComponents/Result.icon';
+import { PermanentIcon } from './IconComponents/Permanent.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -142,4 +156,18 @@ export const IconsComponent = {
   PlusTwelveIcon,
   SadSmileyIcon,
   VeganIcon,
+  PlusThreeIcon,
+  FlowerIcon,
+  CalendarGradientIcon,
+  ZeroThreeIcon,
+  HandFanIcon,
+  MelonIcon,
+  Hairt2Icon,
+  NoChildsIcon,
+  ZeroTwelveIcon,
+  NoVeganIcon,
+  WithoutSmell,
+  AllWashesIcon,
+  ResultIcon,
+  PermanentIcon,
 };

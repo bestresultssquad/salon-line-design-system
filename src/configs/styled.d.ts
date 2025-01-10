@@ -18,6 +18,18 @@ export type Colors = {
     200: string;
     700: string;
   };
+  sky: {
+    100: string;
+    700: string;
+  };
+  blue: {
+    100: string;
+    700: string;
+  };
+  orange: {
+    100: string;
+    700: string;
+  };
   purple: {
     500: string;
     800: string;

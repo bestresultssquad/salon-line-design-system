@@ -61,6 +61,7 @@ function Accordion({
   checked,
   handlePress,
   withoutOpen,
+  iconSize,
   ...props
 }: AccordionProps) {
   const openInternal = useSharedValue(false);
@@ -98,6 +99,10 @@ function Accordion({
       open: IconTypes;
       close: IconTypes;
     };
+    subCategory: {
+      open: IconTypes;
+      close: IconTypes;
+    };
   };
 
   const getIcon = (): IconVariant => {
@@ -118,6 +123,10 @@ function Accordion({
         open: 'ChevronDownIcon',
         close: 'ChevronUpIcon',
       },
+      subCategory: {
+        open: 'ChevronDownIcon',
+        close: 'ChevronUpIcon',
+      },
     };
   };
 
@@ -130,7 +139,7 @@ function Accordion({
 
   return (
     <AccordionContainer variant={variant}>
-      <TitleContainer onPress={() => handlePressAccordion()}>
+      <TitleContainer onPress={() => handlePressAccordion()} variant={variant}>
         <View
           style={{
             alignItems: 'center',
@@ -155,7 +164,11 @@ function Accordion({
             )}
             <Typography
               variant="sm"
-              sizeVariant={variant === 'default' ? 'medium' : 'semiBold'}
+              sizeVariant={
+                variant === 'default' || variant === 'subCategory'
+                  ? 'medium'
+                  : 'semiBold'
+              }
             >
               {title}
             </Typography>
@@ -178,8 +191,8 @@ function Accordion({
                 <>
                   <Animated.View style={[iconStyleOpen]}>
                     <Icon
-                      height={24}
-                      width={24}
+                      height={iconSize ? iconSize : 24}
+                      width={iconSize ? iconSize : 24}
                       type={getIcon()[variant ?? 'default'].open}
                     />
                   </Animated.View>

@@ -1,5 +1,27 @@
 import styled from 'styled-components/native';
 import MaskInput from 'react-native-mask-input';
+import type { InputVariant } from './Input.types';
+import type { DefaultTheme } from 'styled-components/native';
+
+const getPaddingByVariant = (variant: InputVariant, theme: DefaultTheme) => {
+  switch (variant) {
+    case 'sm':
+      return {
+        vertical: '10px',
+        horizontal: '9px',
+      };
+    case 'md':
+      return {
+        vertical: `${theme.spacing.xxxs}px`,
+        horizontal: `${theme.spacing.xxxxs}px`,
+      };
+    default:
+      return {
+        vertical: `${theme.spacing.xxxs}px`,
+        horizontal: `${theme.spacing.xxxxs}px`,
+      };
+  }
+};
 
 export const Container = styled.View``;
 
@@ -7,8 +29,12 @@ export const InputContainer = styled.View<{
   editable: boolean;
   error: boolean;
   clickable: boolean;
+  variant: InputVariant;
 }>`
-  padding: ${({ theme }) => `${theme.spacing.xxxs}px ${theme.spacing.xxxxs}px`};
+  padding: ${({ theme, variant }) =>
+    getPaddingByVariant(variant, theme).vertical +
+    ' ' +
+    getPaddingByVariant(variant, theme).horizontal};
   background-color: ${({ theme, editable, clickable }) =>
     editable || clickable ? theme.colors.white : theme.colors.gray[100]};
   border-radius: 12px;

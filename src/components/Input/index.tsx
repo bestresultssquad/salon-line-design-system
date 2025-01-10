@@ -14,6 +14,7 @@ const Input = ({
   editable = true,
   error,
   clickable = false,
+  variant = 'md',
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
@@ -44,6 +45,7 @@ const Input = ({
       <InputContainer
         editable={editable}
         clickable={clickable ?? false}
+        variant={variant}
         error={!!error}
       >
         {leftIcon && renderLeftIcon()}

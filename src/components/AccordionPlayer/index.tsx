@@ -121,7 +121,7 @@ function AccordionPlayer({
             justifyContent: 'space-between',
           }}
         >
-          <IconContainer>
+          <IconContainer onPress={() => handlePressAccordion()}>
             {!props.open && (
               <Typography sizeVariant="regular" variant="2xs" color={textColor}>
                 Veja os produtos
