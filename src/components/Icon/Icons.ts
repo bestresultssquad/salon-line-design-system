@@ -83,6 +83,22 @@ import { WithoutSmell } from './IconComponents/WithoutSmell.icon';
 import { AllWashesIcon } from './IconComponents/AllWashes.icon';
 import { ResultIcon } from './IconComponents/Result.icon';
 import { PermanentIcon } from './IconComponents/Permanent.icon';
+import { DistributionIcon } from './IconComponents/Distribution.icon';
+import { TickIcon } from './IconComponents/Tick.icon';
+import { InvoiceIcon } from './IconComponents/Invoice.icon';
+import { SettingIcon } from './IconComponents/Setting.icon';
+import { CheckoutCompleteIcon } from './IconComponents/CheckoutComplete.icon';
+import { CheckoutWaitingIcon } from './IconComponents/CheckoutWaiting.icon';
+import { MastercardIcon } from './IconComponents/Mastercard.icon';
+import { VisaIcon } from './IconComponents/Visa.icon';
+import { AmexIcon } from './IconComponents/Amex.icon';
+import { EloIcon } from './IconComponents/Elo.icon';
+import { PixIcon } from './IconComponents/Pix.icon';
+import { BarcodeIcon } from './IconComponents/Barcode.icon';
+import { UploadIcon } from './IconComponents/Upload.icon';
+import { MegaphoneIcon } from './IconComponents/Megaphone.icon';
+import { CreditCardAdd } from './IconComponents/CreditCardAdd.icon';
+import { PixBlackIcon } from './IconComponents/PixBlack.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -170,4 +186,20 @@ export const IconsComponent = {
   AllWashesIcon,
   ResultIcon,
   PermanentIcon,
+  DistributionIcon,
+  TickIcon,
+  InvoiceIcon,
+  SettingIcon,
+  CheckoutCompleteIcon,
+  CheckoutWaitingIcon,
+  MastercardIcon,
+  VisaIcon,
+  AmexIcon,
+  EloIcon,
+  PixIcon,
+  BarcodeIcon,
+  UploadIcon,
+  MegaphoneIcon,
+  CreditCardAdd,
+  PixBlackIcon,
 };

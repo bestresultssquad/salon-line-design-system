@@ -85,6 +85,7 @@ const Button = ({
               }
               sizeVariant={textSizeVariant ?? 'regular'}
               variant={textVariant ?? '3xs'}
+              numberOfLines={1}
             >
               {children}
             </Typography>

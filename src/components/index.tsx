@@ -27,3 +27,4 @@ export { default as CardBlog } from './CardBlog';
 export { default as Loading } from './Loading';
 export { default as ProductAddon } from './ProductAddon';
 export { default as AccordionPlayer } from './AccordionPlayer';
+export { default as AccordionCheckout } from './AccordionCheckout';
