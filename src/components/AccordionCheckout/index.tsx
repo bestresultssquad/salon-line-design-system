@@ -59,7 +59,8 @@ function AccordionCheckout({
   handlePress,
   subtitle,
   iconType,
-
+  checked = false,
+  withoutOpen,
   ...props
 }: Readonly<AccordionCheckoutProps>) {
   const openInternal = useSharedValue(false);
@@ -67,7 +68,7 @@ function AccordionCheckout({
   const { colors } = useTheme();
 
   const handlePressAccordion = () => {
-    if (open) {
+    if (open && !withoutOpen) {
       open.value = !open.value;
     }
     handlePress?.();
@@ -80,7 +81,7 @@ function AccordionCheckout({
           style={{
             justifyContent: 'space-between',
             flexDirection: 'row',
-            paddingVertical: 16,
+            paddingVertical: subtitle ? 16 : 24,
           }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
@@ -88,7 +89,7 @@ function AccordionCheckout({
               <Checkbox
                 onPress={() => handlePressAccordion()}
                 variant="rounded"
-                checked={open.value}
+                checked={checked}
               />
             </View>
             <View style={{ gap: 4 }}>

@@ -99,6 +99,9 @@ import { UploadIcon } from './IconComponents/Upload.icon';
 import { MegaphoneIcon } from './IconComponents/Megaphone.icon';
 import { CreditCardAdd } from './IconComponents/CreditCardAdd.icon';
 import { PixBlackIcon } from './IconComponents/PixBlack.icon';
+import { PagaleveIcon } from './IconComponents/Pagaleve.icon';
+import { PagaleveArrowIcon } from './IconComponents/PagaleveArrow.icon';
+import { MessageAddIcon } from './IconComponents/MessageAdd.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -202,4 +205,7 @@ export const IconsComponent = {
   MegaphoneIcon,
   CreditCardAdd,
   PixBlackIcon,
+  PagaleveIcon,
+  PagaleveArrowIcon,
+  MessageAddIcon,
 };

@@ -16,4 +16,6 @@ export interface AccordionCheckoutProps extends PropsWithChildren {
   handlePress?: () => void;
   iconSize?: number;
   iconType: IconTypes;
+  checked: boolean;
+  withoutOpen?: boolean;
 }

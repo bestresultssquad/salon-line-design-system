@@ -15,6 +15,7 @@ const Input = ({
   error,
   clickable = false,
   variant = 'md',
+  inputRef,
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
@@ -50,6 +51,7 @@ const Input = ({
       >
         {leftIcon && renderLeftIcon()}
         <TextInput
+          ref={inputRef}
           mask={mask}
           value={value}
           onChangeText={onChangeText}
