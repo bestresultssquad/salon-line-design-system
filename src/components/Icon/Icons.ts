@@ -102,6 +102,7 @@ import { PixBlackIcon } from './IconComponents/PixBlack.icon';
 import { PagaleveIcon } from './IconComponents/Pagaleve.icon';
 import { PagaleveArrowIcon } from './IconComponents/PagaleveArrow.icon';
 import { MessageAddIcon } from './IconComponents/MessageAdd.icon';
+import { LightningIcon } from './IconComponents/Lightning.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -208,4 +209,5 @@ export const IconsComponent = {
   PagaleveIcon,
   PagaleveArrowIcon,
   MessageAddIcon,
+  LightningIcon,
 };
