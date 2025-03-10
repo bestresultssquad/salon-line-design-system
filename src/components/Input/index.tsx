@@ -3,6 +3,7 @@ import { Container, InputContainer, TextInput } from './Input.styles';
 import type { InputProps } from './Input.types';
 import Typography from '../Typography';
 import Icon from '../Icon';
+import { useState } from 'react';
 
 const Input = ({
   leftIcon,
@@ -19,6 +20,7 @@ const Input = ({
   ...props
 }: InputProps) => {
   const { colors } = useTheme();
+  const [isFocused, setIsFocused] = useState(false);
 
   const renderLeftIcon = () => {
     if (leftIcon) {
@@ -48,6 +50,7 @@ const Input = ({
         clickable={clickable ?? false}
         variant={variant}
         error={!!error}
+        focused={isFocused}
       >
         {leftIcon && renderLeftIcon()}
         <TextInput
@@ -60,6 +63,18 @@ const Input = ({
           leftIcon={!!leftIcon}
           rightIcon={!!rightIcon}
           placeholderTextColor={colors.gray[500]}
+          onFocus={(e) => {
+            if (props.onFocus) {
+              props.onFocus(e);
+            }
+            setIsFocused(true);
+          }}
+          onBlur={(e) => {
+            if (props.onBlur) {
+              props.onBlur(e);
+            }
+            setIsFocused(false);
+          }}
         />
         {error && (
           <Icon
@@ -73,7 +88,7 @@ const Input = ({
       </InputContainer>
       {error && (
         <Typography
-          sizeVariant="medium"
+          sizeVariant="semiBold"
           variant="xs"
           color={colors.red[500]}
           style={{ marginTop: 4 }}

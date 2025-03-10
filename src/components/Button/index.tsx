@@ -86,6 +86,9 @@ const Button = ({
               sizeVariant={textSizeVariant ?? 'regular'}
               variant={textVariant ?? '3xs'}
               numberOfLines={1}
+              style={{
+                textDecorationLine: variant === 'link' ? 'underline' : 'none',
+              }}
             >
               {children}
             </Typography>

@@ -58,6 +58,10 @@ const colorByVariant = (theme: DefaultTheme) => ({
     backgroundColor: theme.colors.gray[900],
     borderColor: 'transparent',
   },
+  link: {
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+  },
 });
 
 export const ButtonContainer = styled.TouchableOpacity<{

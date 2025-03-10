@@ -23,6 +23,27 @@ const getPaddingByVariant = (variant: InputVariant, theme: DefaultTheme) => {
   }
 };
 
+const getBorder = (
+  theme: DefaultTheme,
+  error: boolean,
+  focused: boolean,
+  editable: boolean,
+  clickable: boolean
+) => {
+  console.log(focused, error, editable, clickable);
+  if (!editable && !clickable) {
+    return 'none';
+  }
+  if (error) {
+    return `1px solid ${theme.colors.red[500]}`;
+  }
+  if (focused) {
+    return `1px solid  ${theme.colors.black}`;
+  }
+
+  return `1px solid  ${theme.colors.gray[200]}`;
+};
+
 export const Container = styled.View``;
 
 export const InputContainer = styled.View<{
@@ -30,6 +51,7 @@ export const InputContainer = styled.View<{
   error: boolean;
   clickable: boolean;
   variant: InputVariant;
+  focused: boolean;
 }>`
   padding: ${({ theme, variant }) =>
     getPaddingByVariant(variant, theme).vertical +
@@ -40,12 +62,8 @@ export const InputContainer = styled.View<{
   border-radius: 12px;
   width: 100%;
   flex-direction: row;
-  border: ${({ theme, editable, error, clickable }) =>
-    !editable && !clickable
-      ? 'none'
-      : error
-        ? `1px solid ${theme.colors.red[500]}`
-        : `1px solid  ${theme.colors.gray[200]}`};
+  border: ${({ theme, editable, error, clickable, focused }) =>
+    getBorder(theme, error, focused, editable, clickable)};
 `;
 
 export const TextInput = styled(MaskInput)<{

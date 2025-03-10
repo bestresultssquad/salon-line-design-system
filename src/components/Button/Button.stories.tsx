@@ -97,3 +97,13 @@ Action.args = {
   textSizeVariant: 'semiBold',
   textVariant: 'sm',
 };
+
+export const Link: StoryObj<typeof Button> = {};
+Link.args = {
+  children: 'Link',
+  variant: 'link',
+  size: 'nano',
+  textSizeVariant: 'semiBold',
+  textVariant: 'sm',
+  textColor: 'blue',
+};

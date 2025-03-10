@@ -27,7 +27,7 @@ const ProductAddon = ({
     <Card onPress={onPress}>
       <Container>
         <CheckboxContainer>
-          <Checkbox onPress={() => {}} checked={checked} variant="sm" />
+          <Checkbox onPress={onPress} checked={checked} variant="sm" />
         </CheckboxContainer>
         <ImageContainer>
           <ImageCustom source={{ uri: imageUri }} />

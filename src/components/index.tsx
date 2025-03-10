@@ -28,7 +28,5 @@ export { default as Loading } from './Loading';
 export { default as ProductAddon } from './ProductAddon';
 export { default as AccordionPlayer } from './AccordionPlayer';
 export { default as AccordionCheckout } from './AccordionCheckout';
-export {
-  default as AccordionSchedule,
-  default as AccordionItem,
-} from './AccordionSchedule';
+export { default as AccordionSchedule } from './AccordionSchedule';
+export { default as AccordionItem } from './AccordionItem';

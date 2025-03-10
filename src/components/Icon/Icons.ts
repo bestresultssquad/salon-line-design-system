@@ -103,6 +103,9 @@ import { PagaleveIcon } from './IconComponents/Pagaleve.icon';
 import { PagaleveArrowIcon } from './IconComponents/PagaleveArrow.icon';
 import { MessageAddIcon } from './IconComponents/MessageAdd.icon';
 import { LightningIcon } from './IconComponents/Lightning.icon';
+import { PlaylistIcon } from './IconComponents/Playlist.icon';
+import { ReloadIcon } from './IconComponents/Reload.icon';
+import { SearchCancel } from './IconComponents/SearchCancel.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -210,4 +213,7 @@ export const IconsComponent = {
   PagaleveArrowIcon,
   MessageAddIcon,
   LightningIcon,
+  PlaylistIcon,
+  ReloadIcon,
+  SearchCancel,
 };

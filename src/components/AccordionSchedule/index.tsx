@@ -1,53 +1,15 @@
 import { View } from 'react-native';
-import Animated, {
-  useAnimatedStyle,
-  useDerivedValue,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
-import type { AccordionItemProps, AccordionProps } from './Accordion.types';
+import { useSharedValue } from 'react-native-reanimated';
+import type { AccordionProps } from './Accordion.types';
 import {
   AccordionContainer,
   AccordionItemContainer,
   TitleContainer,
-  Wrapper,
 } from './Accordion.styles';
 import Typography from '../Typography';
 import { useTheme } from 'styled-components/native';
 import Switch from '../Switch';
-
-export function AccordionItem({
-  isExpanded,
-  children,
-  viewKey,
-  duration,
-}: Readonly<AccordionItemProps>) {
-  const height = useSharedValue(0);
-
-  const derivedHeight = useDerivedValue(() =>
-    withTiming(height.value * Number(isExpanded.value), {
-      duration: duration ?? 500,
-    })
-  );
-  const bodyStyle = useAnimatedStyle(() => ({
-    height: derivedHeight.value,
-  }));
-
-  return (
-    <Animated.View
-      key={`accordionItem_${viewKey}`}
-      style={[{ width: '100%', overflow: 'hidden' }, bodyStyle]}
-    >
-      <Wrapper
-        onLayout={(e) => {
-          height.value = e.nativeEvent.layout.height;
-        }}
-      >
-        {children}
-      </Wrapper>
-    </Animated.View>
-  );
-}
+import AccordionItem from '../AccordionItem';
 
 function AccordionSchedule({
   children,
@@ -55,6 +17,7 @@ function AccordionSchedule({
   handlePressSwitch,
   withoutOpen,
   number = 0,
+  checked,
   ...props
 }: Readonly<AccordionProps>) {
   const { colors } = useTheme();
@@ -110,7 +73,7 @@ function AccordionSchedule({
               {title}
             </Typography>
           </View>
-          <Switch active={false} onPress={() => handlePressAccordion()} />
+          <Switch active={checked} onPress={() => handlePressAccordion()} />
         </View>
       </TitleContainer>
       {children && open && (

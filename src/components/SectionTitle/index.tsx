@@ -22,6 +22,7 @@ const SectionTitle = ({ linkOnPress, linkText, title, ...props }: Props) => {
           sizeVariant={'medium'}
           variant={'sm'}
           color={colors.gray[600]}
+          style={{ textDecorationLine: 'underline' }}
         >
           {linkText}
         </Typography>

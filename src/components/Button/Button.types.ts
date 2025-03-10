@@ -23,7 +23,8 @@ export type ButtonVariant =
   | 'action'
   | 'favorite'
   | 'onboarding'
-  | 'filter';
+  | 'filter'
+  | 'link';
 
 export interface Props extends TouchableOpacityProps {
   textVariant?: TypographyVariants;
