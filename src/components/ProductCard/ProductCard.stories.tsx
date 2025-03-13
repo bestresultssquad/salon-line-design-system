@@ -52,6 +52,10 @@ Primary.args = {
   chipText: '10% OFF',
   onPressFavorite: () => console.log('FavoriteButton pressed'),
   onPress: () => console.log('ProductCard pressed'),
+  tags: [
+    { text: 'Frete Grátis', color: '#15803D', visible: true },
+    { text: 'Lançamento', color: '#000', visible: true },
+  ],
 };
 
 export default Component;

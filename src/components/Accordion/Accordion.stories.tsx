@@ -64,4 +64,11 @@ SubCategory.args = {
   variant: 'subCategory',
 };
 
+export const Category: StoryObj<typeof AccordionCustom> = {};
+Category.args = {
+  title: 'Category',
+  buttonTitle: 'Button Title',
+  variant: 'categories',
+};
+
 export default Component;

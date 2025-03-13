@@ -6,6 +6,11 @@ import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
 import type { ToastType } from './components/Toast/Toast.types';
 import { timeElapsed } from './utils/getTimeElapsed';
+import {
+  getFontSize,
+  getDeviceType,
+  getScreenSizeCategory,
+} from './utils/fontScale';
 
 export * from './components';
 import * as bottomSheetModule from '@gorhom/bottom-sheet';
@@ -21,5 +26,8 @@ export {
   MotiView,
   Skeleton,
   timeElapsed,
+  getFontSize,
+  getDeviceType,
+  getScreenSizeCategory,
 };
 export type { DefaultThemeDesignSystem, ToastType };

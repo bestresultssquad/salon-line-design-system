@@ -4,7 +4,7 @@ import Typography from '../Typography';
 import FastImage from 'react-native-fast-image';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
-const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
+const CARD_WIDTH = DEVICE_WIDTH / 2 - 24;
 
 export const Container = styled.View`
   flex-direction: column;
@@ -59,7 +59,8 @@ const cardStyle = css<{
 }>`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 16px;
-
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.gray[200]};
   ${({ theme, elevation = 'md' }) => css`
     elevation: 6;
     shadow-color: ${Platform.OS === 'ios'

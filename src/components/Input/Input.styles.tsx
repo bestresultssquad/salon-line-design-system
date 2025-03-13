@@ -30,7 +30,6 @@ const getBorder = (
   editable: boolean,
   clickable: boolean
 ) => {
-  console.log(focused, error, editable, clickable);
   if (!editable && !clickable) {
     return 'none';
   }

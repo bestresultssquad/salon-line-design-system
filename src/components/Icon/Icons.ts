@@ -106,6 +106,7 @@ import { LightningIcon } from './IconComponents/Lightning.icon';
 import { PlaylistIcon } from './IconComponents/Playlist.icon';
 import { ReloadIcon } from './IconComponents/Reload.icon';
 import { SearchCancel } from './IconComponents/SearchCancel.icon';
+import { BagCancel } from './IconComponents/BagCancel.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -216,4 +217,5 @@ export const IconsComponent = {
   PlaylistIcon,
   ReloadIcon,
   SearchCancel,
+  BagCancel,
 };

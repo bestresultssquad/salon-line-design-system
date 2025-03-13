@@ -163,8 +163,8 @@ function Accordion({
               />
             )}
             <Typography
-              variant="sm"
-              sizeVariant={variant === 'subCategory' ? 'medium' : 'semiBold'}
+              variant={variant === 'categories' ? 'base' : 'sm'}
+              sizeVariant={'semiBold'}
             >
               {title}
             </Typography>

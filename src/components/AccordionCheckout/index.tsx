@@ -93,7 +93,7 @@ function AccordionCheckout({
               />
             </View>
             <View style={{ gap: 4 }}>
-              <Typography variant="sm" sizeVariant="medium">
+              <Typography variant="sm" sizeVariant="semiBold">
                 {title}
               </Typography>
               {subtitle && (
@@ -108,7 +108,7 @@ function AccordionCheckout({
             </View>
           </View>
           <View>
-            <Icon type={iconType} height={20} width={20} />
+            <Icon type={iconType} height={24} width={24} />
           </View>
         </View>
       </TitleContainer>

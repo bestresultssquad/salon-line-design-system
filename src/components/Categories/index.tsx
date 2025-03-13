@@ -49,7 +49,7 @@ const Categories = ({
               disableSelection={disableSelection ?? false}
               categoriesVariant={variant || 'default'}
               variant="sm"
-              sizeVariant={variant === 'primary' ? 'semiBold' : 'medium'}
+              sizeVariant={'semiBold'}
               selected={selectedTab === item.id}
             >
               {item.text}

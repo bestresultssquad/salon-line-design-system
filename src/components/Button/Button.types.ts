@@ -18,7 +18,6 @@ export type ButtonSize =
 export type ButtonVariant =
   | 'primary'
   | 'outline'
-  | 'disabled'
   | 'cart'
   | 'action'
   | 'favorite'

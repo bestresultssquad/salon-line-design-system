@@ -13,7 +13,7 @@ const AccordionCustom = (props: any) => {
 };
 
 const Component: Meta<typeof AccordionCustom> = {
-  title: 'Accordion',
+  title: 'AccordionCategory',
   component: AccordionCustom,
   argTypes: {
     title: { control: { type: 'text' } },

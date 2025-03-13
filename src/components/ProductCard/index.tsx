@@ -19,6 +19,7 @@ import Chip from '../ChipComponent';
 import FavoriteButton from '../FavoriteButton';
 import ProductCardSkeleton from './ProductCard.skeleton';
 import { useTheme } from 'styled-components/native';
+import { View } from 'react-native';
 
 const ProductCard = ({
   imageUri,
@@ -33,6 +34,7 @@ const ProductCard = ({
   favorited = false,
   onCardPress,
   disabled,
+  tags,
 }: ProductCardProps) => {
   const { colors } = useTheme();
 
@@ -48,20 +50,44 @@ const ProductCard = ({
           )}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
           <ImageCustom source={{ uri: imageUri }} />
+          <View
+            style={{ flexDirection: 'row', gap: 4, padding: 4, height: 28 }}
+          >
+            {tags
+              ?.filter((tag) => tag.visible)
+              .map((tag, index) => (
+                <Chip
+                  key={index}
+                  label={tag.text}
+                  style={{
+                    backgroundColor: tag.color,
+                  }}
+                />
+              ))}
+          </View>
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>
-            <Icon
-              width={12}
-              height={12}
-              type="StarIcon"
-              fill={colors.yellow[500]}
-            />
-            <Typography variant="2xs" sizeVariant="semiBold">
-              {rating.toString()}
-            </Typography>
+            {Array.from({ length: rating }).map((_, index) => (
+              <Icon
+                key={index}
+                width={12}
+                height={12}
+                type="StarIcon"
+                fill={colors.yellow[500]}
+              />
+            ))}
+            {Array.from({ length: 5 - rating }).map((_, index) => (
+              <Icon
+                key={index}
+                width={12}
+                height={12}
+                type="StarIcon"
+                fill={colors.gray[300]}
+              />
+            ))}
             <Typography variant="3xs" sizeVariant="medium">
-              {`(${ratingCount}) Avaliações`}
+              {`(${ratingCount})`}
             </Typography>
           </StarContainer>
           <TitleContainer>

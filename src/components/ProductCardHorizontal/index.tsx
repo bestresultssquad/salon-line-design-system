@@ -15,7 +15,7 @@ import { useTheme } from 'styled-components/native';
 import Counter from '../Counter';
 import Button from '../Button';
 import ProductCardHorizontalSkeleton from './ProductCardHorizontal.skeleton';
-import { TouchableOpacity } from '@gorhom/bottom-sheet';
+import { TouchableOpacity } from 'react-native';
 
 const ProductCardHorizontal = ({
   imageUri,
@@ -33,6 +33,7 @@ const ProductCardHorizontal = ({
   disableDecrement,
   disableIncrement,
   type = 'product',
+  enableHeader,
   onPressCard,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
@@ -44,7 +45,7 @@ const ProductCardHorizontal = ({
         onPress={onPressCard}
         activeOpacity={onPressCard ? 0.2 : 1}
       >
-        {variant === 'cart' && (
+        {variant === 'cart' && enableHeader && (
           <TitleMainContainer>
             <Typography sizeVariant="medium" variant="sm">
               {label}
@@ -59,7 +60,7 @@ const ProductCardHorizontal = ({
             </TouchableOpacity>
           </TitleMainContainer>
         )}
-        <View style={{ flexDirection: 'row', gap: spacing.nano }}>
+        <View style={{ flexDirection: 'row' }}>
           <ImageContainer>
             <ImageCustom source={{ uri: imageUri }} />
           </ImageContainer>
@@ -111,14 +112,16 @@ const ProductCardHorizontal = ({
                 justifyContent: 'space-between',
               }}
             >
-              <View style={{ gap: variant === 'cart' ? spacing.nano : 0 }}>
-                <OldPrice
-                  sizeVariant="medium"
-                  variant="xs"
-                  color={colors.gray[600]}
-                >
-                  {disabled ? 'Produto' : oldPrice}
-                </OldPrice>
+              <View style={{ gap: variant === 'cart' ? spacing.quarck : 0 }}>
+                {oldPrice && (
+                  <OldPrice
+                    sizeVariant="medium"
+                    variant="xs"
+                    color={colors.gray[600]}
+                  >
+                    {disabled ? 'Produto' : oldPrice}
+                  </OldPrice>
+                )}
                 <Typography sizeVariant="semiBold" variant="xl">
                   {disabled ? 'Indisponível' : price}
                 </Typography>

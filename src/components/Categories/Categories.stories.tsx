@@ -45,6 +45,7 @@ Primary.args = {
   onPress: (callback: any) => console.log(callback),
   variant: 'primary',
 };
+
 export const DisableSelection: StoryObj<typeof Categories> = {};
 DisableSelection.args = {
   categories: [

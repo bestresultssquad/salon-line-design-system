@@ -17,7 +17,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     selected: theme.colors.gray[900],
     borderWidth: 1,
     borderColor: theme.colors.gray[100],
-    textColor: theme.colors.gray[600],
+    textColor: theme.colors.black,
     textColorSelected: theme.colors.white,
   },
 });

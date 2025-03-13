@@ -26,4 +26,5 @@ export interface ProductCardHorizontalProps {
   disableDecrement?: boolean;
   type?: 'gift' | 'product';
   onPressCard?: () => void;
+  enableHeader?: boolean;
 }

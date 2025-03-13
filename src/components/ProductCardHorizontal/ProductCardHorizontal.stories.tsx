@@ -32,7 +32,11 @@ const Component: Meta<typeof ProductCardHorizontal> = {
 
   decorators: [
     (Story: any) => (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <View
+        style={{
+          flex: 1,
+        }}
+      >
         <Story />
       </View>
     ),
@@ -45,7 +49,7 @@ Cart.args = {
   title:
     'Kit Kids com Shampoo + Condicionador + Creme para Pentear + Spray Desembaraçante Meu Lisinho Salon Line',
   subtitle: 'Subtitle',
-  price: 'R$100',
+  price: 'R$10000',
   oldPrice: 'R$200',
   discount: '50%',
   chipTexts: [
@@ -54,6 +58,9 @@ Cart.args = {
   ],
   variant: 'cart',
   type: 'product',
+  enableHeader: true,
+  label: 'Kit Kids',
+  value: 10,
 };
 
 export const CartGift: StoryObj<typeof ProductCardHorizontal> = {};
@@ -63,12 +70,7 @@ CartGift.args = {
     'Kit Kids com Shampoo + Condicionador + Creme para Pentear + Spray Desembaraçante Meu Lisinho Salon Line',
   subtitle: 'Subtitle',
   price: 'R$100',
-  oldPrice: 'R$200',
   discount: '50%',
-  chipTexts: [
-    { text: 'Compra Recorrente', variant: 'primary' },
-    { text: 'A cada 30 dias', variant: 'outlined' },
-  ],
   variant: 'cart',
   value: 5,
   type: 'gift',

@@ -15,13 +15,27 @@ const Counter = ({
   const { colors } = useTheme();
   return (
     <Container>
-      <TouchableOpacity onPress={onDecrement} disabled={disableDecrement}>
-        <Icon
-          type="MinusIcon"
-          width={20}
-          height={20}
-          stroke={disableDecrement ? colors.gray[400] : colors.black}
-        />
+      <TouchableOpacity
+        onPress={onDecrement}
+        disabled={disableDecrement}
+        style={{ padding: 10 }}
+      >
+        {value > 1 ? (
+          <Icon
+            type="MinusIcon"
+            width={20}
+            height={20}
+            stroke={disableDecrement ? colors.gray[400] : colors.black}
+          />
+        ) : (
+          <Icon
+            type="TrashIcon"
+            width={20}
+            height={20}
+            stroke={colors.red[500]}
+            strokeWidth={2}
+          />
+        )}
       </TouchableOpacity>
 
       <TextContainer>
@@ -30,7 +44,11 @@ const Counter = ({
         </Typography>
       </TextContainer>
 
-      <TouchableOpacity onPress={onIncrement} disabled={disableIncrement}>
+      <TouchableOpacity
+        onPress={onIncrement}
+        disabled={disableIncrement}
+        style={{ padding: 10 }}
+      >
         <Icon
           type="PlusIcon"
           width={20}

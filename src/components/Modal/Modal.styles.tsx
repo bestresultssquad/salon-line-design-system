@@ -13,6 +13,6 @@ export const ModalContainer = styled(Animated.View)`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.spacing.sm}px;
   elevation: 20;
-  padding: ${({ theme }) => theme.spacing.xxxxs}px;
+  padding: ${({ theme }) => theme.spacing.xxs}px;
   gap: ${({ theme }) => theme.spacing.sm}px;
 `;

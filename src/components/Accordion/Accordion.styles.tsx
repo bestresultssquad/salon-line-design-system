@@ -41,7 +41,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.xxxxs,
     borderColor: 0,
-    backgrounColor: theme.colors.gray[100],
+    backgrounColor: theme.colors.white,
   },
 });
 

@@ -1,5 +1,11 @@
 import type { ImageRequireSource } from 'react-native';
 
+export interface tagProps {
+  text: string;
+  color: string;
+  visible?: boolean;
+}
+
 export interface ProductCardProps {
   oldPrice?: string;
   price: string;
@@ -14,4 +20,5 @@ export interface ProductCardProps {
   chipText?: string;
   favorited?: boolean;
   disabled?: boolean;
+  tags?: tagProps[];
 }
