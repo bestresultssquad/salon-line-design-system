@@ -19,9 +19,6 @@ const preview: Preview = {
       <View
         style={{
           flex: 1,
-          width: Dimensions.get('window').width,
-          height: Dimensions.get('window').height,
-          padding: 8,
           backgroundColor: 'white',
         }}
       >

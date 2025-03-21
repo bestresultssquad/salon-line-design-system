@@ -30,3 +30,4 @@ export { default as AccordionPlayer } from './AccordionPlayer';
 export { default as AccordionCheckout } from './AccordionCheckout';
 export { default as AccordionSchedule } from './AccordionSchedule';
 export { default as AccordionItem } from './AccordionItem';
+export { default as BannerImageMd } from './BannerImageMd';

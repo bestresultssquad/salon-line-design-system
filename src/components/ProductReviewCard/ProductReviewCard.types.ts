@@ -8,5 +8,6 @@ export type ProductReviewCardProps = {
   date: string;
   onLikePress: () => void;
   onDislikePress: () => void;
+  onImagePress: () => void;
   recommends: boolean;
 };

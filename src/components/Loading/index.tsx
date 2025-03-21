@@ -34,7 +34,7 @@ const Loading = ({ size, color }: { color: string; size: number }) => {
     <Component
       width={size}
       height={size}
-      stroke={color}
+      fill={color}
       style={[animatedStyle2]}
     />
   );

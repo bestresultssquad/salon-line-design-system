@@ -1,24 +1,22 @@
 import Svg, { type SvgProps, Path } from 'react-native-svg';
 
 export const PasswordIcon = (props: SvgProps) => (
-  <Svg width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
+  <Svg
+    width={props.width ?? 24}
+    height={props.height ?? 25}
+    viewBox="0 0 24 25"
+    fill="none"
+    {...props}
+  >
     <Path
-      d="M12 16.5V14.5"
-      strokeWidth={props.strokeWidth || 1.5}
-      stroke={props.stroke || '#000'}
-      strokeLinecap="round"
+      d="M21.544 11.5186C21.848 11.9449 22 12.1581 22 12.4736C22 12.7892 21.848 13.0023 21.544 13.4286C20.1779 15.3442 16.6892 19.4736 12 19.4736C7.31078 19.4736 3.8221 15.3442 2.45604 13.4286C2.15201 13.0023 2 12.7892 2 12.4736C2 12.1581 2.15201 11.9449 2.45604 11.5186C3.8221 9.60307 7.31078 5.47363 12 5.47363C16.6892 5.47363 20.1779 9.60307 21.544 11.5186Z"
+      stroke={props.stroke ?? 'black'}
+      strokeWidth={props.strokeWidth ?? 1.5}
     />
     <Path
-      d="M4.26781 18.8447C4.49269 20.515 5.87613 21.8235 7.55966 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.879 17.7547 20 16.6376 20 15.5C20 14.3624 19.879 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55966 9.09909C5.87613 9.17649 4.49269 10.485 4.26781 12.1553C4.12105 13.2453 4 14.3624 4 15.5C4 16.6376 4.12105 17.7547 4.26781 18.8447Z"
-      stroke={props.stroke || '#000'}
-      strokeWidth={props.strokeWidth || 1.5}
-    />
-    <Path
-      d="M7.5 9V6.5C7.5 4.01472 9.51472 2 12 2C13.9593 2 15.5 3.5 16 5"
-      strokeWidth={props.strokeWidth || 1.5}
-      stroke={props.stroke || '#000'}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M15 12.4736C15 10.8168 13.6569 9.47363 12 9.47363C10.3431 9.47363 9 10.8168 9 12.4736C9 14.1305 10.3431 15.4736 12 15.4736C13.6569 15.4736 15 14.1305 15 12.4736Z"
+      stroke={props.stroke ?? 'black'}
+      strokeWidth={props.strokeWidth ?? 1.5}
     />
   </Svg>
 );

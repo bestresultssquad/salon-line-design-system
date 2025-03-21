@@ -107,6 +107,11 @@ import { PlaylistIcon } from './IconComponents/Playlist.icon';
 import { ReloadIcon } from './IconComponents/Reload.icon';
 import { SearchCancel } from './IconComponents/SearchCancel.icon';
 import { BagCancel } from './IconComponents/BagCancel.icon';
+import { ReloadHorizontal } from './IconComponents/ReloadHorizontal.icon';
+import { CustomerSupport } from './IconComponents/CustomerSupport.icon';
+import { File2Icon } from './IconComponents/File2.icon';
+import { DeliveryTracking } from './IconComponents/DeliveryTracking.icon';
+import { CameraIcon } from './IconComponents/Camera.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -218,4 +223,9 @@ export const IconsComponent = {
   ReloadIcon,
   SearchCancel,
   BagCancel,
+  ReloadHorizontal,
+  CustomerSupport,
+  File2Icon,
+  DeliveryTracking,
+  CameraIcon,
 };

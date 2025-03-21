@@ -23,8 +23,8 @@ const Paginator = ({
       borderActive: colors.pink[700],
     },
     default: {
-      widthNormal: spacing.nano,
-      widthActive: spacing.sm,
+      widthNormal: spacing.quarck,
+      widthActive: spacing.xxs,
       colorNormal: colors.gray[400],
       colorActive: colors.black,
       borderNormal: colors.black,

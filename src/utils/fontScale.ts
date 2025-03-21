@@ -27,7 +27,6 @@ export const getDeviceType = (): 'phone' | 'tablet' => {
   const pixelDensity = PixelRatio.get();
   const adjustedWidth = SCREEN_WIDTH * pixelDensity;
   const adjustedHeight = SCREEN_HEIGHT * pixelDensity;
-
   if (pixelDensity < 2 && (adjustedWidth >= 1000 || adjustedHeight >= 1000)) {
     return 'tablet';
   } else if (
@@ -42,7 +41,7 @@ export const getDeviceType = (): 'phone' | 'tablet' => {
 
 // Helper function to determine screen size category
 export const getScreenSizeCategory = (): 'small' | 'medium' | 'large' => {
-  if (SCALE <= 360) return 'small';
+  if (SCALE <= 370) return 'small';
   if (SCALE > 500) return 'large';
   return 'medium';
 };
@@ -50,7 +49,7 @@ export const getScreenSizeCategory = (): 'small' | 'medium' | 'large' => {
 export const getFontSize = (size: number): number => {
   const deviceType = getDeviceType();
   const screenCategory = getScreenSizeCategory();
-  const config = fontConfig[deviceType][screenCategory];
+  const config = fontConfig.phone[screenCategory];
 
   // Calculate the scale factor
   const scaleFactor = SCALE / BASE_WIDTH;
@@ -70,10 +69,7 @@ export const getFontSize = (size: number): number => {
   }
 
   // Round the size and adjust for the device's font scale
-  return (
-    Math.round(PixelRatio.roundToNearestPixel(newSize)) /
-    PixelRatio.getFontScale()
-  );
+  return PixelRatio.roundToNearestPixel(newSize) / PixelRatio.getFontScale();
 };
 
 // Function to adjust font configuration

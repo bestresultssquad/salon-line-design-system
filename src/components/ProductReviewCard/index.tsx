@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 import {
   ButtonContainer,
   Card,
@@ -25,6 +25,7 @@ const ProductReviewCard = ({
   likeCount,
   onDislikePress,
   onLikePress,
+  onImagePress,
   recommends,
   review,
   userName,
@@ -48,10 +49,12 @@ const ProductReviewCard = ({
   return (
     <Card>
       {image && (
-        <FastImage
-          source={{ uri: image }}
-          style={{ width: 74, height: 162, borderRadius: 8 }}
-        />
+        <Pressable onPress={onImagePress}>
+          <FastImage
+            source={{ uri: image }}
+            style={{ width: 74, height: 162, borderRadius: 8 }}
+          />
+        </Pressable>
       )}
       <LeftContainer>
         <View

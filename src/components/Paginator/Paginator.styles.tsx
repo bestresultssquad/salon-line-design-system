@@ -11,7 +11,7 @@ const getVariantStyle = (theme: DefaultTheme) => {
       margin: theme.spacing.nano,
     },
     default: {
-      height: theme.spacing.nano,
+      height: theme.spacing.quarck,
       borderWidth: 0,
       margin: theme.spacing.quarck,
     },
