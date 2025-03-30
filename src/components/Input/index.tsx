@@ -41,7 +41,7 @@ const Input = ({
   return (
     <Container>
       {inputLabel && (
-        <Typography sizeVariant="medium" variant="base">
+        <Typography sizeVariant="semiBold" variant="base">
           {inputLabel}
         </Typography>
       )}

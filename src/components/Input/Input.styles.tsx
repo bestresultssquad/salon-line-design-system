@@ -63,6 +63,7 @@ export const InputContainer = styled.View<{
   flex-direction: row;
   border: ${({ theme, editable, error, clickable, focused }) =>
     getBorder(theme, error, focused, editable, clickable)};
+  align-items: center;
 `;
 
 export const TextInput = styled(MaskInput)<{
@@ -77,4 +78,5 @@ export const TextInput = styled(MaskInput)<{
     leftIcon ? theme.spacing.xxxxs : 0}px;
   margin-right: ${({ theme, rightIcon }) =>
     rightIcon ? theme.spacing.xxxxs : 0}px;
+  color: ${({ theme }) => theme.colors.black};
 `;

@@ -108,7 +108,13 @@ function AccordionCheckout({
             </View>
           </View>
           <View>
-            <Icon type={iconType} height={24} width={24} />
+            <Icon
+              type={iconType}
+              height={28}
+              width={28}
+              viewBox="0 0 28 28"
+              fill={'black'}
+            />
           </View>
         </View>
       </TitleContainer>

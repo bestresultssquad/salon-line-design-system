@@ -4,7 +4,7 @@ import Typography from '../Typography';
 import FastImage from 'react-native-fast-image';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
-const CARD_WIDTH = DEVICE_WIDTH / 2 - 24;
+const CARD_WIDTH = DEVICE_WIDTH / 2 - 32;
 
 export const Container = styled.View`
   flex-direction: column;
@@ -50,8 +50,9 @@ export const ButtonContainer = styled.View``;
 
 export const OldPrice = styled(Typography).attrs(({ theme }) => ({
   color: theme.colors.gray[500],
-}))`
-  text-decoration-line: line-through;
+}))<{ disabled?: boolean }>`
+  text-decoration-line: ${({ disabled }) =>
+    disabled ? 'none' : 'line-through'};
 `;
 
 const cardStyle = css<{

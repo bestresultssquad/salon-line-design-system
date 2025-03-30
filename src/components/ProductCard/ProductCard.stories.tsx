@@ -58,4 +58,25 @@ Primary.args = {
   ],
 };
 
+export const Disabled: StoryObj<typeof ProductCard> = {};
+Disabled.args = {
+  imageUri: 'https://picsum.photos/200/300',
+  title: 'Product Card',
+  subtitle: 'Subtitle',
+  price: 'R$100',
+  oldPrice: 'R$200',
+  discount: '50%',
+  ratingCount: 0,
+  rating: 4,
+  favorited: false,
+  disabled: true,
+  chipText: '10% OFF',
+  onPressFavorite: () => console.log('FavoriteButton pressed'),
+  onPress: () => console.log('ProductCard pressed'),
+  tags: [
+    { text: 'Frete Grátis', color: '#15803D', visible: true },
+    { text: 'Lançamento', color: '#000', visible: true },
+  ],
+};
+
 export default Component;

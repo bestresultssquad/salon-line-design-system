@@ -49,7 +49,10 @@ const ProductCard = ({
             />
           )}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
-          <ImageCustom source={{ uri: imageUri }} />
+          <ImageCustom
+            source={{ uri: imageUri }}
+            style={{ opacity: disabled ? 0.5 : 1 }}
+          />
           <View
             style={{ flexDirection: 'row', gap: 4, padding: 4, height: 28 }}
           >
@@ -91,7 +94,12 @@ const ProductCard = ({
             </Typography>
           </StarContainer>
           <TitleContainer>
-            <Typography variant="xs" sizeVariant="semiBold" numberOfLines={2}>
+            <Typography
+              variant="xs"
+              sizeVariant="semiBold"
+              numberOfLines={2}
+              color={disabled ? colors.gray[500] : colors.black}
+            >
               {title}
             </Typography>
           </TitleContainer>

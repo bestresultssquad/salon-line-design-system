@@ -112,6 +112,9 @@ import { CustomerSupport } from './IconComponents/CustomerSupport.icon';
 import { File2Icon } from './IconComponents/File2.icon';
 import { DeliveryTracking } from './IconComponents/DeliveryTracking.icon';
 import { CameraIcon } from './IconComponents/Camera.icon';
+import { MessageIcon } from './IconComponents/Message.icon';
+import { BarCodeFilledIcon } from './IconComponents/BarCodeFilled.icon';
+import { CreditCardFilledIcon } from './IconComponents/CreditCardFilled.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -228,4 +231,7 @@ export const IconsComponent = {
   File2Icon,
   DeliveryTracking,
   CameraIcon,
+  MessageIcon,
+  BarCodeFilledIcon,
+  CreditCardFilledIcon,
 };
