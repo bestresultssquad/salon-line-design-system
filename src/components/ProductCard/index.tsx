@@ -106,7 +106,11 @@ const ProductCard = ({
           <PriceContainer>
             <PriceLeft>
               {oldPrice && (
-                <OldPrice variant="xs" sizeVariant="semiBold">
+                <OldPrice
+                  variant="xs"
+                  sizeVariant="semiBold"
+                  disabled={disabled}
+                >
                   {disabled ? 'Produto' : oldPrice?.toString()}
                 </OldPrice>
               )}

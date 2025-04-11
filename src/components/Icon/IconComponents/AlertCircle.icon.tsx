@@ -6,19 +6,19 @@ export const AlertCircleIcon = (props: SvgProps) => (
       cy={12}
       r={10}
       stroke={props.stroke || '#000'}
-      strokeWidth={1.25}
+      strokeWidth={props.strokeWidth ?? 1.25}
     />
     <Path
       d="M11.992 15H12.001"
       stroke={props.stroke || '#000'}
-      strokeWidth={1.66667}
+      strokeWidth={props.strokeWidth ?? 1.66667}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <Path
       d="M12 12L12 8"
       stroke={props.stroke || '#000'}
-      strokeWidth={1.25}
+      strokeWidth={props.strokeWidth ?? 1.25}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

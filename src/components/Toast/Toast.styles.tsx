@@ -4,16 +4,16 @@ import type { ToastType } from './Toast.types';
 
 export const stylesByType = (theme: DefaultTheme) => ({
   warning: {
-    backgroundColor: theme.colors.yellow[100],
-    titleColor: theme.colors.yellow[700],
+    backgroundColor: theme.colors.yellow[700],
+    titleColor: theme.colors.white,
   },
   error: {
-    backgroundColor: '#FFF2F2',
-    titleColor: theme.colors.red[500],
+    backgroundColor: theme.colors.red[500],
+    titleColor: theme.colors.white,
   },
   success: {
-    backgroundColor: '#E8F3EC',
-    titleColor: theme.colors.green[700],
+    backgroundColor: theme.colors.green[700],
+    titleColor: theme.colors.white,
   },
 });
 

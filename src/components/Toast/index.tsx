@@ -33,7 +33,7 @@ const ToastCustom = ({
           width={20}
           height={20}
           stroke={stylesByType(theme)[type].titleColor}
-          strokeWidth={1.5}
+          strokeWidth={2}
         />
       </View>
       <View style={{ flex: 1 }}>
@@ -45,7 +45,7 @@ const ToastCustom = ({
           {title}
         </Typography>
         {description && (
-          <Typography variant="2xs" sizeVariant="regular" color="black">
+          <Typography variant="2xs" sizeVariant="regular" color="white">
             {description}
           </Typography>
         )}
