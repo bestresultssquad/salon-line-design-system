@@ -26,4 +26,5 @@ export interface AccordionProps extends PropsWithChildren {
   handlePress?: () => void;
   withoutOpen?: boolean;
   iconSize?: number;
+  invertIcon?: boolean;
 }

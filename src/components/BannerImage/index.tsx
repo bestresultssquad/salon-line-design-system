@@ -28,6 +28,8 @@ const BannerImage = ({
   bannerVariant = 'md',
   fullWidth = false,
   removeBorder = false,
+  width,
+  height,
 }: BannerImageProps) => {
   const [_, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
@@ -46,12 +48,16 @@ const BannerImage = ({
         bannerVariant={bannerVariant}
         onPress={item.action}
         fullWidth={fullWidth}
+        width={width}
+        height={height}
       >
         {bannerVariant !== 'blog' && (
           <BannerImg
             removeBorder={removeBorder}
             bannerVariant={bannerVariant}
             key={index}
+            width={width}
+            height={height}
             //@ts-ignore
             source={
               item.imageFile

@@ -19,7 +19,6 @@ export const ImageContainer = styled.TouchableOpacity<{
 export const BannerImg = styled(FastImage)<{
   removeBorder: boolean;
 }>`
-  aspect-ratio: 4/3;
   border-radius: ${({ theme, removeBorder }) =>
     removeBorder ? 0 : theme.spacing.sm}px;
 `;

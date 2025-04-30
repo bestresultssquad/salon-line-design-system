@@ -62,6 +62,7 @@ function Accordion({
   handlePress,
   withoutOpen,
   iconSize,
+  invertIcon,
   ...props
 }: AccordionProps) {
   const openInternal = useSharedValue(false);
@@ -120,8 +121,8 @@ function Accordion({
         close: 'ChevronDownIcon',
       },
       categories: {
-        open: 'ChevronDownIcon',
-        close: 'ChevronUpIcon',
+        open: invertIcon ? 'ChevronUpIcon' : 'ChevronDownIcon',
+        close: invertIcon ? 'ChevronDownIcon' : 'ChevronUpIcon',
       },
       subCategory: {
         open: 'ChevronDownIcon',

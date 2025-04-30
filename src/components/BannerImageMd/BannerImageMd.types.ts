@@ -15,4 +15,6 @@ export interface BannerImageProps {
   bannerObject: BannerObject[];
   fullWidth?: boolean;
   removeBorder?: boolean;
+  width?: number;
+  height?: number;
 }

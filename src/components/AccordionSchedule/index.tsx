@@ -16,7 +16,7 @@ function AccordionSchedule({
   title,
   handlePressSwitch,
   withoutOpen,
-  number = 0,
+  number,
   checked,
   ...props
 }: Readonly<AccordionProps>) {
@@ -42,25 +42,27 @@ function AccordionSchedule({
             gap: 8,
           }}
         >
-          <View
-            style={{
-              flexDirection: 'row',
-              width: 24,
-              height: 24,
-              borderRadius: 999,
-              backgroundColor: colors.black,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Typography
-              variant="sm"
-              sizeVariant={'semiBold'}
-              color={colors.white}
+          {number && (
+            <View
+              style={{
+                flexDirection: 'row',
+                width: 24,
+                height: 24,
+                borderRadius: 999,
+                backgroundColor: colors.black,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              {number}
-            </Typography>
-          </View>
+              <Typography
+                variant="sm"
+                sizeVariant={'semiBold'}
+                color={colors.white}
+              >
+                {number}
+              </Typography>
+            </View>
+          )}
           <View
             style={{
               alignItems: 'center',

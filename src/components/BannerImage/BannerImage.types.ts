@@ -18,4 +18,6 @@ export interface BannerImageProps {
   bannerVariant?: BannerVariant;
   fullWidth?: boolean;
   removeBorder?: boolean;
+  width?: number;
+  height?: number;
 }

@@ -32,11 +32,13 @@ export const BannerImageContainer = styled.View<{
 export const ImageContainer = styled.TouchableOpacity<{
   fullWidth: boolean;
   bannerVariant: BannerVariant;
+  width?: number;
+  height?: number;
 }>`
   flex: 1;
-  width: ${({ bannerVariant }) =>
-    getStyleByVariant()[bannerVariant].imgWidth}px;
-  height: 100%;
+  width: ${({ bannerVariant, width }) =>
+    width || getStyleByVariant()[bannerVariant].imgWidth}px;
+  height: ${({ height }) => `${height}px` || '100%'};
   padding-left: ${({ theme, fullWidth }) =>
     fullWidth ? 0 : theme.spacing.sm}px;
   padding-right: ${({ theme, fullWidth }) =>
@@ -46,10 +48,12 @@ export const ImageContainer = styled.TouchableOpacity<{
 export const BannerImg = styled(FastImage)<{
   bannerVariant: BannerVariant;
   removeBorder: boolean;
+  width?: number;
+  height?: number;
 }>`
-  height: ${({ bannerVariant }) =>
-    getStyleByVariant()[bannerVariant].imgHeight}px;
-  width: 100%;
+  height: ${({ bannerVariant, height }) =>
+    height ? height : getStyleByVariant()[bannerVariant].imgHeight}px;
+  width: ${({ width }) => `${width}px` || '100%'};
   border-radius: ${({ theme, removeBorder }) =>
     removeBorder ? 0 : theme.spacing.sm}px;
 `;

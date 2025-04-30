@@ -37,6 +37,12 @@ const Component: Meta<typeof BannerImage> = {
     category: { control: { type: 'text' } },
     date: { control: { type: 'text' } },
     subtitle: { control: { type: 'text' } },
+    width: {
+      control: { type: 'number' },
+    },
+    height: {
+      control: { type: 'number' },
+    },
   },
 
   decorators: [
@@ -68,6 +74,7 @@ BannerCarroussel.args = {
       imageUrl: 'https://picsum.photos/200/300',
       altText: 'Banner Image',
       action: () => console.log('Banner Image Clicked'),
+      date: '28/04/2025-23:59',
     },
     {
       imageUrl: 'https://picsum.photos/200/300',

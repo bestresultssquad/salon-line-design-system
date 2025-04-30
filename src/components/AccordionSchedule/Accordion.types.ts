@@ -17,5 +17,5 @@ export interface AccordionProps extends PropsWithChildren {
   checked?: boolean;
   handlePressSwitch?: () => void;
   withoutOpen?: boolean;
-  number: number;
+  number?: number;
 }

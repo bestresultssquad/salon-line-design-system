@@ -2,23 +2,21 @@ import {
   Animated,
   Dimensions,
   FlatList,
-  type ImageSourcePropType,
   type ListRenderItemInfo,
 } from 'react-native';
-import {
-  BannerImageContainer,
-  BannerImg,
-  ImageContainer,
-} from './BannerImageMd.styles';
+import { BannerImageContainer } from './BannerImageMd.styles';
 import { useRef, useState } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImageMd.types';
 import BannerImageSkeleton from '../BannerImage/BannerImage.skeleton';
+import BannerImg from './BannerImg';
 
 const BannerImageMd = ({
   bannerObject,
   fullWidth = false,
   removeBorder = false,
+  width,
+  height,
 }: BannerImageProps) => {
   const [_, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
@@ -32,19 +30,14 @@ const BannerImageMd = ({
     index,
   }: ListRenderItemInfo<BannerObject>) => {
     return (
-      <ImageContainer onPress={item.action} fullWidth={fullWidth}>
-        <BannerImg
-          removeBorder={removeBorder}
-          key={index}
-          //@ts-ignore
-          source={
-            item.imageFile
-              ? item.imageFile
-              : ({ uri: item.imageUrl } as ImageSourcePropType)
-          }
-          testID={`image-${index}`}
-        />
-      </ImageContainer>
+      <BannerImg
+        removeBorder={removeBorder}
+        index={index}
+        item={item}
+        fullWidth={fullWidth}
+        width={width}
+        height={height}
+      />
     );
   };
 
