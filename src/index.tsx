@@ -14,6 +14,7 @@ import {
 
 export * from './components';
 import * as bottomSheetModule from '@gorhom/bottom-sheet';
+export * from './lottie';
 
 const styled = styledDefault;
 

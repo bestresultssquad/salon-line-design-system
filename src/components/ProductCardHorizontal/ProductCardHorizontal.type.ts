@@ -15,6 +15,8 @@ export interface ProductCardHorizontalProps {
   image?: ImageRequireSource;
   imageUri?: string;
   chipTexts?: ChipTextProps[];
+  onSelectPress?: () => void;
+  onRemove: () => void;
   onPress: () => void;
   onIncrement?: () => void;
   onDecrement?: () => void;

@@ -11,10 +11,12 @@ const ToastCustom = ({
   type,
   title,
   description,
+  iconType,
 }: {
   type: ToastType;
   title: string;
   description?: string;
+  iconType?: IconTypes;
 }) => {
   const theme = useTheme();
   const toast = useToast();
@@ -29,7 +31,7 @@ const ToastCustom = ({
     <ToastContainer type={type}>
       <View>
         <Icon
-          type={iconByType[type] as IconTypes}
+          type={iconType ?? (iconByType[type] as IconTypes)}
           width={20}
           height={20}
           stroke={stylesByType(theme)[type].titleColor}

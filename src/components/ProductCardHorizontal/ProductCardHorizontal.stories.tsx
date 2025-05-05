@@ -52,6 +52,7 @@ Cart.args = {
   price: 'R$10000',
   oldPrice: 'R$200',
   discount: '50%',
+  onSelectPress: () => console.log('aqui'),
   chipTexts: [
     { text: 'Compra Recorrente', variant: 'primary' },
     { text: 'A cada 30 dias', variant: 'outlined' },

@@ -12,10 +12,10 @@ import Icon from '../Icon';
 import Typography from '../Typography';
 import Chip from '../ChipComponent';
 import { useTheme } from 'styled-components/native';
-import Counter from '../Counter';
 import Button from '../Button';
 import ProductCardHorizontalSkeleton from './ProductCardHorizontal.skeleton';
 import { TouchableOpacity } from 'react-native';
+import SelectUnits from '../SelectUnits';
 
 const ProductCardHorizontal = ({
   imageUri,
@@ -24,17 +24,15 @@ const ProductCardHorizontal = ({
   price,
   chipTexts,
   onPress,
-  onDecrement,
-  onIncrement,
+  onRemove,
   value,
   variant,
   label,
   disabled,
-  disableDecrement,
-  disableIncrement,
   type = 'product',
   enableHeader,
   onPressCard,
+  onSelectPress,
 }: ProductCardHorizontalProps) => {
   const { colors, spacing } = useTheme();
 
@@ -50,14 +48,31 @@ const ProductCardHorizontal = ({
             <Typography sizeVariant="medium" variant="sm">
               {label}
             </Typography>
-            <TouchableOpacity onPress={onPress}>
-              <Icon
-                type="MoreHorizontalIcon"
-                width={24}
-                height={24}
-                strokeWidth={2}
-              />
-            </TouchableOpacity>
+            <View
+              style={{
+                flexDirection: 'row',
+                gap: spacing.nano,
+                alignItems: 'center',
+              }}
+            >
+              <TouchableOpacity onPress={onRemove}>
+                <Icon
+                  type="TrashIcon"
+                  width={24}
+                  height={24}
+                  strokeWidth={2}
+                  stroke={colors.red[500]}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={onPress}>
+                <Icon
+                  type="MoreHorizontalIcon"
+                  width={24}
+                  height={24}
+                  strokeWidth={2}
+                />
+              </TouchableOpacity>
+            </View>
           </TitleMainContainer>
         )}
         <View style={{ flexDirection: 'row' }}>
@@ -133,13 +148,7 @@ const ProductCardHorizontal = ({
                       {value} Unidade(s)
                     </Typography>
                   ) : (
-                    <Counter
-                      disableDecrement={disableDecrement}
-                      disableIncrement={disableIncrement}
-                      onDecrement={onDecrement ?? (() => {})}
-                      onIncrement={onIncrement ?? (() => {})}
-                      value={value ?? 1}
-                    />
+                    <SelectUnits value={value} onSelectPress={onSelectPress} />
                   )
                 ) : (
                   <Button

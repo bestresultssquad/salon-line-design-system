@@ -71,7 +71,6 @@ import { SadSmileyIcon } from './IconComponents/SadSmiley.icon';
 import { VeganIcon } from './IconComponents/Vegan.icon';
 import { PlusThreeIcon } from './IconComponents/PlusThree.icon';
 import { FlowerIcon } from './IconComponents/Flower.icon';
-import { CalendarGradientIcon } from './IconComponents/CalendarGradient.icon';
 import { ZeroThreeIcon } from './IconComponents/ZeroThree.icon';
 import { HandFanIcon } from './IconComponents/HandFan.icon';
 import { MelonIcon } from './IconComponents/Melon.icon';
@@ -190,7 +189,6 @@ export const IconsComponent = {
   VeganIcon,
   PlusThreeIcon,
   FlowerIcon,
-  CalendarGradientIcon,
   ZeroThreeIcon,
   HandFanIcon,
   MelonIcon,

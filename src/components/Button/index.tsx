@@ -2,7 +2,8 @@ import { ButtonContainer, CustomIcon } from './Button.styles';
 import Typography from '../Typography';
 import type { Props } from './Button.types';
 import { useTheme } from 'styled-components/native';
-import Loading from '../Loading';
+import LottieView from 'lottie-react-native';
+import { useRef } from 'react';
 
 const Button = ({
   children,
@@ -24,6 +25,7 @@ const Button = ({
   ...props
 }: Props) => {
   const { colors } = useTheme();
+  const animation = useRef<LottieView>(null);
 
   const renderLeftIcon = () => {
     if (customIcon) {
@@ -75,7 +77,15 @@ const Button = ({
       {!onlyIcon &&
         children &&
         (loading ? (
-          <Loading size={24} color="white" />
+          <LottieView
+            autoPlay
+            ref={animation}
+            style={{
+              width: 24,
+              height: 24,
+            }}
+            source={require('../../lottie/loading-white.json')}
+          />
         ) : (
           <>
             <Typography
