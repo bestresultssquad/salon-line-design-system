@@ -39,6 +39,7 @@ const ProductCardHorizontal = ({
   return (
     <Card variant={variant ?? 'cart'}>
       <Container
+        delayPressIn={100}
         variant={variant ?? 'cart'}
         onPress={onPressCard}
         activeOpacity={onPressCard ? 0.2 : 1}

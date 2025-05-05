@@ -40,6 +40,7 @@ const Categories = ({
             disableSelection={disableSelection ?? false}
             selected={selectedTab === item.id}
             variant={variant || 'default'}
+            delayPressIn={100}
             onPress={() => {
               setSelectedTab(item.id);
               onPress(item);

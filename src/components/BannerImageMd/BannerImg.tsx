@@ -30,7 +30,11 @@ const BannerImg = ({
   const { hours, minutes, seconds, hasEnded } = useTimeCounter(date);
 
   return (
-    <ImageContainer onPress={item.action} fullWidth={fullWidth}>
+    <ImageContainer
+      delayPressIn={100}
+      onPress={item.action}
+      fullWidth={fullWidth}
+    >
       {item.date && !hasEnded && (
         <View
           style={{ position: 'absolute', top: '75%', left: '22%', zIndex: 1 }}

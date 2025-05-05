@@ -24,7 +24,7 @@ const ProductAddon = ({
   checked,
 }: ProductAddonProps) => {
   return (
-    <Card onPress={onPress}>
+    <Card delayPressIn={100} onPress={onPress}>
       <Container>
         <CheckboxContainer>
           <Checkbox onPress={onPress} checked={checked} variant="sm" />

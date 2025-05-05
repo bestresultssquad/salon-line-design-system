@@ -27,7 +27,12 @@ const CardBlog = ({
   const { colors, spacing } = useTheme();
   return (
     <Card>
-      <Container activeOpacity={0.6} variant={variant} onPress={onCardPress}>
+      <Container
+        activeOpacity={0.6}
+        variant={variant}
+        delayPressIn={100}
+        onPress={onCardPress}
+      >
         <ImageContainer variant={variant}>
           <ImageCustom
             source={{ uri: image }}

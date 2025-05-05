@@ -39,7 +39,7 @@ const ProductCard = ({
   const { colors } = useTheme();
 
   return (
-    <Card onPress={onCardPress}>
+    <Card onPress={onCardPress} delayPressIn={100}>
       <Container>
         <ImageContainer>
           {chipText && (

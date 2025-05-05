@@ -45,6 +45,7 @@ const BannerImage = ({
   }: ListRenderItemInfo<BannerObject>) => {
     return (
       <ImageContainer
+        delayPressIn={100}
         bannerVariant={bannerVariant}
         onPress={item.action}
         fullWidth={fullWidth}

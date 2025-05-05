@@ -49,6 +49,7 @@ const FavoriteButton = ({
       variant="favorite"
       size="nano"
       fullRounded
+      delayPressIn={100}
       onPress={onPress}
       {...props}
       customIcon={
