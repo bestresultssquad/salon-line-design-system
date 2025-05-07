@@ -2161,6 +2161,7 @@ __metadata:
   resolution: "@bestresultssquad/salon-line-design-system@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
+    "@d11/react-native-fast-image": ^8.9.2
     "@evilmartians/lefthook": ^1.5.0
     "@gorhom/bottom-sheet": ^5.0.0-alpha.11
     "@react-native/babel-preset": 0.75.2
@@ -2190,7 +2191,6 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.5
     react-native-builder-bob: ^0.30.2
-    react-native-fast-image: ^8.6.3
     react-native-mask-input: ^1.2.3
     react-native-reanimated: ~3.10.1
     react-native-svg: ^15.7.1
@@ -2416,6 +2416,16 @@ __metadata:
   dependencies:
     "@jridgewell/trace-mapping": 0.3.9
   checksum: 5718f267085ed8edb3e7ef210137241775e607ee18b77d95aa5bd7514f47f5019aa2d82d96b3bf342ef7aa890a346fa1044532ff7cc3009e7d24fce3ce6200fa
+  languageName: node
+  linkType: hard
+
+"@d11/react-native-fast-image@npm:^8.9.2":
+  version: 8.9.2
+  resolution: "@d11/react-native-fast-image@npm:8.9.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 535e018df2affddd3bcb354949f60b5f42d1b303354e2e2d7667cbc63319a4fc82cceeca0308200601790f34b47cc84d89da420866aa10349f03508ac9671349
   languageName: node
   linkType: hard
 
@@ -5242,7 +5252,7 @@ __metadata:
     react-dom: 18.2.0
     react-native: 0.74.5
     react-native-builder-bob: ^0.30.2
-    react-native-fast-image: ^8.6.3
+    @d11/react-native-fast-image: ^8.6.3
     react-native-gesture-handler: ~2.16.1
     react-native-reanimated: ~3.10.1
     react-native-safe-area-context: ^4.11.0
@@ -17545,9 +17555,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-fast-image@npm:^8.6.3":
+"@d11/react-native-fast-image@npm:^8.6.3":
   version: 8.6.3
-  resolution: "react-native-fast-image@npm:8.6.3"
+  resolution: "@d11/react-native-fast-image@npm:8.6.3"
   peerDependencies:
     react: ^17 || ^18
     react-native: ">=0.60.0"

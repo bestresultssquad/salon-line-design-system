@@ -35,6 +35,7 @@ const ProductCard = ({
   onCardPress,
   disabled,
   tags,
+  loading,
 }: ProductCardProps) => {
   const { colors } = useTheme();
 
@@ -50,7 +51,7 @@ const ProductCard = ({
           )}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
           <ImageCustom
-            source={{ uri: imageUri }}
+            source={{ uri: imageUri, cache: 'immutable' }}
             style={{ opacity: disabled ? 0.5 : 1 }}
           />
           <View
@@ -122,6 +123,7 @@ const ProductCard = ({
               <Button
                 disabled={disabled}
                 onPress={onPress}
+                loading={loading ?? false}
                 onlyIcon
                 variant="primary"
                 size="nano"

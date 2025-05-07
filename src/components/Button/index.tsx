@@ -73,38 +73,36 @@ const Button = ({
       variant={variant}
       fullRounded={fullRounded}
     >
-      {(onlyIcon || leftIcon) && renderLeftIcon()}
-      {!onlyIcon &&
-        children &&
-        (loading ? (
-          <LottieView
-            autoPlay
-            ref={animation}
+      {(onlyIcon || leftIcon) && !loading && renderLeftIcon()}
+      {loading ? (
+        <LottieView
+          autoPlay
+          ref={animation}
+          style={{
+            width: 24,
+            height: 24,
+          }}
+          source={require('../../lottie/loading-white.json')}
+        />
+      ) : (
+        <>
+          <Typography
+            color={
+              textColor ??
+              (variant !== 'outline' ? colors.white : colors.gray[900])
+            }
+            sizeVariant={textSizeVariant ?? 'regular'}
+            variant={textVariant ?? '3xs'}
+            numberOfLines={1}
             style={{
-              width: 24,
-              height: 24,
+              textDecorationLine: variant === 'link' ? 'underline' : 'none',
             }}
-            source={require('../../lottie/loading-white.json')}
-          />
-        ) : (
-          <>
-            <Typography
-              color={
-                textColor ??
-                (variant !== 'outline' ? colors.white : colors.gray[900])
-              }
-              sizeVariant={textSizeVariant ?? 'regular'}
-              variant={textVariant ?? '3xs'}
-              numberOfLines={1}
-              style={{
-                textDecorationLine: variant === 'link' ? 'underline' : 'none',
-              }}
-            >
-              {children}
-            </Typography>
-            {rightIcon && renderRightIcon()}
-          </>
-        ))}
+          >
+            {children}
+          </Typography>
+          {rightIcon && renderRightIcon()}
+        </>
+      )}
     </ButtonContainer>
   );
 };

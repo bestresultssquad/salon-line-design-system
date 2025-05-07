@@ -78,7 +78,7 @@ const ProductCardHorizontal = ({
         )}
         <View style={{ flexDirection: 'row' }}>
           <ImageContainer>
-            <ImageCustom source={{ uri: imageUri }} />
+            <ImageCustom source={{ uri: imageUri, cache: 'immutable' }} />
           </ImageContainer>
           <View
             style={{

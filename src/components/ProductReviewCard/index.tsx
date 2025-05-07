@@ -16,7 +16,7 @@ import { View } from 'react-native';
 import Button from '../Button';
 import type { ProductReviewCardProps } from './ProductReviewCard.types';
 import { timeElapsed } from '../../utils/getTimeElapsed';
-import FastImage from 'react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 
 const ProductReviewCard = ({
   rating = 4.5,

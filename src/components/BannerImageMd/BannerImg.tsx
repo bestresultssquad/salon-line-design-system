@@ -132,7 +132,10 @@ const BannerImg = ({
         source={
           item.imageFile
             ? item.imageFile
-            : ({ uri: item.imageUrl } as ImageSourcePropType)
+            : ({
+                uri: item.imageUrl,
+                cache: 'immutable',
+              } as unknown as ImageSourcePropType)
         }
         style={{
           width,

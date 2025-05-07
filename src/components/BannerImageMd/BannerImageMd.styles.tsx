@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
-import FastImage from 'react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 
 export const BannerImageContainer = styled.View`
   align-items: center;

@@ -1,7 +1,7 @@
 import { Dimensions, Platform, TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
-import FastImage from 'react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 32;

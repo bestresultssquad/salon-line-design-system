@@ -1,7 +1,7 @@
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Typography from '../Typography';
-import FastImage from 'react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 
 export const Container = styled.View`
   flex-direction: row;

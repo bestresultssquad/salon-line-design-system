@@ -8,6 +8,7 @@ export interface tagProps {
 
 export interface ProductCardProps {
   oldPrice?: string;
+  loading?: boolean;
   price: string;
   title: string;
   image?: ImageRequireSource;

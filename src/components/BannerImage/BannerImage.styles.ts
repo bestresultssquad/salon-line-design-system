@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 import type { BannerVariant } from './BannerImage.types';
-import FastImage from 'react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 
 const getStyleByVariant = () => ({
   sm: {
