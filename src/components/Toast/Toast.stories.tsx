@@ -24,24 +24,19 @@ const Component: Meta<typeof Toast> = {
 };
 
 export const Success: StoryObj<typeof Toast> = {};
-Success.args = {
-  title: 'Title',
-  description: 'Description',
-  type: 'success',
-};
+Success.args = { title: 'Title', description: 'Description', type: 'success' };
 
 export const Warning: StoryObj<typeof Toast> = {};
-Warning.args = {
-  title: 'Title',
-  description: 'Description',
-  type: 'warning',
-};
+Warning.args = { title: 'Title', description: 'Description', type: 'warning' };
 
 export const Error: StoryObj<typeof Toast> = {};
-Error.args = {
+Error.args = { title: 'Title', description: 'Description', type: 'error' };
+
+export const Notification: StoryObj<typeof Toast> = {};
+Notification.args = {
   title: 'Title',
-  description: 'Description',
-  type: 'error',
+  description: 'Descriçao grande aqui para testar o tamanho do texto',
+  type: 'notificationtoast',
 };
 
 export default Component;

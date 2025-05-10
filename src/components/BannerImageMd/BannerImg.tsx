@@ -1,4 +1,4 @@
-import { View, type ImageSourcePropType } from 'react-native';
+import { Dimensions, View, type ImageSourcePropType } from 'react-native';
 import { BannerImg as Image, ImageContainer } from './BannerImageMd.styles';
 import type { BannerObject } from './BannerImageMd.types';
 import { useTimeCounter } from '../../utils/useTimeCounter';
@@ -37,7 +37,13 @@ const BannerImg = ({
     >
       {item.date && !hasEnded && (
         <View
-          style={{ position: 'absolute', top: '75%', left: '22%', zIndex: 1 }}
+          style={{
+            position: 'absolute',
+            transform: [{ translateX: -0.3 * Dimensions.get('window').width }],
+            bottom: 10,
+            left: '50%',
+            zIndex: 1,
+          }}
         >
           <View
             style={{

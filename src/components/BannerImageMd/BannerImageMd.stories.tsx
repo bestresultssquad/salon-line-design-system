@@ -37,17 +37,13 @@ const Component: Meta<typeof BannerImage> = {
     category: { control: { type: 'text' } },
     date: { control: { type: 'text' } },
     subtitle: { control: { type: 'text' } },
-    width: {
-      control: { type: 'number' },
-    },
-    height: {
-      control: { type: 'number' },
-    },
+    width: { control: { type: 'number' } },
+    height: { control: { type: 'number' } },
   },
 
   decorators: [
     (Story: any) => (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <View>
         <Story />
       </View>
     ),

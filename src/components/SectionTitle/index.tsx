@@ -12,7 +12,7 @@ const SectionTitle = ({ linkOnPress, linkText, title, ...props }: Props) => {
         sizeVariant={'semiBold'}
         variant={'sm'}
         color={colors.black}
-        numberOfLines={1}
+        numberOfLines={2}
         style={{ maxWidth: '80%' }}
       >
         {title}

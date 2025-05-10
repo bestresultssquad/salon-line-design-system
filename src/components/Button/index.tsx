@@ -79,8 +79,8 @@ const Button = ({
           autoPlay
           ref={animation}
           style={{
-            width: 24,
-            height: 24,
+            width: onlyIcon ? 16 : 24,
+            height: onlyIcon ? 16 : 24,
           }}
           source={require('../../lottie/loading-white.json')}
         />

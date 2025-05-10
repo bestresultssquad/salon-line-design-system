@@ -15,13 +15,17 @@ export const stylesByType = (theme: DefaultTheme) => ({
     backgroundColor: theme.colors.green[700],
     titleColor: theme.colors.white,
   },
+  notificationtoast: {
+    backgroundColor: theme.colors.white,
+    titleColor: theme.colors.white,
+  },
 });
 
 export const ToastContainer = styled.View<{ type: ToastType }>`
   padding: ${({ theme }) => theme.spacing.xxxxs}px;
   border-radius: ${({ theme }) => theme.spacing.xxxxs}px;
   background-color: ${({ theme, type }) =>
-    stylesByType(theme)[type].backgroundColor};
+    stylesByType(theme)[type]?.backgroundColor};
   flex-direction: row;
   gap: ${({ theme }) => theme.spacing.nano}px;
   margin-left: ${({ theme }) => theme.spacing.sm}px;
