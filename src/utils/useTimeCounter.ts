@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { isValid } from 'date-fns';
-import { AppState } from 'react-native';
+import { useBatchedState } from './useBatchedState';
 
 export function useTimeCounter(endDate: Date) {
-  const [state, setState] = useState({
+  const [state, setState] = useBatchedState({
     days: '00',
     hours: '00',
     minutes: '00',
@@ -31,54 +31,42 @@ export function useTimeCounter(endDate: Date) {
         const minutes = Math.floor((timeleft % hora) / minuto);
         const seconds = Math.floor((timeleft % minuto) / segundo);
 
-        const formattedDays = days.toFixed(0).padStart(2, '0');
-        const formattedHours = hours.toFixed(0).padStart(2, '0');
-        const formattedMinutes = String(minutes).padStart(2, '0');
-        const formattedSeconds = String(seconds).padStart(2, '0');
-
-        setState({
-          days: formattedDays,
-          hours: formattedHours,
-          minutes: formattedMinutes,
-          seconds: formattedSeconds,
-          hasEnded: false,
+        // Only update if values changed
+        setState((prev) => {
+          const newState = {
+            days: String(days).padStart(2, '0'),
+            hours: String(hours).padStart(2, '0'),
+            minutes: String(minutes).padStart(2, '0'),
+            seconds: String(seconds).padStart(2, '0'),
+            hasEnded: false,
+          };
+          return JSON.stringify(prev) !== JSON.stringify(newState)
+            ? newState
+            : prev;
         });
       } else {
-        setState((prev) => ({ ...prev, hasEnded: true }));
-
-        if (intervalRef.current !== null) {
-          clearInterval(intervalRef.current);
-        }
+        setState((prev) =>
+          prev.hasEnded
+            ? prev
+            : {
+                days: '00',
+                hours: '00',
+                minutes: '00',
+                seconds: '00',
+                hasEnded: true,
+              }
+        );
+        if (intervalRef.current) clearInterval(intervalRef.current);
       }
     };
 
-    const handleAppStateChange = (nextAppState: string) => {
-      if (nextAppState === 'active') {
-        updateCounter();
-        intervalRef.current = setInterval(updateCounter, 1000);
-      } else if (intervalRef.current !== null) {
-        clearInterval(intervalRef.current);
-      }
-    };
-
-    const subscription = AppState.addEventListener(
-      'change',
-      handleAppStateChange
-    );
-
-    if (AppState.currentState === 'active') {
-      updateCounter();
-      intervalRef.current = setInterval(updateCounter, 1000);
-    }
+    updateCounter();
+    intervalRef.current = setInterval(updateCounter, 1000);
 
     return () => {
-      if (intervalRef.current !== null) {
-        clearInterval(intervalRef.current);
-      }
-      subscription.remove();
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [endDate]);
 
   return state;
 }

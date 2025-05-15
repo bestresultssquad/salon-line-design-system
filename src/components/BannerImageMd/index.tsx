@@ -9,7 +9,8 @@ import { useRef, useState } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImageMd.types';
 import BannerImageSkeleton from '../BannerImage/BannerImage.skeleton';
-import BannerImg from './BannerImg';
+import BannerImg from './BannerImgWithCounter';
+import BannerImgWithCounter from './BannerImgWithCounter';
 
 const BannerImageMd = ({
   bannerObject,
@@ -29,8 +30,20 @@ const BannerImageMd = ({
     item,
     index,
   }: ListRenderItemInfo<BannerObject>) => {
+    if (!item.date) {
+      return (
+        <BannerImg
+          removeBorder={removeBorder}
+          index={index}
+          item={item}
+          fullWidth={fullWidth}
+          width={width}
+          height={height}
+        />
+      );
+    }
     return (
-      <BannerImg
+      <BannerImgWithCounter
         removeBorder={removeBorder}
         index={index}
         item={item}

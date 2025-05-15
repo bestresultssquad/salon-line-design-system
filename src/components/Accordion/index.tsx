@@ -178,12 +178,7 @@ function Accordion({
                 </Typography>
               )}
               {withoutOpen ? (
-                <Icon
-                  height={24}
-                  width={24}
-                  type={'ArrowRightIcon'}
-                  strokeWidth={1.5}
-                />
+                <></>
               ) : (
                 <>
                   <Animated.View style={[iconStyleOpen]}>
