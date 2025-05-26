@@ -21,7 +21,7 @@ export const stylesByType = (theme: DefaultTheme) => ({
   },
 });
 
-export const ToastContainer = styled.View<{ type: ToastType }>`
+export const ToastContainer = styled.TouchableOpacity<{ type: ToastType }>`
   padding: ${({ theme }) => theme.spacing.xxxxs}px;
   border-radius: ${({ theme }) => theme.spacing.xxxxs}px;
   background-color: ${({ theme, type }) =>

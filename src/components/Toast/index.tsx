@@ -93,7 +93,11 @@ const ToastCustom = ({
   }
 
   return (
-    <ToastContainer type={type}>
+    <ToastContainer
+      activeOpacity={handlePress ? 0.3 : 1}
+      onPress={handlePress}
+      type={type}
+    >
       <View>
         <Icon
           type={iconType ?? (iconByType[type] as IconTypes)}
