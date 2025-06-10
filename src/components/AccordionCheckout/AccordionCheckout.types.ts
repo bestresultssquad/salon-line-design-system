@@ -18,4 +18,5 @@ export interface AccordionCheckoutProps extends PropsWithChildren {
   iconType: IconTypes;
   checked: boolean;
   withoutOpen?: boolean;
+  disabled?: boolean;
 }

@@ -5,7 +5,7 @@ import {
   type ListRenderItemInfo,
 } from 'react-native';
 import { BannerImageContainer } from './BannerImageMd.styles';
-import { useRef, useState, useEffect } from 'react'; 
+import { useRef, useState, useEffect } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImageMd.types';
 import BannerImageSkeleton from '../BannerImage/BannerImage.skeleton';
@@ -19,22 +19,21 @@ const BannerImageMd = ({
   width,
   height,
 }: BannerImageProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
   const screenWidth = Dimensions.get('window').width;
 
   const isCarrousel = bannerObject.length > 1;
 
-  
   useEffect(() => {
-    if (!isCarrousel) return; 
+    if (!isCarrousel) return;
 
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % bannerObject.length; 
+      const nextIndex = (currentIndex + 1) % bannerObject.length;
       flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex); 
-    }, 4000); 
+      setCurrentIndex(nextIndex);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [currentIndex, bannerObject.length, isCarrousel]);

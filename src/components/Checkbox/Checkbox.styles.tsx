@@ -31,11 +31,16 @@ export const CheckboxContainer = styled.View<{ variant: CheckBoxVariant }>`
   align-items: flex-start;
 `;
 
-export const CheckboxComponent = styled.View<{ variant: CheckBoxVariant }>`
+export const CheckboxComponent = styled.View<{
+  variant: CheckBoxVariant;
+  disabled?: boolean;
+}>`
   width: ${({ theme, variant }) => getStyleByVariant(theme)[variant].size}px;
   height: ${({ theme, variant }) => getStyleByVariant(theme)[variant].size}px;
   border-radius: ${({ theme, variant }) =>
     getStyleByVariant(theme)[variant].borderRadius}px;
+  border-color: ${({ disabled, theme }) =>
+    disabled ? theme.colors.gray[400] : theme.colors.gray[900]};
   border-width: 1px;
   padding: ${({ theme, variant }) =>
     getStyleByVariant(theme)[variant].padding}px;

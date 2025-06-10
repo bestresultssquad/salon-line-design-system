@@ -6,4 +6,5 @@ export interface CheckboxProps extends PropsWithChildren {
   checked?: boolean;
   onPress: () => void;
   variant: CheckBoxVariant;
+  disabled?: boolean;
 }

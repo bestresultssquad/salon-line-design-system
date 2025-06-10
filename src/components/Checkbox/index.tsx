@@ -8,7 +8,13 @@ import {
 } from './Checkbox.styles';
 import { useTheme } from 'styled-components/native';
 
-const Checkbox = ({ onPress, checked, children, variant }: CheckboxProps) => {
+const Checkbox = ({
+  onPress,
+  checked,
+  children,
+  variant,
+  disabled,
+}: CheckboxProps) => {
   const { colors } = useTheme();
 
   const animatedValue = useRef(new Animated.Value(0)).current;
@@ -42,7 +48,7 @@ const Checkbox = ({ onPress, checked, children, variant }: CheckboxProps) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <CheckboxContainer variant={variant} testID="checkbox-container">
-        <CheckboxComponent variant={variant ?? 'default'}>
+        <CheckboxComponent variant={variant ?? 'default'} disabled={disabled}>
           <CheckboxChecked
             variant={variant ?? 'default'}
             testID={'checkbox-checked'}
@@ -55,6 +61,7 @@ const Checkbox = ({ onPress, checked, children, variant }: CheckboxProps) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 display: checked ? 'flex' : 'none',
+                borderColor: colors.red[500],
               },
             ]}
           >
@@ -68,6 +75,7 @@ const Checkbox = ({ onPress, checked, children, variant }: CheckboxProps) => {
                     padding: 3.5,
                     backgroundColor: colors.white,
                     borderRadius: 100,
+                    borderColor: colors.black,
                   },
                 ]}
               />

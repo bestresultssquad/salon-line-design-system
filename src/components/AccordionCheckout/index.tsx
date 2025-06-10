@@ -61,6 +61,7 @@ function AccordionCheckout({
   iconType,
   checked = false,
   withoutOpen,
+  disabled,
   ...props
 }: Readonly<AccordionCheckoutProps>) {
   const openInternal = useSharedValue(false);
@@ -76,7 +77,7 @@ function AccordionCheckout({
 
   return (
     <AccordionContainer>
-      <TitleContainer onPress={() => handlePressAccordion()}>
+      <TitleContainer onPress={() => !disabled && handlePressAccordion()}>
         <View
           style={{
             justifyContent: 'space-between',
@@ -87,20 +88,25 @@ function AccordionCheckout({
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
             <View>
               <Checkbox
-                onPress={() => handlePressAccordion()}
+                onPress={() => !disabled && handlePressAccordion()}
                 variant="rounded"
                 checked={checked}
+                disabled={disabled}
               />
             </View>
             <View style={{ gap: 4 }}>
-              <Typography variant="sm" sizeVariant="semiBold">
+              <Typography
+                variant="sm"
+                sizeVariant="semiBold"
+                color={disabled ? colors.gray[500] : colors.gray[900]}
+              >
                 {title}
               </Typography>
               {subtitle && (
                 <Typography
                   variant="xs"
                   sizeVariant="regular"
-                  color={colors.gray[600]}
+                  color={disabled ? colors.gray[500] : colors.gray[600]}
                 >
                   {subtitle}
                 </Typography>

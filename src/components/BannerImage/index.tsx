@@ -40,13 +40,13 @@ const BannerImage = ({
   const isCarrousel = bannerObject.length > 1;
 
   useEffect(() => {
-    if (!isCarrousel) return; 
+    if (!isCarrousel) return;
 
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % bannerObject.length; 
+      const nextIndex = (currentIndex + 1) % bannerObject.length;
       flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex); 
-    }, 4000); 
+      setCurrentIndex(nextIndex);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [currentIndex, bannerObject.length, isCarrousel]);
