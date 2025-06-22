@@ -13,7 +13,7 @@ import {
   ImageContainer,
   TextBlogContainer,
 } from './BannerImage.styles';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImage.types';
 import BannerImageSkeleton from './BannerImage.skeleton';
@@ -22,6 +22,7 @@ import Typography from '../Typography';
 import { useTheme } from 'styled-components/native';
 import Icon from '../Icon';
 import { timeElapsed } from '../../utils/getTimeElapsed';
+import { useFocusEffect } from '@react-navigation/native';
 
 const BannerImage = ({
   bannerObject,
@@ -39,17 +40,22 @@ const BannerImage = ({
 
   const isCarrousel = bannerObject.length > 1;
 
-  useEffect(() => {
-    if (!isCarrousel) return;
+  useFocusEffect(
+    useCallback(() => {
+      if (!isCarrousel) return;
 
-    const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % bannerObject.length;
-      flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex);
-    }, 4000);
+      const interval = setInterval(() => {
+        const nextIndex = (currentIndex + 1) % bannerObject.length;
+        flatListRef.current?.scrollToIndex({
+          index: nextIndex,
+          animated: true,
+        });
+        setCurrentIndex(nextIndex);
+      }, 4000);
 
-    return () => clearInterval(interval);
-  }, [currentIndex, bannerObject.length, isCarrousel]);
+      return () => clearInterval(interval);
+    }, [currentIndex, bannerObject.length, isCarrousel])
+  );
 
   const renderBannerImage = ({
     item,

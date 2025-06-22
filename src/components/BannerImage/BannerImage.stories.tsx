@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 import BannerImage from './index';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Component: Meta<typeof BannerImage> = {
   title: 'BannerImage',
@@ -51,9 +52,13 @@ const Component: Meta<typeof BannerImage> = {
 
   decorators: [
     (Story: any) => (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-        <Story />
-      </View>
+      <NavigationContainer>
+        <View
+          style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}
+        >
+          <Story />
+        </View>
+      </NavigationContainer>
     ),
   ],
 };

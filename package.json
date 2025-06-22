@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.1.189",
+  "version": "0.1.190",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -192,6 +192,7 @@
   "dependencies": {
     "@d11/react-native-fast-image": "^8.9.2",
     "@gorhom/bottom-sheet": "^5.0.0-alpha.11",
+    "@react-navigation/native": "^7.0.14",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "lottie-react-native": "^7.2.2",

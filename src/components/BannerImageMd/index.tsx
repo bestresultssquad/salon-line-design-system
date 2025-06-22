@@ -5,12 +5,13 @@ import {
   type ListRenderItemInfo,
 } from 'react-native';
 import { BannerImageContainer } from './BannerImageMd.styles';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import Paginator from '../Paginator';
 import type { BannerImageProps, BannerObject } from './BannerImageMd.types';
 import BannerImageSkeleton from '../BannerImage/BannerImage.skeleton';
 import BannerImg from './BannerImgWithCounter';
 import BannerImgWithCounter from './BannerImgWithCounter';
+import { useFocusEffect } from '@react-navigation/native';
 
 const BannerImageMd = ({
   bannerObject,
@@ -26,17 +27,22 @@ const BannerImageMd = ({
 
   const isCarrousel = bannerObject.length > 1;
 
-  useEffect(() => {
-    if (!isCarrousel) return;
+  useFocusEffect(
+    useCallback(() => {
+      if (!isCarrousel) return;
 
-    const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % bannerObject.length;
-      flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex);
-    }, 4000);
+      const interval = setInterval(() => {
+        const nextIndex = (currentIndex + 1) % bannerObject.length;
+        flatListRef.current?.scrollToIndex({
+          index: nextIndex,
+          animated: true,
+        });
+        setCurrentIndex(nextIndex);
+      }, 4000);
 
-    return () => clearInterval(interval);
-  }, [currentIndex, bannerObject.length, isCarrousel]);
+      return () => clearInterval(interval);
+    }, [currentIndex, bannerObject.length, isCarrousel])
+  );
 
   const renderBannerImage = ({
     item,
