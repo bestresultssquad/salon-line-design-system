@@ -52,6 +52,7 @@ const FavoriteButton = ({
       delayPressIn={100}
       onPress={onPress}
       {...props}
+      testID="favorite-button"
       customIcon={
         <View>
           <Animated.View

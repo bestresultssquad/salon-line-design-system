@@ -114,6 +114,7 @@ import { CameraIcon } from './IconComponents/Camera.icon';
 import { MessageIcon } from './IconComponents/Message.icon';
 import { BarCodeFilledIcon } from './IconComponents/BarCodeFilled.icon';
 import { CreditCardFilledIcon } from './IconComponents/CreditCardFilled.icon';
+import { ArrowUpDownIcon } from './IconComponents/ArrowUpDown.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -232,4 +233,5 @@ export const IconsComponent = {
   MessageIcon,
   BarCodeFilledIcon,
   CreditCardFilledIcon,
+  ArrowUpDownIcon,
 };

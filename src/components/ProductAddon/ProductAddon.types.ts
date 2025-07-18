@@ -9,4 +9,5 @@ export interface ProductAddonProps {
   onPress: () => void;
   disabled?: boolean;
   checked?: boolean;
+  index?: number;
 }

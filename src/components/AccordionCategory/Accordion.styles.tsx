@@ -33,7 +33,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     radius: 0,
     paddingHorizontal: 0,
     borderColor: 0,
-    backgrounColor: theme.colors.white,
+    backgrounColor: 'transparent',
   },
   subCategory: {
     padding: theme.spacing.xxxxs,
@@ -41,7 +41,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.xxxxs,
     borderColor: 0,
-    backgrounColor: theme.colors.gray[100],
+    backgrounColor: 'transparent',
   },
 });
 

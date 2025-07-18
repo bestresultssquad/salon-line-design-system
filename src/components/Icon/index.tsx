@@ -18,7 +18,7 @@ const Icon = ({
   const { colors } = useTheme();
 
   return (
-    <View>
+    <View testID={`icon-${type}`}>
       <IconComponent
         width={width}
         height={height}

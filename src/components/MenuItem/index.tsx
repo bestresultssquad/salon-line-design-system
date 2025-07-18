@@ -18,7 +18,7 @@ const MenuItem = ({
 
   return (
     <Container
-      testID="container-menu-item"
+      testID={`container-menu-item-${title}`}
       onPress={() => !useSwitch && onPress()}
       onPressIn={() => setPressed(true)}
       onPressOut={() => setPressed(false)}
