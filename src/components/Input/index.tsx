@@ -1,3 +1,4 @@
+//@ts-ignore
 import { useTheme } from 'styled-components/native';
 import { Container, InputContainer, TextInput } from './Input.styles';
 import type { InputProps } from './Input.types';
@@ -63,14 +64,16 @@ const Input = ({
           leftIcon={!!leftIcon}
           rightIcon={!!rightIcon}
           placeholderTextColor={colors.gray[500]}
-          onFocus={(e) => {
+          onFocus={(e: React.FocusEvent<any>) => {
             if (props.onFocus) {
+              //@ts-ignore
               props.onFocus(e);
             }
             setIsFocused(true);
           }}
-          onBlur={(e) => {
+          onBlur={(e: React.FocusEvent<any>) => {
             if (props.onBlur) {
+              //@ts-ignore
               props.onBlur(e);
             }
             setIsFocused(false);

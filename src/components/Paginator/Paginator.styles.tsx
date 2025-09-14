@@ -20,17 +20,45 @@ const getVariantStyle = (theme: DefaultTheme) => {
 
 export const PaginatorContainer = styled.View<{ variant: PaginatorVariant }>`
   flex-direction: row;
-  height: ${({ theme, variant }) => getVariantStyle(theme)[variant].height}px;
+  height: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: PaginatorVariant;
+  }) => getVariantStyle(theme)[variant].height}px;
 `;
 
 export const Dots = styled(Animated.View)<{ variant: PaginatorVariant }>`
-  height: ${({ theme, variant }) => getVariantStyle(theme)[variant].height}px;
-  border-radius: ${({ theme }) => theme.spacing.md}px;
-  border-width: ${({ theme, variant }) =>
-    getVariantStyle(theme)[variant].borderWidth}px;
-  background-color: ${({ theme }) => theme.colors.white};
-  margin-left: ${({ theme, variant }) =>
-    getVariantStyle(theme)[variant].margin}px;
-  margin-right: ${({ theme, variant }) =>
-    getVariantStyle(theme)[variant].margin}px;
+  height: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: PaginatorVariant;
+  }) => getVariantStyle(theme)[variant].height}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.md}px;
+  border-width: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: PaginatorVariant;
+  }) => getVariantStyle(theme)[variant].borderWidth}px;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.white};
+  margin-left: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: PaginatorVariant;
+  }) => getVariantStyle(theme)[variant].margin}px;
+  margin-right: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: PaginatorVariant;
+  }) => getVariantStyle(theme)[variant].margin}px;
 `;

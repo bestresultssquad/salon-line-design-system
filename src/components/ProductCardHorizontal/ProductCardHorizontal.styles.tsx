@@ -3,36 +3,44 @@ import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 import type { ProductCardHorizontalVariant } from './ProductCardHorizontal.type';
 import FastImage from '@d11/react-native-fast-image';
+import type { DefaultTheme } from 'styled-components/native';
 
 export const TitleMainContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.nano}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) => theme.colors.gray[200]};
-  margin-bottom: ${({ theme }) => theme.spacing.nano}px;
+  border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.gray[200]};
+  margin-bottom: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.spacing.nano}px;
 `;
 
 export const Container = styled.TouchableOpacity<{
   variant: ProductCardHorizontalVariant;
 }>`
   flex-direction: column;
-  padding: ${({ theme, variant }) =>
-    variant === 'cart' ? `${theme.spacing.nano}px` : 0};
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  padding: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: ProductCardHorizontalVariant;
+  }) => (variant === 'cart' ? `${theme.spacing.nano}px` : 0)};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;
 
 export const ImageContainer = styled.View`
   position: relative;
   justify-content: center;
-  margin-right: ${({ theme }) => theme.spacing.nano}px;
+  margin-right: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
 `;
 
 export const ImageCustom = styled(FastImage)`
-  width: ${({ theme }) => theme.spacing.huge}px;
-  height: ${({ theme }) => theme.spacing.huge}px;
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  width: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.huge}px;
+  height: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.huge}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;
 
 export const OldPrice = styled(Typography)`
@@ -68,5 +76,6 @@ export const Card = styled.View<{
   elevation?: 'md';
   variant: ProductCardHorizontalVariant;
 }>`
-  ${({ variant }) => (variant === 'cart' ? cardStyle : cardSearchStyle)}
+  ${({ variant }: { variant: ProductCardHorizontalVariant }) =>
+    variant === 'cart' ? cardStyle : cardSearchStyle}
 `;

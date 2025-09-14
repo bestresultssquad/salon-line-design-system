@@ -22,13 +22,19 @@ export const stylesByType = (theme: DefaultTheme) => ({
 });
 
 export const ToastContainer = styled.TouchableOpacity<{ type: ToastType }>`
-  padding: ${({ theme }) => theme.spacing.xxxxs}px;
-  border-radius: ${({ theme }) => theme.spacing.xxxxs}px;
-  background-color: ${({ theme, type }) =>
-    stylesByType(theme)[type]?.backgroundColor};
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxxxs}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.spacing.xxxxs}px;
+  background-color: ${({
+    theme,
+    type,
+  }: {
+    theme: DefaultTheme;
+    type: ToastType;
+  }) => stylesByType(theme)[type]?.backgroundColor};
   flex-direction: row;
-  gap: ${({ theme }) => theme.spacing.nano}px;
-  margin-left: ${({ theme }) => theme.spacing.sm}px;
-  margin-right: ${({ theme }) => theme.spacing.sm}px;
-  margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
+  margin-left: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.sm}px;
+  margin-right: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.sm}px;
+  margin-bottom: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;

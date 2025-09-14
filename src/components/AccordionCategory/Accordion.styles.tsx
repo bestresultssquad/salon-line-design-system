@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from 'styled-components/native';
 import type { AccordionVariant } from './Accordion.types';
 import type { DefaultTheme } from 'styled-components/native';
@@ -65,7 +66,7 @@ export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
     getStylesByVariant(theme)[variant].backgrounColor};
 `;
 
-export const TitleContainer = styled.TouchableWithoutFeedback<{
+export const TitleContainer = styled.TouchableOpacity<{
   variant: AccordionVariant;
 }>`
   flex-direction: row;

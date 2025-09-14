@@ -52,17 +52,41 @@ export const InputContainer = styled.View<{
   variant: InputVariant;
   focused: boolean;
 }>`
-  padding: ${({ theme, variant }) =>
+  padding: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: InputVariant;
+  }) =>
     getPaddingByVariant(variant, theme).vertical +
     ' ' +
     getPaddingByVariant(variant, theme).horizontal};
-  background-color: ${({ theme, editable, clickable }) =>
-    editable || clickable ? theme.colors.white : theme.colors.gray[100]};
+  background-color: ${({
+    theme,
+    editable,
+    clickable,
+  }: {
+    theme: DefaultTheme;
+    editable: boolean;
+    clickable: boolean;
+  }) => (editable || clickable ? theme.colors.white : theme.colors.gray[100])};
   border-radius: 12px;
   width: 100%;
   flex-direction: row;
-  border: ${({ theme, editable, error, clickable, focused }) =>
-    getBorder(theme, error, focused, editable, clickable)};
+  border: ${({
+    theme,
+    editable,
+    error,
+    clickable,
+    focused,
+  }: {
+    theme: DefaultTheme;
+    editable: boolean;
+    error: boolean;
+    clickable: boolean;
+    focused: boolean;
+  }) => getBorder(theme, error, focused, editable, clickable)};
   align-items: center;
 `;
 
@@ -71,12 +95,25 @@ export const TextInput = styled(MaskInput)<{
   leftIcon: boolean;
 }>`
   flex: 1;
-  font-family: ${({ theme }) => theme.typography.sm.medium.family};
-  font-size: ${({ theme }) => theme.typography.sm.medium.size}px;
-  font-weight: ${({ theme }) => theme.typography.sm.medium.weight};
-  margin-left: ${({ theme, leftIcon }) =>
-    leftIcon ? theme.spacing.xxxxs : 0}px;
-  margin-right: ${({ theme, rightIcon }) =>
-    rightIcon ? theme.spacing.xxxxs : 0}px;
-  color: ${({ theme }) => theme.colors.black};
+  font-family: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.typography.sm.medium.family};
+  font-size: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.typography.sm.medium.size}px;
+  font-weight: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.typography.sm.medium.weight};
+  margin-left: ${({
+    theme,
+    leftIcon,
+  }: {
+    theme: DefaultTheme;
+    leftIcon: boolean;
+  }) => (leftIcon ? theme.spacing.xxxxs : 0)}px;
+  margin-right: ${({
+    theme,
+    rightIcon,
+  }: {
+    theme: DefaultTheme;
+    rightIcon: boolean;
+  }) => (rightIcon ? theme.spacing.xxxxs : 0)}px;
+  color: ${({ theme }: { theme: DefaultTheme }) => theme.colors.black};
 `;

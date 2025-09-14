@@ -2,18 +2,20 @@ import styled from 'styled-components/native';
 import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
 import { View } from 'react-native';
+import type { DefaultTheme } from 'styled-components/native';
 
 const MotiCustom = styled(MotiView)`
   width: 327px;
   height: 112px;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   flex-direction: row;
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) => theme.colors.gray[200]};
+  border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.gray[200]};
 `;
 
 const DescriptionContainer = styled.View`
-  gap: ${({ theme }) => theme.spacing.xxs}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;
 
 const ButtonContainer = styled.View`

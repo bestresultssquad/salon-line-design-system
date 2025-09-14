@@ -35,12 +35,23 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
 
 export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
   width: 100%;
-  padding: ${({ theme, variant }) =>
-    `${getStylesByVariant(theme)[variant].padding}px ${getStylesByVariant(theme)[variant].paddingHorizontal}px`};
+  padding: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: AccordionVariant;
+  }) => {
+    const styles =
+      getStylesByVariant(theme)[
+        variant as keyof ReturnType<typeof getStylesByVariant>
+      ];
+    return `${styles.padding}px ${styles.paddingHorizontal}px`;
+  }};
   border-width: 0;
 `;
 
-export const TitleContainer = styled.TouchableWithoutFeedback`
+export const TitleContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -49,7 +60,7 @@ export const TitleContainer = styled.TouchableWithoutFeedback`
 export const IconContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   padding: 8px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;

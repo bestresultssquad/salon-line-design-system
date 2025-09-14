@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
 import { Dimensions, View } from 'react-native';
+import type { DefaultTheme } from 'styled-components/native';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
@@ -9,11 +10,11 @@ const CARD_WIDTH = DEVICE_WIDTH / 2 - 30;
 const MotiCustom = styled(MotiView)`
   width: ${CARD_WIDTH}px;
   height: 264px;
-  gap: ${({ theme }) => theme.spacing.xxxxs}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxxxs}px;
 `;
 
 const DescriptionContainer = styled.View`
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
 `;
 
 const ButtonContainer = styled.View`

@@ -70,19 +70,53 @@ export const ButtonContainer = styled.TouchableOpacity<{
   fullRounded?: boolean;
   disabled?: boolean;
 }>`
-  background-color: ${({ theme, variant, disabled }) =>
+  background-color: ${({
+    theme,
+    variant,
+    disabled,
+  }: {
+    theme: DefaultTheme;
+    variant: ButtonVariant;
+    disabled?: boolean;
+  }) =>
     disabled
       ? theme.colors.gray[400]
       : colorByVariant(theme)[variant].backgroundColor};
-  border-color: ${({ theme, variant }) =>
-    colorByVariant(theme)[variant].borderColor};
-  border-width: ${({ variant }) => (variant === 'outline' ? 1 : 0)}px;
-  padding-left: ${({ theme, size }) => paddingHorizontalBySize(theme)[size]}px;
-  padding-right: ${({ theme, size }) => paddingHorizontalBySize(theme)[size]}px;
-  padding-top: ${({ theme, size }) => paddingVerticalBySize(theme)[size]}px;
-  padding-bottom: ${({ theme, size }) => paddingVerticalBySize(theme)[size]}px;
+  border-color: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: ButtonVariant;
+  }) => colorByVariant(theme)[variant].borderColor};
+  border-width: ${({ variant }: { variant: ButtonVariant }) =>
+    variant === 'outline' ? 1 : 0}px;
+  padding-left: ${({
+    theme,
+    size,
+  }: {
+    theme: DefaultTheme;
+    size: ButtonSize;
+  }) => paddingHorizontalBySize(theme)[size]}px;
+  padding-right: ${({
+    theme,
+    size,
+  }: {
+    theme: DefaultTheme;
+    size: ButtonSize;
+  }) => paddingHorizontalBySize(theme)[size]}px;
+  padding-top: ${({ theme, size }: { theme: DefaultTheme; size: ButtonSize }) =>
+    paddingVerticalBySize(theme)[size]}px;
+  padding-bottom: ${({
+    theme,
+    size,
+  }: {
+    theme: DefaultTheme;
+    size: ButtonSize;
+  }) => paddingVerticalBySize(theme)[size]}px;
 
-  border-radius: ${({ fullRounded }) => (fullRounded ? 50 : 12)}px;
+  border-radius: ${({ fullRounded }: { fullRounded: boolean }) =>
+    fullRounded ? 50 : 12}px;
   align-items: center;
   justify-content: center;
 
@@ -93,8 +127,18 @@ export const CustomIcon = styled(Icon)<{
   leftIcon: boolean;
   rightIcon: boolean;
 }>`
-  margin-right: ${({ theme, leftIcon }) =>
-    leftIcon ? theme.spacing.nano : 0}px;
-  margin-left: ${({ theme, rightIcon }) =>
-    rightIcon ? theme.spacing.nano : 0}px;
+  margin-right: ${({
+    theme,
+    leftIcon,
+  }: {
+    theme: DefaultTheme;
+    leftIcon: boolean;
+  }) => (leftIcon ? theme.spacing.nano : 0)}px;
+  margin-left: ${({
+    theme,
+    rightIcon,
+  }: {
+    theme: DefaultTheme;
+    rightIcon: boolean;
+  }) => (rightIcon ? theme.spacing.nano : 0)}px;
 `;

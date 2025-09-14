@@ -2,6 +2,7 @@ import { Dimensions, Platform, TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import Typography from '../Typography';
 import FastImage from '@d11/react-native-fast-image';
+import type { DefaultTheme } from 'styled-components/native';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 32;
@@ -24,13 +25,13 @@ export const ImageCustom = styled(FastImage)`
 
 export const DescriptionContainer = styled.View`
   flex-direction: column;
-  padding: ${({ theme }) => theme.spacing.nano}px;
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
 `;
 
 export const StarContainer = styled.View`
   flex-direction: row;
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
   align-items: center;
 `;
 
@@ -48,10 +49,12 @@ export const PriceLeft = styled.View``;
 
 export const ButtonContainer = styled.View``;
 
-export const OldPrice = styled(Typography).attrs(({ theme }) => ({
-  color: theme.colors.gray[500],
-}))<{ disabled?: boolean }>`
-  text-decoration-line: ${({ disabled }) =>
+export const OldPrice = styled(Typography).attrs(
+  ({ theme }: { theme: DefaultTheme }) => ({
+    color: theme.colors.gray[500],
+  })
+)<{ disabled?: boolean }>`
+  text-decoration-line: ${({ disabled }: { disabled: boolean }) =>
     disabled ? 'none' : 'line-through'};
 `;
 

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components/native';
 import { Dimensions, Platform } from 'react-native';
 import type { CardBlogVariant } from './CardBlog.types';
 import FastImage from '@d11/react-native-fast-image';
+import type { DefaultTheme } from 'styled-components/native';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = DEVICE_WIDTH / 2 - 24;
@@ -47,13 +48,17 @@ const getSizeByVariant = () => ({
 });
 
 export const Container = styled.TouchableOpacity<{ variant: CardBlogVariant }>`
-  flex-direction: ${({ variant }) => getSizeByVariant()[variant].flexDirection};
-  width: ${({ variant }) => getSizeByVariant()[variant].width}px;
+  flex-direction: ${({ variant }: { variant: CardBlogVariant }) =>
+    getSizeByVariant()[variant].flexDirection};
+  width: ${({ variant }: { variant: CardBlogVariant }) =>
+    getSizeByVariant()[variant].width}px;
 `;
 
 export const ImageContainer = styled.View<{ variant: CardBlogVariant }>`
-  width: ${({ variant }) => getSizeByVariant()[variant].imgWidth}px;
-  height: ${({ variant }) => getSizeByVariant()[variant].imgHeight}px;
+  width: ${({ variant }: { variant: CardBlogVariant }) =>
+    getSizeByVariant()[variant].imgWidth}px;
+  height: ${({ variant }: { variant: CardBlogVariant }) =>
+    getSizeByVariant()[variant].imgHeight}px;
   border-radius: 16px;
 `;
 
@@ -64,17 +69,23 @@ export const ImageCustom = styled(FastImage)<{ variant: CardBlogVariant }>`
 `;
 
 export const TextContainer = styled.View<{ variant: CardBlogVariant }>`
-  padding: ${({ theme }) => theme.spacing.nano}px;
-  width: ${({ variant }) => getSizeByVariant()[variant].textContainerWidth}px;
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
+  width: ${({ variant }: { variant: CardBlogVariant }) =>
+    getSizeByVariant()[variant].textContainerWidth}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
 `;
 
 export const BottomContainer = styled.View<{ variant: CardBlogVariant }>`
-  margin-top: ${({ theme, variant }) =>
-    variant === 'vertical' ? theme.spacing.nano : theme.spacing.quarck}px;
+  margin-top: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CardBlogVariant;
+  }) => (variant === 'vertical' ? theme.spacing.nano : theme.spacing.quarck)}px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
 `;

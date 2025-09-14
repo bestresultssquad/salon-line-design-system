@@ -3,17 +3,20 @@ import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
 import { View } from 'react-native';
 import type { CardBlogVariant } from './CardBlog.types';
+import type { DefaultTheme } from 'styled-components/native';
 
 const MotiCustom = styled(MotiView)<{ variant: CardBlogVariant }>`
-  width: ${({ variant }) => (variant === 'horizontal' ? 327 : 158)}px;
-  height: ${({ variant }) => (variant === 'horizontal' ? 112 : 252)}px;
-  gap: ${({ theme }) => theme.spacing.nano}px;
-  flex-direction: ${({ variant }) =>
+  width: ${({ variant }: { variant: CardBlogVariant }) =>
+    variant === 'horizontal' ? 327 : 158}px;
+  height: ${({ variant }: { variant: CardBlogVariant }) =>
+    variant === 'horizontal' ? 112 : 252}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
+  flex-direction: ${({ variant }: { variant: CardBlogVariant }) =>
     variant === 'horizontal' ? 'row' : 'column'};
 `;
 
 const DescriptionContainer = styled.View`
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
 `;
 
 const ButtonContainer = styled.View`

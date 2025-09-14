@@ -1,11 +1,13 @@
+import type { DefaultTheme } from 'styled-components/native';
 import styled from 'styled-components/native';
 
 export const AccordionContainer = styled.View`
   width: 100%;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray[200]};
-  padding: ${({ theme }) => theme.spacing.xxxxs}px;
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  border-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.gray[200]};
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxxxs}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;
 
 export const TitleContainer = styled.View`
@@ -17,7 +19,7 @@ export const TitleContainer = styled.View`
 export const IconContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
 `;
 
 export const AccordionItemContainer = styled.View``;

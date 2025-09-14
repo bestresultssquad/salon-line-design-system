@@ -30,7 +30,7 @@ function AccordionItem({
       style={[{ width: '100%', overflow: 'hidden' }, bodyStyle]}
     >
       <Wrapper
-        onLayout={(e) => {
+        onLayout={(e: { nativeEvent: { layout: { height: number } } }) => {
           height.value = e.nativeEvent.layout.height;
         }}
       >

@@ -27,13 +27,34 @@ export const Container = styled.TouchableOpacity<{
   selected: boolean;
   disableSelection: boolean;
 }>`
-  padding: ${({ theme }) => `${theme.spacing.nano}px ${theme.spacing.xxxxs}px`};
-  border-width: ${({ theme, variant }) =>
-    getStylesByVariant(theme)[variant].borderWidth}px;
-  border-color: ${({ theme, variant }) =>
-    getStylesByVariant(theme)[variant].borderColor};
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
-  background-color: ${({ theme, variant, selected, disableSelection }) =>
+  padding: ${({ theme }: { theme: DefaultTheme }) =>
+    `${theme.spacing.nano}px ${theme.spacing.xxxxs}px`};
+  border-width: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CategoriesVariant;
+  }) => getStylesByVariant(theme)[variant].borderWidth}px;
+  border-color: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CategoriesVariant;
+  }) => getStylesByVariant(theme)[variant].borderColor};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
+  background-color: ${({
+    theme,
+    variant,
+    selected,
+    disableSelection,
+  }: {
+    theme: DefaultTheme;
+    variant: CategoriesVariant;
+    selected: boolean;
+    disableSelection: boolean;
+  }) =>
     selected && !disableSelection
       ? getStylesByVariant(theme)[variant].selected
       : getStylesByVariant(theme)[variant].backgroundColor};
@@ -46,7 +67,17 @@ export const Text = styled(Typography)<{
   categoriesVariant: CategoriesVariant;
   disableSelection: boolean;
 }>`
-  color: ${({ theme, categoriesVariant, selected, disableSelection }) =>
+  color: ${({
+    theme,
+    categoriesVariant,
+    selected,
+    disableSelection,
+  }: {
+    theme: DefaultTheme;
+    selected: boolean;
+    categoriesVariant: CategoriesVariant;
+    disableSelection: boolean;
+  }) =>
     selected && !disableSelection
       ? getStylesByVariant(theme)[categoriesVariant].textColorSelected
       : getStylesByVariant(theme)[categoriesVariant].textColor};

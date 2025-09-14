@@ -2,6 +2,7 @@ import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 import type { BannerVariant } from './BannerImage.types';
 import FastImage from '@d11/react-native-fast-image';
+import type { DefaultTheme } from 'styled-components/native';
 
 const getStyleByVariant = () => ({
   sm: {
@@ -24,7 +25,7 @@ const getStyleByVariant = () => ({
 export const BannerImageContainer = styled.View<{
   bannerVariant: BannerVariant;
 }>`
-  height: ${({ bannerVariant }) =>
+  height: ${({ bannerVariant }: { bannerVariant: BannerVariant }) =>
     getStyleByVariant()[bannerVariant].containerHeight}px;
   align-items: center;
 `;
@@ -36,13 +37,28 @@ export const ImageContainer = styled.TouchableOpacity<{
   height?: number;
 }>`
   flex: 1;
-  width: ${({ bannerVariant, width }) =>
-    width || getStyleByVariant()[bannerVariant].imgWidth}px;
-  height: ${({ height }) => `${height}px` || '100%'};
-  padding-left: ${({ theme, fullWidth }) =>
-    fullWidth ? 0 : theme.spacing.sm}px;
-  padding-right: ${({ theme, fullWidth }) =>
-    fullWidth ? 0 : theme.spacing.sm}px;
+  width: ${({
+    bannerVariant,
+    width,
+  }: {
+    bannerVariant: BannerVariant;
+    width: number;
+  }) => width || getStyleByVariant()[bannerVariant].imgWidth}px;
+  height: ${({ height }: { height: number }) => `${height}px` || '100%'};
+  padding-left: ${({
+    theme,
+    fullWidth,
+  }: {
+    theme: DefaultTheme;
+    fullWidth: boolean;
+  }) => (fullWidth ? 0 : theme.spacing.sm)}px;
+  padding-right: ${({
+    theme,
+    fullWidth,
+  }: {
+    theme: DefaultTheme;
+    fullWidth: boolean;
+  }) => (fullWidth ? 0 : theme.spacing.sm)}px;
 `;
 
 export const BannerImg = styled(FastImage)<{
@@ -51,11 +67,21 @@ export const BannerImg = styled(FastImage)<{
   width?: number;
   height?: number;
 }>`
-  height: ${({ bannerVariant, height }) =>
-    height ? height : getStyleByVariant()[bannerVariant].imgHeight}px;
-  width: ${({ width }) => `${width}px` || '100%'};
-  border-radius: ${({ theme, removeBorder }) =>
-    removeBorder ? 0 : theme.spacing.sm}px;
+  height: ${({
+    bannerVariant,
+    height,
+  }: {
+    bannerVariant: BannerVariant;
+    height: number;
+  }) => (height ? height : getStyleByVariant()[bannerVariant].imgHeight)}px;
+  width: ${({ width }: { width: number }) => `${width}px` || '100%'};
+  border-radius: ${({
+    theme,
+    removeBorder,
+  }: {
+    theme: DefaultTheme;
+    removeBorder: boolean;
+  }) => (removeBorder ? 0 : theme.spacing.sm)}px;
 `;
 
 export const BannerBgImg = styled.ImageBackground.attrs(() => ({
@@ -65,18 +91,19 @@ export const BannerBgImg = styled.ImageBackground.attrs(() => ({
 }))<{
   bannerVariant: BannerVariant;
 }>`
-  height: ${({ bannerVariant }) =>
+  height: ${({ bannerVariant }: { bannerVariant: BannerVariant }) =>
     getStyleByVariant()[bannerVariant].imgHeight}px;
   width: 100%;
-  border-radius: ${({ theme }) => theme.spacing.sm}px;
-  margin-bottom: ${({ theme }) => theme.spacing.nano}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.sm}px;
+  margin-bottom: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.spacing.nano}px;
 `;
 
 export const TextBlogContainer = styled.View`
   flex: 1;
   justify-content: flex-end;
-  gap: ${({ theme }) => theme.spacing.quarck}px;
-  padding: ${({ theme }) => theme.spacing.xxxxs}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxxxs}px;
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;

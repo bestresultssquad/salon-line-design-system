@@ -26,8 +26,13 @@ const getStyleByVariant = (theme: DefaultTheme) => ({
 
 export const CheckboxContainer = styled.View<{ variant: CheckBoxVariant }>`
   flex-direction: row;
-  gap: ${({ theme, variant }) =>
-    variant === 'default' ? theme.spacing.nano : theme.spacing.xxxxs}px;
+  gap: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => (variant === 'default' ? theme.spacing.nano : theme.spacing.xxxxs)}px;
   align-items: flex-start;
 `;
 
@@ -35,20 +40,52 @@ export const CheckboxComponent = styled.View<{
   variant: CheckBoxVariant;
   disabled?: boolean;
 }>`
-  width: ${({ theme, variant }) => getStyleByVariant(theme)[variant].size}px;
-  height: ${({ theme, variant }) => getStyleByVariant(theme)[variant].size}px;
-  border-radius: ${({ theme, variant }) =>
-    getStyleByVariant(theme)[variant].borderRadius}px;
-  border-color: ${({ disabled, theme }) =>
-    disabled ? theme.colors.gray[400] : theme.colors.gray[900]};
+  width: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => getStyleByVariant(theme)[variant].size}px;
+  height: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => getStyleByVariant(theme)[variant].size}px;
+  border-radius: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => getStyleByVariant(theme)[variant].borderRadius}px;
+  border-color: ${({
+    disabled,
+    theme,
+  }: {
+    theme: DefaultTheme;
+    disabled: boolean;
+  }) => (disabled ? theme.colors.gray[400] : theme.colors.gray[900])};
   border-width: 1px;
-  padding: ${({ theme, variant }) =>
-    getStyleByVariant(theme)[variant].padding}px;
+  padding: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => getStyleByVariant(theme)[variant].padding}px;
 `;
 
 export const CheckboxChecked = styled(Animated.View)<{
   variant: CheckBoxVariant;
 }>`
-  border-radius: ${({ theme, variant }) =>
-    getStyleByVariant(theme)[variant].checkedRadius}px;
+  border-radius: ${({
+    theme,
+    variant,
+  }: {
+    theme: DefaultTheme;
+    variant: CheckBoxVariant;
+  }) => getStyleByVariant(theme)[variant].checkedRadius}px;
 `;

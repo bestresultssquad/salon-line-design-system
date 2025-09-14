@@ -1,15 +1,22 @@
 import { MotiView } from 'moti';
 import { Skeleton } from 'moti/skeleton';
+import type { DefaultTheme } from 'styled-components/native';
 
 import styled from 'styled-components/native';
 
 const MotiCustom = styled(MotiView)<{ rightLabel: boolean }>`
   width: 70px;
   height: 70px;
-  gap: ${({ theme, rightLabel }) =>
-    rightLabel ? theme.spacing.xxxxs : theme.spacing.nano}px;
-  margin-bottom: ${({ theme }) => theme.spacing.xxs}px;
-  flex-direction: ${({ rightLabel }) => (rightLabel ? 'row' : 'column')};
+  gap: ${({
+    theme,
+    rightLabel,
+  }: {
+    theme: DefaultTheme;
+    rightLabel: boolean;
+  }) => (rightLabel ? theme.spacing.xxxxs : theme.spacing.nano)}px;
+  margin-bottom: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
+  flex-direction: ${({ rightLabel }: { rightLabel: boolean }) =>
+    rightLabel ? 'row' : 'column'};
   align-items: center;
 `;
 

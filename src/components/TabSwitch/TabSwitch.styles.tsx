@@ -1,11 +1,13 @@
 import Animated from 'react-native-reanimated';
+import type { DefaultTheme } from 'styled-components/native';
 import styled from 'styled-components/native';
 
 export const Container = styled(Animated.View)`
-  padding: ${({ theme }) => theme.spacing.quarck}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray[200]};
-  border-radius: ${({ theme }) => theme.spacing.xxs}px;
+  border-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.gray[200]};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -14,7 +16,8 @@ export const Container = styled(Animated.View)`
 `;
 
 export const TextContainer = styled.View`
-  padding: ${({ theme }) => `${theme.spacing.xxxxs}px 0px`};
+  padding: ${({ theme }: { theme: DefaultTheme }) =>
+    `${theme.spacing.xxxxs}px 0px`};
   flex: 1;
   align-items: center;
 `;

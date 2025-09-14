@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 import type { Props } from './Typography.types';
 
 export const TypographyContainer = styled.Text<Props>`
-  ${(props) => css`
+  ${(props: any) => css`
     font-size: ${props.theme.typography[props.variant][props.sizeVariant]
       .size}px;
     font-weight: ${props.theme.typography[props.variant][props.sizeVariant]

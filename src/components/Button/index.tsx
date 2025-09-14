@@ -75,15 +75,27 @@ const Button = ({
     >
       {(onlyIcon || leftIcon) && !loading && renderLeftIcon()}
       {loading ? (
-        <LottieView
-          autoPlay
-          ref={animation}
-          style={{
-            width: onlyIcon ? 16 : 24,
-            height: onlyIcon ? 16 : 24,
-          }}
-          source={require('../../lottie/loading-white.json')}
-        />
+        variant === 'outline' ? (
+          <LottieView
+            autoPlay
+            ref={animation}
+            style={{
+              width: onlyIcon ? 16 : 24,
+              height: onlyIcon ? 16 : 24,
+            }}
+            source={require('../../lottie/loading-black.json')}
+          />
+        ) : (
+          <LottieView
+            autoPlay
+            ref={animation}
+            style={{
+              width: onlyIcon ? 16 : 24,
+              height: onlyIcon ? 16 : 24,
+            }}
+            source={require('../../lottie/loading-white.json')}
+          />
+        )
       ) : (
         <>
           <Typography

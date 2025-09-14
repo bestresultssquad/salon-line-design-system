@@ -2,10 +2,11 @@ import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Typography from '../Typography';
 import FastImage from '@d11/react-native-fast-image';
+import type { DefaultTheme } from 'styled-components/native';
 
 export const Container = styled.View`
   flex-direction: row;
-  gap: ${({ theme }) => theme.spacing.nano}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
 `;
 export const ImageContainer = styled.View`
   position: relative;
@@ -19,12 +20,12 @@ export const ImageCustom = styled(FastImage)`
 
 export const DescriptionContainer = styled.View`
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.quarck}px;
+  gap: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
   flex: 1;
 `;
 
 export const CheckboxContainer = styled.View`
-  padding: ${({ theme }) => theme.spacing.quarck}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.quarck}px;
 `;
 
 export const TitleContainer = styled.View`
@@ -42,16 +43,20 @@ export const PriceLeft = styled.View``;
 
 export const ButtonContainer = styled.View``;
 
-export const OldPrice = styled(Typography).attrs(({ theme }) => ({
-  color: theme.colors.gray[500],
-}))`
+export const OldPrice = styled(Typography).attrs(
+  ({ theme }: { theme: DefaultTheme }) => ({
+    color: theme.colors.gray[500],
+  })
+)`
   text-decoration-line: line-through;
 `;
 
 export const Card = styled(TouchableOpacity)`
-  padding: ${({ theme }) => theme.spacing.nano}px;
+  padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-width: 1px;
-  border-radius: ${({ theme }) => theme.spacing.xxxxs}px;
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.spacing.xxxxs}px;
   width: 100%;
-  border-color: ${({ theme }) => theme.colors.gray[200]};
+  border-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.colors.gray[200]};
 `;
