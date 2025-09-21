@@ -1,8 +1,10 @@
 import { useBottomSheetInternal } from '@gorhom/bottom-sheet';
-import { useCallback, useEffect } from 'react';
-import type {
-  NativeSyntheticEvent,
-  TextInputFocusEventData,
+import { useCallback, useEffect, useImperativeHandle, useRef } from 'react';
+import {
+  findNodeHandle,
+  TextInput,
+  type NativeSyntheticEvent,
+  type TextInputFocusEventData,
 } from 'react-native';
 import Input from '../Input';
 import type { InputProps } from '../Input/Input.types';
@@ -19,32 +21,76 @@ const InputBottomSheet = ({
   onBlur,
   ...props
 }: InputProps) => {
-  const { shouldHandleKeyboardEvents } = useBottomSheetInternal();
-
+  const { animatedKeyboardState, textInputNodesRef } = useBottomSheetInternal();
+  const ref = useRef<TextInput>(null);
   const handleOnFocus = useCallback(
     (args: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      shouldHandleKeyboardEvents.value = true;
+      animatedKeyboardState.set((state) => ({
+        ...state,
+        target: args.nativeEvent.target,
+      }));
       if (onFocus) {
         onFocus(args);
       }
     },
-    [onFocus, shouldHandleKeyboardEvents]
+    [onFocus, animatedKeyboardState]
   );
   const handleOnBlur = useCallback(
     (args: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      shouldHandleKeyboardEvents.value = false;
+      const keyboardState = animatedKeyboardState.get();
+      const currentFocusedInput = findNodeHandle(
+        TextInput.State.currentlyFocusedInput()
+      );
+
+      const shouldRemoveCurrentTarget =
+        keyboardState.target === args.nativeEvent.target;
+      const shouldIgnoreBlurEvent =
+        currentFocusedInput &&
+        textInputNodesRef.current.has(currentFocusedInput);
+
+      if (shouldRemoveCurrentTarget && !shouldIgnoreBlurEvent) {
+        animatedKeyboardState.set((state) => ({
+          ...state,
+          target: undefined,
+        }));
+      }
+
       if (onBlur) {
         onBlur(args);
       }
     },
-    [onBlur, shouldHandleKeyboardEvents]
+    [onBlur, animatedKeyboardState, textInputNodesRef]
   );
-
   useEffect(() => {
+    const componentNode = findNodeHandle(ref.current);
+    if (!componentNode) {
+      return;
+    }
+
+    if (!textInputNodesRef.current.has(componentNode)) {
+      textInputNodesRef.current.add(componentNode);
+    }
+
     return () => {
-      shouldHandleKeyboardEvents.value = false;
+      const componentNode = findNodeHandle(ref.current);
+      if (!componentNode) {
+        return;
+      }
+
+      const keyboardState = animatedKeyboardState.get();
+      if (keyboardState.target === componentNode) {
+        animatedKeyboardState.set((state) => ({
+          ...state,
+          target: undefined,
+        }));
+      }
+
+      if (textInputNodesRef.current.has(componentNode)) {
+        textInputNodesRef.current.delete(componentNode);
+      }
     };
-  }, [shouldHandleKeyboardEvents]);
+  }, [textInputNodesRef, animatedKeyboardState]);
+  useImperativeHandle(props.inputRef, () => ref.current ?? undefined, []);
 
   return (
     <Input

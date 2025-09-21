@@ -1934,7 +1934,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.0.2
     "@d11/react-native-fast-image": ^8.9.2
     "@evilmartians/lefthook": ^1.5.0
-    "@gorhom/bottom-sheet": ^5.0.0-alpha.11
+    "@gorhom/bottom-sheet": ^5.2.6
     "@react-native/babel-preset": 0.75.2
     "@react-native/eslint-config": ^0.73.1
     "@react-navigation/native": ^7.0.14
@@ -2882,9 +2882,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gorhom/bottom-sheet@npm:^5.0.0-alpha.11":
-  version: 5.1.4
-  resolution: "@gorhom/bottom-sheet@npm:5.1.4"
+"@gorhom/bottom-sheet@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "@gorhom/bottom-sheet@npm:5.2.6"
   dependencies:
     "@gorhom/portal": 1.0.14
     invariant: ^2.2.4
@@ -2894,13 +2894,13 @@ __metadata:
     react: "*"
     react-native: "*"
     react-native-gesture-handler: ">=2.16.1"
-    react-native-reanimated: ">=3.16.0"
+    react-native-reanimated: "*"
   peerDependenciesMeta:
     "@types/react":
       optional: true
     "@types/react-native":
       optional: true
-  checksum: 661c89e43c84b2b5452fb5b7eb185bdb5368507d541253009fe915356a5d3983a74cca7a6e6ae3580d13b61f86f79a261f120ef93aaf8f5a0ad0243b098099e0
+  checksum: 1afdb8a11024dda72b67d2358d907a0241478ad0ee8aebedc6ef4413ed0571af3eec678229ba5f8cbe15dbfc8fd508dfbd64e5685b68209a68fca85cd848d34f
   languageName: node
   linkType: hard
 
