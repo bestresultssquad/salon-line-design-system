@@ -34,6 +34,7 @@ const lightTheme = {
     purple: {
       500: '#BA4DDE',
       800: '#804FE8',
+      900: "#660EBA",
     },
     pink: {
       600: '#DB2777',

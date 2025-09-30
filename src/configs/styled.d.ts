@@ -33,6 +33,7 @@ export type Colors = {
   purple: {
     500: string;
     800: string;
+    900: string;
   };
   pink: {
     600: string;
