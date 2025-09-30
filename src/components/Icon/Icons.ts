@@ -115,6 +115,11 @@ import { MessageIcon } from './IconComponents/Message.icon';
 import { BarCodeFilledIcon } from './IconComponents/BarCodeFilled.icon';
 import { CreditCardFilledIcon } from './IconComponents/CreditCardFilled.icon';
 import { ArrowUpDownIcon } from './IconComponents/ArrowUpDown.icon';
+import { EditMigs } from './IconComponents/EditMigs.icon';
+import { LegalDocumentIcon } from './IconComponents/LegalDocument.Icon';
+import { LoginIcon } from './IconComponents/Login.icon';
+import { MailOpenLoveIcon } from './IconComponents/MailOpenLove.icon';
+import { MailSendIcon } from './IconComponents/MailSend.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -234,4 +239,9 @@ export const IconsComponent = {
   BarCodeFilledIcon,
   CreditCardFilledIcon,
   ArrowUpDownIcon,
+  EditMigs,
+  LegalDocumentIcon,
+  LoginIcon,
+  MailOpenLoveIcon,
+  MailSendIcon
 };
