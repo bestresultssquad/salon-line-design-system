@@ -60,11 +60,11 @@ export const InputContainer = styled.View<{
     theme: DefaultTheme;
     variant: InputVariant;
   }) =>
-    Platform.OS === 'android'
+    (Platform.OS === 'android'
       ? 0
-      : getPaddingByVariant(variant, theme).vertical +
-        ' ' +
-        getPaddingByVariant(variant, theme).horizontal};
+      : getPaddingByVariant(variant, theme).vertical) +
+    ' ' +
+    getPaddingByVariant(variant, theme).horizontal};
   background-color: ${({
     theme,
     editable,
