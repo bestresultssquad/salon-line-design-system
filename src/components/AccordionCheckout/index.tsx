@@ -80,6 +80,7 @@ function AccordionCheckout({
       <TitleContainer onPress={() => !disabled && handlePressAccordion()}>
         <View
           style={{
+            flex:1,
             justifyContent: 'space-between',
             flexDirection: 'row',
             paddingVertical: subtitle ? 16 : 24,

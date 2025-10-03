@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import MaskInput from 'react-native-mask-input';
 import type { InputVariant } from './Input.types';
 import type { DefaultTheme } from 'styled-components/native';
+import { Platform } from 'react-native';
 
 const getPaddingByVariant = (variant: InputVariant, theme: DefaultTheme) => {
   switch (variant) {
@@ -59,9 +60,11 @@ export const InputContainer = styled.View<{
     theme: DefaultTheme;
     variant: InputVariant;
   }) =>
-    getPaddingByVariant(variant, theme).vertical +
-    ' ' +
-    getPaddingByVariant(variant, theme).horizontal};
+    Platform.OS === 'android'
+      ? 0
+      : getPaddingByVariant(variant, theme).vertical +
+        ' ' +
+        getPaddingByVariant(variant, theme).horizontal};
   background-color: ${({
     theme,
     editable,

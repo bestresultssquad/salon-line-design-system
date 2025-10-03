@@ -119,6 +119,7 @@ function AccordionPlayer({
             alignItems: 'center',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            flex: 1,
           }}
         >
           <IconContainer onPress={() => handlePressAccordion()}>
