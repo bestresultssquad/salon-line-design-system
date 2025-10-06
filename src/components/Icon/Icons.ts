@@ -120,6 +120,9 @@ import { LegalDocumentIcon } from './IconComponents/LegalDocument.Icon';
 import { LoginIcon } from './IconComponents/Login.icon';
 import { MailOpenLoveIcon } from './IconComponents/MailOpenLove.icon';
 import { MailSendIcon } from './IconComponents/MailSend.icon';
+import { TickDoubleIcon } from './IconComponents/TickDouble.icon';
+import { MailIcon } from './IconComponents/Mail.icon';
+import { InformativeIcon } from './IconComponents/Informative.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -243,5 +246,8 @@ export const IconsComponent = {
   LegalDocumentIcon,
   LoginIcon,
   MailOpenLoveIcon,
-  MailSendIcon
+  MailSendIcon,
+  TickDoubleIcon,
+  MailIcon,
+  InformativeIcon,
 };

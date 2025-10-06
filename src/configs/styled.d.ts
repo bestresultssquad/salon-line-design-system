@@ -17,6 +17,7 @@ export type Colors = {
     100: string;
     200: string;
     700: string;
+    800: string;
   };
   sky: {
     100: string;
@@ -31,6 +32,8 @@ export type Colors = {
     700: string;
   };
   purple: {
+    100: string;
+    400: string;
     500: string;
     800: string;
     900: string;

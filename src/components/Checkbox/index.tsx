@@ -14,6 +14,7 @@ const Checkbox = ({
   children,
   variant,
   disabled,
+  checkedColor,
 }: CheckboxProps) => {
   const { colors } = useTheme();
 
@@ -55,7 +56,7 @@ const Checkbox = ({
             style={[
               {
                 transform: [{ scale: displayIcon }],
-                backgroundColor: colors.black,
+                backgroundColor: checkedColor || colors.black,
                 width: '100%',
                 height: '100%',
                 alignItems: 'center',

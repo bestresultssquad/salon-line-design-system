@@ -9,4 +9,5 @@ export interface LinkProps extends PropsWithChildren {
   typographyVariant?: TypographyVariants;
   onPress?: () => void;
   disabled?: boolean;
+  typographyColor?: string;
 }

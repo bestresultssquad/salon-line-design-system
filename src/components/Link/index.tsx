@@ -6,6 +6,7 @@ const Link = ({
   onPress,
   typographySizeVariant,
   typographyVariant,
+  typographyColor,
   children,
   disabled = false,
   ...props
@@ -17,6 +18,7 @@ const Link = ({
         disabled={disabled}
         sizeVariant={typographySizeVariant ?? 'medium'}
         variant={typographyVariant ?? 'base'}
+        color={typographyColor ?? 'black'}
       >
         {children}
       </TypographyCustom>

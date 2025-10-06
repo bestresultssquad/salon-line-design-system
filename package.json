@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
