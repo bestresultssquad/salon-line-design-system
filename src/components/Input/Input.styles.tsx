@@ -35,13 +35,13 @@ const getBorder = (
     return 'none';
   }
   if (error) {
-    return `1px solid ${theme.colors.red[500]}`;
+    return `1px solid ${theme.baseColors.red[500]}`;
   }
   if (focused) {
-    return `1px solid  ${theme.colors.black}`;
+    return `1px solid  ${theme.baseColors.black}`;
   }
 
-  return `1px solid  ${theme.colors.gray[200]}`;
+  return `1px solid  ${theme.baseColors.gray[200]}`;
 };
 
 export const Container = styled.View``;
@@ -73,7 +73,10 @@ export const InputContainer = styled.View<{
     theme: DefaultTheme;
     editable: boolean;
     clickable: boolean;
-  }) => (editable || clickable ? theme.colors.white : theme.colors.gray[100])};
+  }) =>
+    editable || clickable
+      ? theme.themed.inputBackground
+      : theme.baseColors.gray[100]};
   border-radius: 12px;
   width: 100%;
   flex-direction: row;
@@ -118,5 +121,5 @@ export const TextInput = styled(MaskInput)<{
     theme: DefaultTheme;
     rightIcon: boolean;
   }) => (rightIcon ? theme.spacing.xxxxs : 0)}px;
-  color: ${({ theme }: { theme: DefaultTheme }) => theme.colors.black};
+  color: ${({ theme }: { theme: DefaultTheme }) => theme.baseColors.black};
 `;

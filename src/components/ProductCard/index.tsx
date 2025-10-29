@@ -38,7 +38,7 @@ const ProductCard = ({
   tags,
   loading,
 }: ProductCardProps) => {
-  const { colors } = useTheme();
+  const { baseColors, themed } = useTheme();
 
   const imageStyle = useMemo(
     () => ({ opacity: disabled ? 0.5 : 1 }),
@@ -66,8 +66,8 @@ const ProductCard = ({
   );
 
   const titleColor = useMemo(
-    () => (disabled ? colors.gray[500] : colors.black),
-    [disabled, colors.gray, colors.black]
+    () => (disabled ? baseColors.gray[500] : themed.text),
+    [disabled, baseColors.gray, baseColors.black]
   );
 
   return (
@@ -102,7 +102,7 @@ const ProductCard = ({
                 width={12}
                 height={12}
                 type="StarIcon"
-                fill={colors.yellow[500]}
+                fill={baseColors.yellow[500]}
               />
             ))}
             {emptyStars.map((index) => (
@@ -111,7 +111,7 @@ const ProductCard = ({
                 width={12}
                 height={12}
                 type="StarIcon"
-                fill={colors.gray[300]}
+                fill={baseColors.gray[300]}
               />
             ))}
             <Typography variant="3xs" sizeVariant="medium">
@@ -153,7 +153,7 @@ const ProductCard = ({
                 size="nano"
                 iconType="BagIcon"
                 iconSize={16}
-                iconStrokeColor={colors.white}
+                iconStrokeColor={themed.text}
               />
             </ButtonContainer>
           </PriceContainer>

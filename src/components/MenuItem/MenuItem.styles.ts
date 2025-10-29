@@ -14,12 +14,12 @@ export const Container = styled.Pressable<{
     removeBorderBottom: boolean;
   }) => (removeBorderBottom ? 0 : 1)}px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
   padding: ${({ theme }: { theme: DefaultTheme }) =>
     `${theme.spacing.xxxxs}px 0`};
   opacity: ${({ pressed }: { pressed: boolean }) => (pressed ? 0.5 : 1)};
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.white};
+    theme.themed.background};
 `;
 
 export const LeftContainer = styled.View`

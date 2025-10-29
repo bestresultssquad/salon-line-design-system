@@ -24,7 +24,7 @@ const Button = ({
   iconFill = 'none',
   ...props
 }: Props) => {
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
   const animation = useRef<LottieView>(null);
 
   const renderLeftIcon = () => {
@@ -101,7 +101,7 @@ const Button = ({
           <Typography
             color={
               textColor ??
-              (variant !== 'outline' ? colors.white : colors.gray[900])
+              (variant !== 'outline' ? baseColors.white : baseColors.gray[900])
             }
             sizeVariant={textSizeVariant ?? 'regular'}
             variant={textVariant ?? '3xs'}

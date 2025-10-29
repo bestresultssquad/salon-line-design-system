@@ -5,20 +5,20 @@ import Typography from '../Typography';
 
 const getStylesByVariant = (theme: DefaultTheme) => ({
   default: {
-    backgroundColor: theme.colors.white,
-    selected: theme.colors.gray[900],
+    backgroundColor: theme.themed.background,
+    selected: theme.baseColors.gray[900],
     borderWidth: 1,
-    borderColor: theme.colors.gray[200],
-    textColor: theme.colors.black,
-    textColorSelected: theme.colors.white,
+    borderColor: theme.baseColors.gray[200],
+    textColor: theme.themed.text,
+    textColorSelected: theme.baseColors.white,
   },
   primary: {
-    backgroundColor: theme.colors.gray[100],
-    selected: theme.colors.gray[900],
+    backgroundColor: theme.baseColors.gray[100],
+    selected: theme.baseColors.gray[900],
     borderWidth: 1,
-    borderColor: theme.colors.gray[100],
-    textColor: theme.colors.black,
-    textColorSelected: theme.colors.white,
+    borderColor: theme.baseColors.gray[100],
+    textColor: theme.baseColors.black,
+    textColorSelected: theme.baseColors.white,
   },
 });
 

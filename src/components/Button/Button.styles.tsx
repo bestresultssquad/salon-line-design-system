@@ -26,36 +26,36 @@ const paddingHorizontalBySize = (theme: DefaultTheme) => ({
 
 const colorByVariant = (theme: DefaultTheme) => ({
   primary: {
-    backgroundColor: theme.colors.gray[900],
+    backgroundColor: theme.baseColors.gray[900],
     borderColor: 'transparent',
   },
   outline: {
-    backgroundColor: theme.colors.white,
-    borderColor: theme.colors.gray[600],
+    backgroundColor: theme.baseColors.white,
+    borderColor: theme.baseColors.gray[600],
   },
   disabled: {
-    backgroundColor: theme.colors.gray[400],
+    backgroundColor: theme.baseColors.gray[400],
     borderColor: 'transparent',
   },
   cart: {
-    backgroundColor: theme.colors.green[700],
+    backgroundColor: theme.baseColors.green[700],
     borderColor: 'transparent',
   },
   action: {
-    backgroundColor: theme.colors.gray[100],
+    backgroundColor: theme.baseColors.gray[100],
     borderColor: 'transparent',
   },
 
   favorite: {
-    backgroundColor: theme.colors.gray[200],
+    backgroundColor: theme.baseColors.gray[200],
     borderColor: 'transparent',
   },
   onboarding: {
-    backgroundColor: theme.colors.gray[100],
+    backgroundColor: theme.baseColors.gray[100],
     borderColor: 'transparent',
   },
   filter: {
-    backgroundColor: theme.colors.gray[900],
+    backgroundColor: theme.baseColors.gray[900],
     borderColor: 'transparent',
   },
   link: {
@@ -80,7 +80,7 @@ export const ButtonContainer = styled.TouchableOpacity<{
     disabled?: boolean;
   }) =>
     disabled
-      ? theme.colors.gray[400]
+      ? theme.baseColors.gray[400]
       : colorByVariant(theme)[variant].backgroundColor};
   border-color: ${({
     theme,

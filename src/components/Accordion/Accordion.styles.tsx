@@ -20,8 +20,8 @@ const getStylesByVariant = (
     borderWidth: 1,
     radius: 0,
     paddingHorizontal: 0,
-    borderColor: theme.colors.white,
-    backgrounColor: theme.colors.white,
+    borderColor: theme.baseColors.white,
+    backgrounColor: theme.themed.background,
   },
   reviews: {
     padding: 0,
@@ -29,15 +29,15 @@ const getStylesByVariant = (
     radius: 0,
     paddingHorizontal: 0,
     borderColor: '',
-    backgrounColor: theme.colors.white,
+    backgrounColor: theme.themed.background,
   },
   recurringPurchase: {
     padding: theme.spacing.xxxs,
     borderWidth: 1,
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.nano,
-    borderColor: theme.colors.gray[200],
-    backgrounColor: theme.colors.white,
+    borderColor: theme.baseColors.gray[200],
+    backgrounColor: theme.themed.background,
   },
   categories: {
     padding: theme.spacing.xxxxs,
@@ -45,7 +45,7 @@ const getStylesByVariant = (
     radius: 0,
     paddingHorizontal: 0,
     borderColor: 0,
-    backgrounColor: theme.colors.white,
+    backgrounColor: theme.themed.background,
   },
   subCategory: {
     padding: theme.spacing.xxxxs,
@@ -53,7 +53,7 @@ const getStylesByVariant = (
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.xxxxs,
     borderColor: 0,
-    backgrounColor: theme.colors.white,
+    backgrounColor: theme.themed.background,
   },
 });
 
@@ -75,7 +75,7 @@ export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
     variant: AccordionVariant;
   }) =>
     variant === 'default' || variant === 'recurringPurchase'
-      ? `${theme.colors.gray[200]} `
+      ? `${theme.baseColors.gray[200]} `
       : 0};
   border-color: ${({
     theme,

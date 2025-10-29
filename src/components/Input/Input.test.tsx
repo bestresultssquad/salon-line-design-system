@@ -52,6 +52,6 @@ describe('Input Component', () => {
       <Input {...defaultProps} placeholder="Test Placeholder" />
     );
     const input = getByPlaceholderText('Test Placeholder');
-    expect(input.props.placeholderTextColor).toBe(themes.colors.gray[500]);
+    expect(input.props.placeholderTextColor).toBe(themes.baseColors.gray[500]);
   });
 });

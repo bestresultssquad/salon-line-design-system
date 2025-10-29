@@ -12,7 +12,7 @@ export const TitleMainContainer = styled.View`
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
   margin-bottom: ${({ theme }: { theme: DefaultTheme }) =>
     theme.spacing.nano}px;
 `;
@@ -50,10 +50,10 @@ export const OldPrice = styled(Typography)`
 const cardStyle = css<{
   elevation?: 'md';
 }>`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.themed.background};
   border-radius: 16px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray[200]};
+  border-color: ${({ theme }) => theme.baseColors.gray[200]};
 
   ${({ theme, elevation = 'md' }) => css`
     elevation: 6;
@@ -68,8 +68,9 @@ const cardStyle = css<{
 `;
 
 const cardSearchStyle = css`
-  border-bottom-color: ${({ theme }) => theme.colors.gray[200]};
+  border-bottom-color: ${({ theme }) => theme.baseColors.gray[200]};
   border-bottom-width: 1px;
+  background-color: ${({ theme }) => theme.themed.background};
 `;
 
 export const Card = styled.View<{

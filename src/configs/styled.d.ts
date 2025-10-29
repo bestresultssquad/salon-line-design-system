@@ -1,6 +1,6 @@
 import 'styled-components/native';
 
-export type Colors = {
+export type BaseColors = {
   black: string;
   white: string;
   gray: {
@@ -119,11 +119,19 @@ export type Elevation = {
   };
 };
 
+export type Themed = {
+  background: string;
+  text: string;
+  inputBackground: string;
+  inverseBackground: string;
+};
+
 export interface DefaultThemeDesignSystem {
-  colors: Colors;
+  baseColors: BaseColors;
   typography: Typography;
   spacing: Spacing;
   elevation: Elevation;
+  themed: Themed;
 }
 
 declare module 'styled-components/native' {

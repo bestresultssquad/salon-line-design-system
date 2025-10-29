@@ -11,7 +11,7 @@ const CARD_WIDTH_HORIZONTAL = DEVICE_WIDTH - 24;
 const cardStyle = css<{
   elevation?: 'md';
 }>`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.themed.background};
   border-radius: 16px;
 
   ${({ theme, elevation = 'md' }) => css`

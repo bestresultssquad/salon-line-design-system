@@ -11,7 +11,7 @@ const MotiCustom = styled(MotiView)`
   flex-direction: row;
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
 `;
 
 const DescriptionContainer = styled.View`

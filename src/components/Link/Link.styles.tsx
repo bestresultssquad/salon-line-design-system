@@ -6,5 +6,5 @@ export const Container = styled.View``;
 
 export const TypographyCustom = styled(Typography)<{ disabled: boolean }>`
   color: ${({ theme, disabled }: { theme: DefaultTheme; disabled: boolean }) =>
-    disabled ? theme.colors.gray[600] : theme.colors.black};
+    disabled ? theme.baseColors.gray[600] : theme.themed.text};
 `;

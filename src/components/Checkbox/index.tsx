@@ -16,7 +16,7 @@ const Checkbox = ({
   disabled,
   checkedColor,
 }: CheckboxProps) => {
-  const { colors } = useTheme();
+  const { baseColors, themed } = useTheme();
 
   const animatedValue = useRef(new Animated.Value(0)).current;
 
@@ -56,13 +56,13 @@ const Checkbox = ({
             style={[
               {
                 transform: [{ scale: displayIcon }],
-                backgroundColor: checkedColor || colors.black,
+                backgroundColor: checkedColor || baseColors.black,
                 width: '100%',
                 height: '100%',
                 alignItems: 'center',
                 justifyContent: 'center',
                 display: checked ? 'flex' : 'none',
-                borderColor: colors.red[500],
+                borderColor: baseColors.red[500],
               },
             ]}
           >
@@ -74,9 +74,9 @@ const Checkbox = ({
                     width: 6,
                     height: 6,
                     padding: 3.5,
-                    backgroundColor: colors.white,
+                    backgroundColor: baseColors.white,
                     borderRadius: 100,
-                    borderColor: colors.black,
+                    borderColor: baseColors.black,
                   },
                 ]}
               />

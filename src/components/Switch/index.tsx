@@ -14,7 +14,7 @@ import { SwitchCircle, SwitchContainer } from './Switch.styles';
 
 const Switch = ({ onPress, active }: SwitchProps) => {
   const switchTranslate = useSharedValue(0);
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
 
   const progress = useDerivedValue(() => {
     return withTiming(active ? 22 : 0);
@@ -49,7 +49,7 @@ const Switch = ({ onPress, active }: SwitchProps) => {
     const backgroundColor = interpolateColor(
       progress.value,
       [0, 22],
-      [colors.gray[400], colors.green[700]]
+      [baseColors.gray[400], baseColors.green[700]]
     );
     return {
       backgroundColor,
@@ -66,7 +66,7 @@ const Switch = ({ onPress, active }: SwitchProps) => {
           testID={'switch-circle'}
           style={[
             {
-              shadowColor: colors.black,
+              shadowColor: baseColors.black,
               shadowOffset: {
                 width: 0,
                 height: 2,

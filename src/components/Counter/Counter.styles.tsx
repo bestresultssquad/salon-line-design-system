@@ -9,7 +9,7 @@ export const Container = styled.View`
   border-radius: ${({ theme }: { theme: DefaultTheme }) =>
     theme.spacing.xxxxs}px;
   border-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
   height: 40px;
 `;
 

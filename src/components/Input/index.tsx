@@ -20,7 +20,7 @@ const Input = ({
   inputRef,
   ...props
 }: InputProps) => {
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
   const [isFocused, setIsFocused] = useState(false);
 
   const renderLeftIcon = () => {
@@ -63,7 +63,7 @@ const Input = ({
           {...props}
           leftIcon={!!leftIcon}
           rightIcon={!!rightIcon}
-          placeholderTextColor={colors.gray[500]}
+          placeholderTextColor={baseColors.gray[500]}
           onFocus={(e: React.FocusEvent<any>) => {
             if (props.onFocus) {
               //@ts-ignore
@@ -83,7 +83,7 @@ const Input = ({
           <Icon
             height={24}
             width={24}
-            stroke={colors.red[500]}
+            stroke={baseColors.red[500]}
             type="AlertIcon"
           />
         )}
@@ -93,7 +93,7 @@ const Input = ({
         <Typography
           sizeVariant="semiBold"
           variant="xs"
-          color={colors.red[500]}
+          color={baseColors.red[500]}
           style={{ marginTop: 4 }}
         >
           {error}

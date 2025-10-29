@@ -5,13 +5,13 @@ import type { Props } from './SectionTitle.types';
 import { TouchableOpacity } from 'react-native';
 
 const SectionTitle = ({ linkOnPress, linkText, title, ...props }: Props) => {
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
   return (
     <Container {...props}>
       <Typography
         sizeVariant={'semiBold'}
         variant={'sm'}
-        color={colors.black}
+        color={baseColors.black}
         numberOfLines={2}
         style={{ maxWidth: '80%' }}
       >
@@ -21,7 +21,7 @@ const SectionTitle = ({ linkOnPress, linkText, title, ...props }: Props) => {
         <Typography
           sizeVariant={'medium'}
           variant={'sm'}
-          color={colors.gray[600]}
+          color={baseColors.gray[600]}
           style={{ textDecorationLine: 'underline' }}
         >
           {linkText}

@@ -46,7 +46,7 @@ export const Dots = styled(Animated.View)<{ variant: PaginatorVariant }>`
     variant: PaginatorVariant;
   }) => getVariantStyle(theme)[variant].borderWidth}px;
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.white};
+    theme.baseColors.white};
   margin-left: ${({
     theme,
     variant,

@@ -11,6 +11,6 @@ export const TypographyContainer = styled.Text<Props>`
       .family};
     line-height: ${props.theme.typography[props.variant][props.sizeVariant]
       .lineHeight}px;
-    color: ${props.color ? props.color : props.theme.colors.white};
+    color: ${props.color ? props.color : props.theme.themed.text};
   `}
 `;

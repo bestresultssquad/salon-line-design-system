@@ -12,7 +12,7 @@ export const ModalBackground = styled(Animated.View)`
 export const ModalContainer = styled(Animated.View)`
   width: 90%;
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.white};
+    theme.themed.background};
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.sm}px;
   elevation: 20;
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;

@@ -45,7 +45,7 @@ export const ButtonContainer = styled.View``;
 
 export const OldPrice = styled(Typography).attrs(
   ({ theme }: { theme: DefaultTheme }) => ({
-    color: theme.colors.gray[500],
+    color: theme.baseColors.gray[500],
   })
 )`
   text-decoration-line: line-through;
@@ -58,5 +58,7 @@ export const Card = styled(TouchableOpacity)`
     theme.spacing.xxxxs}px;
   width: 100%;
   border-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.themed.background};
 `;

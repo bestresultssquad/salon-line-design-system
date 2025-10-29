@@ -14,5 +14,5 @@ export const SwitchCircle = styled(Animated.View)`
   height: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xs}px;
   border-radius: 30px;
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.white};
+    theme.baseColors.white};
 `;

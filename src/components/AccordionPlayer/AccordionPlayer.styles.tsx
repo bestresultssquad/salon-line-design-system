@@ -8,7 +8,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     borderWidth: 1,
     radius: 0,
     paddingHorizontal: 0,
-    borderColor: theme.colors.white,
+    borderColor: theme.baseColors.white,
   },
   reviews: {
     padding: 0,
@@ -22,7 +22,7 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     borderWidth: 1,
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.nano,
-    borderColor: theme.colors.gray[200],
+    borderColor: theme.baseColors.gray[200],
   },
   categories: {
     padding: theme.spacing.xxxxs,

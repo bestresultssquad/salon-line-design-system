@@ -26,7 +26,10 @@ export const ChipContainer = styled.View<{
   }: {
     theme: DefaultTheme;
     variant: ChipVariant;
-  }) => (variant === 'outlined' ? theme.colors.white : theme.colors.pink[600])};
+  }) =>
+    variant === 'outlined'
+      ? theme.baseColors.white
+      : theme.baseColors.pink[600]};
   border-radius: 50px;
   border-width: ${({ variant }: { variant: ChipVariant }) =>
     variant === 'outlined' ? '1px' : '0'};

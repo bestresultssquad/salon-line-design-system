@@ -25,7 +25,7 @@ const BannerImg = ({
   const [day, month, year] = datePart?.split('/') || [];
   const formattedDateString = `${year}-${month}-${day}T${timePart?.trim()}:00`;
   const date = new Date(formattedDateString);
-  const { colors, spacing } = useTheme();
+  const { baseColors, spacing } = useTheme();
 
   const { hours, minutes, seconds, hasEnded } = useTimeCounter(date);
 
@@ -56,7 +56,7 @@ const BannerImg = ({
             <View
               style={{
                 paddingVertical: 8,
-                backgroundColor: colors.gray[900],
+                backgroundColor: baseColors.gray[900],
                 borderRadius: spacing.xxxxs,
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -66,14 +66,14 @@ const BannerImg = ({
               <Typography
                 sizeVariant="semiBold"
                 variant="lg"
-                color={colors.white}
+                color={baseColors.white}
               >
                 {hours}
               </Typography>
               <Typography
                 sizeVariant="medium"
                 variant="2xs"
-                color={colors.white}
+                color={baseColors.white}
               >
                 Horas
               </Typography>
@@ -81,7 +81,7 @@ const BannerImg = ({
             <View
               style={{
                 paddingVertical: 8,
-                backgroundColor: colors.gray[900],
+                backgroundColor: baseColors.gray[900],
                 borderRadius: spacing.xxxxs,
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -91,14 +91,14 @@ const BannerImg = ({
               <Typography
                 sizeVariant="semiBold"
                 variant="lg"
-                color={colors.white}
+                color={baseColors.white}
               >
                 {minutes}
               </Typography>
               <Typography
                 sizeVariant="medium"
                 variant="2xs"
-                color={colors.white}
+                color={baseColors.white}
               >
                 Minutos
               </Typography>
@@ -106,7 +106,7 @@ const BannerImg = ({
             <View
               style={{
                 paddingVertical: 8,
-                backgroundColor: colors.gray[900],
+                backgroundColor: baseColors.gray[900],
                 borderRadius: spacing.xxxxs,
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -116,14 +116,14 @@ const BannerImg = ({
               <Typography
                 sizeVariant="semiBold"
                 variant="lg"
-                color={colors.white}
+                color={baseColors.white}
               >
                 {seconds}
               </Typography>
               <Typography
                 sizeVariant="medium"
                 variant="2xs"
-                color={colors.white}
+                color={baseColors.white}
               >
                 Segundos
               </Typography>

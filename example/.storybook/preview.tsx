@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/react';
 import { View } from 'moti';
 import { ThemeProvider } from 'styled-components/native';
 import light from '../../src/themes/light';
+import dark from '../../src/themes/dark';
 import { Dimensions } from 'react-native';
 
 const preview: Preview = {
@@ -22,7 +23,7 @@ const preview: Preview = {
           backgroundColor: 'white',
         }}
       >
-        <ThemeProvider theme={light}>
+        <ThemeProvider theme={dark}>
           <Story />
         </ThemeProvider>
       </View>

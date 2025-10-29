@@ -11,24 +11,24 @@ const Paginator = ({
   ...props
 }: Props) => {
   const { width } = useWindowDimensions();
-  const { colors, spacing } = useTheme();
+  const { baseColors, spacing } = useTheme();
 
   const variantStyle = {
     onboarding: {
       widthNormal: 12,
       widthActive: 25,
-      colorNormal: colors.white,
-      colorActive: colors.pink[700],
-      borderNormal: colors.gray[600],
-      borderActive: colors.pink[700],
+      colorNormal: baseColors.white,
+      colorActive: baseColors.pink[700],
+      borderNormal: baseColors.gray[600],
+      borderActive: baseColors.pink[700],
     },
     default: {
       widthNormal: spacing.quarck,
       widthActive: spacing.xxs,
-      colorNormal: colors.gray[400],
-      colorActive: colors.black,
-      borderNormal: colors.black,
-      borderActive: colors.black,
+      colorNormal: baseColors.gray[400],
+      colorActive: baseColors.black,
+      borderNormal: baseColors.black,
+      borderActive: baseColors.black,
     },
   };
 

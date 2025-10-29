@@ -18,7 +18,7 @@ const Link = ({
         disabled={disabled}
         sizeVariant={typographySizeVariant ?? 'medium'}
         variant={typographyVariant ?? 'base'}
-        color={typographyColor ?? 'black'}
+        color={typographyColor}
       >
         {children}
       </TypographyCustom>

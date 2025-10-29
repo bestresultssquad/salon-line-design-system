@@ -9,8 +9,8 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     borderWidth: 1,
     radius: 0,
     paddingHorizontal: 0,
-    borderColor: theme.colors.white,
-    backgrounColor: theme.colors.white,
+    borderColor: theme.baseColors.white,
+    backgrounColor: theme.themed.background,
   },
   reviews: {
     padding: 0,
@@ -18,15 +18,15 @@ const getStylesByVariant = (theme: DefaultTheme) => ({
     radius: 0,
     paddingHorizontal: 0,
     borderColor: '',
-    backgrounColor: theme.colors.white,
+    backgrounColor: theme.themed.background,
   },
   recurringPurchase: {
     padding: theme.spacing.xxxs,
     borderWidth: 1,
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.nano,
-    borderColor: theme.colors.gray[200],
-    backgrounColor: theme.colors.white,
+    borderColor: theme.baseColors.gray[200],
+    backgrounColor: theme.themed.background,
   },
   categories: {
     padding: theme.spacing.xxxxs,
@@ -52,7 +52,7 @@ export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
     `${getStylesByVariant(theme)[variant].padding}px ${getStylesByVariant(theme)[variant].paddingHorizontal}px`};
   border-bottom-color: ${({ theme, variant }) =>
     variant === 'default' || variant === 'recurringPurchase'
-      ? `${theme.colors.gray[200]} `
+      ? `${theme.baseColors.gray[200]} `
       : 0};
   border-color: ${({ theme, variant }) =>
     getStylesByVariant(theme)[variant].borderColor};

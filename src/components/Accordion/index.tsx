@@ -17,6 +17,7 @@ import Typography from '../Typography';
 import Icon from '../Icon';
 import type { IconTypes } from '../Icon/Icon.types';
 import Checkbox from '../Checkbox';
+import { useTheme } from 'styled-components/native';
 
 function AccordionItem({
   isExpanded,
@@ -67,6 +68,7 @@ function Accordion({
 }: AccordionProps) {
   const openInternal = useSharedValue(false);
   const open = props.open ?? openInternal;
+  const { themed } = useTheme();
 
   const derivedOpacityOpen = useDerivedValue(() =>
     withTiming(Number(!open?.value), { duration: 0 })
@@ -186,6 +188,7 @@ function Accordion({
                       height={iconSize ? iconSize : 24}
                       width={iconSize ? iconSize : 24}
                       type={getIcon()[variant ?? 'default'].open}
+                      stroke={themed.text}
                     />
                   </Animated.View>
                   <Animated.View style={[iconStyleClose]}>
@@ -193,6 +196,7 @@ function Accordion({
                       height={24}
                       width={24}
                       type={getIcon()[variant ?? 'default'].close}
+                      stroke={themed.text}
                     />
                   </Animated.View>
                 </>

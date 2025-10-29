@@ -1,3 +1,4 @@
+import { useTheme } from 'styled-components/native';
 import Icon from '../Icon';
 import Switch from '../Switch';
 import Typography from '../Typography';
@@ -18,6 +19,7 @@ const MenuItem = ({
 }: MenuItemProps) => {
   const [switchActive, setSwitchActive] = useState(false);
   const [pressed, setPressed] = useState(false);
+  const { themed } = useTheme();
 
   return (
     <Container
@@ -34,7 +36,7 @@ const MenuItem = ({
           testID="icon-left-menu-item"
           height={20}
           width={20}
-          stroke={strokeColor ?? 'black'}
+          stroke={strokeColor ?? themed.text}
           type={leftIcon}
           strokeWidth={strokeWidth}
         />
@@ -58,7 +60,7 @@ const MenuItem = ({
           height={rightIconSize ?? 24}
           width={rightIconSize ?? 24}
           type={rightIcon ?? 'ChevronRightIcon'}
-          stroke={strokeColor ?? 'black'}
+          stroke={strokeColor ?? themed.text}
           strokeWidth={1.5}
         />
       )}

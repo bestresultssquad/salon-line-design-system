@@ -24,7 +24,7 @@ const CardBlog = ({
   variant,
   onCardPress,
 }: CardBlogProps) => {
-  const { colors, spacing } = useTheme();
+  const { baseColors, spacing, themed } = useTheme();
   return (
     <Card>
       <Container
@@ -46,7 +46,7 @@ const CardBlog = ({
               size="small"
               label={category}
               variant="primary"
-              style={{ backgroundColor: colors.purple[800] }}
+              style={{ backgroundColor: baseColors.purple[800] }}
             />
           </BottomContainer>
           <Typography sizeVariant="semiBold" variant="xs" numberOfLines={2}>
@@ -63,7 +63,12 @@ const CardBlog = ({
                 alignItems: 'center',
               }}
             >
-              <Icon type="CalendarIcon" width={16} height={16} />
+              <Icon
+                type="CalendarIcon"
+                width={16}
+                height={16}
+                stroke={themed.text}
+              />
               <Typography sizeVariant="regular" variant="2xs">
                 {timeElapsed(date)}
               </Typography>

@@ -70,6 +70,7 @@ const FavoriteButton = ({
               height={16}
               stroke="black"
               strokeWidth={1.5}
+              viewBox="-2 0 16 16"
             />
           </Animated.View>
           <Animated.View
@@ -87,6 +88,7 @@ const FavoriteButton = ({
               height={16}
               stroke="black"
               strokeWidth={1.5}
+              viewBox="-2 0 24 24"
             />
           </Animated.View>
         </View>

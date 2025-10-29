@@ -34,7 +34,7 @@ const ProductCardHorizontal = ({
   onPressCard,
   onSelectPress,
 }: ProductCardHorizontalProps) => {
-  const { colors, spacing } = useTheme();
+  const { baseColors, spacing, themed } = useTheme();
 
   return (
     <Card variant={variant ?? 'cart'}>
@@ -62,7 +62,7 @@ const ProductCardHorizontal = ({
                   width={24}
                   height={24}
                   strokeWidth={2}
-                  stroke={colors.red[500]}
+                  stroke={baseColors.red[500]}
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={onPress}>
@@ -71,6 +71,7 @@ const ProductCardHorizontal = ({
                   width={24}
                   height={24}
                   strokeWidth={2}
+                  stroke={themed.text}
                 />
               </TouchableOpacity>
             </View>
@@ -105,7 +106,7 @@ const ProductCardHorizontal = ({
                       backgroundColor:
                         chipText.variant === 'outlined'
                           ? undefined
-                          : colors.black,
+                          : baseColors.black,
                       top: undefined,
                       left: undefined,
                     }}
@@ -133,7 +134,7 @@ const ProductCardHorizontal = ({
                   <OldPrice
                     sizeVariant="medium"
                     variant="xs"
-                    color={colors.gray[600]}
+                    color={baseColors.gray[600]}
                   >
                     {disabled ? 'Produto' : oldPrice}
                   </OldPrice>

@@ -15,7 +15,7 @@ const Icon = ({
   ...props
 }: Props) => {
   const IconComponent = IconsComponent[type];
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
 
   return (
     <View testID={`icon-${type}`}>
@@ -34,7 +34,7 @@ const Icon = ({
             width: 14,
             height: 14,
             borderRadius: 7,
-            backgroundColor: colors.red[500],
+            backgroundColor: baseColors.red[500],
             alignItems: 'center',
             justifyContent: 'center',
             position: 'absolute',
@@ -42,7 +42,11 @@ const Icon = ({
             bottom: 13,
           }}
         >
-          <Typography sizeVariant="semiBold" variant="3xs" color={colors.white}>
+          <Typography
+            sizeVariant="semiBold"
+            variant="3xs"
+            color={baseColors.white}
+          >
             {chipValue}
           </Typography>
         </View>

@@ -34,7 +34,7 @@ const BannerImage = ({
 }: BannerImageProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
   const scrollX = useRef(new Animated.Value(0)).current;
   const screenWidth = Dimensions.get('window').width;
 
@@ -104,21 +104,21 @@ const BannerImage = ({
                   size="small"
                   style={{
                     position: 'relative',
-                    backgroundColor: colors.purple[500],
+                    backgroundColor: baseColors.purple[500],
                   }}
                 />
               </View>
               <Typography
                 sizeVariant="medium"
                 variant="base"
-                color={colors.white}
+                color={baseColors.white}
               >
                 {item?.title}
               </Typography>
               <Typography
                 sizeVariant="regular"
                 variant="2xs"
-                color={colors.white}
+                color={baseColors.white}
                 numberOfLines={1}
               >
                 {item?.subtitle}
@@ -129,14 +129,14 @@ const BannerImage = ({
                 <Icon
                   width={16}
                   height={16}
-                  stroke={colors.white}
+                  stroke={baseColors.white}
                   type="CalendarIcon"
                   strokeWidth={1.5}
                 />
                 <Typography
                   sizeVariant="medium"
                   variant="3xs"
-                  color={colors.white}
+                  color={baseColors.white}
                 >
                   {timeElapsed(item?.date ?? '')}
                 </Typography>

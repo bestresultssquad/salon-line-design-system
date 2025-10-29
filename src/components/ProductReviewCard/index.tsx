@@ -31,7 +31,7 @@ const ProductReviewCard = ({
   userName,
   image,
 }: ProductReviewCardProps) => {
-  const { colors, spacing } = useTheme();
+  const { baseColors, spacing } = useTheme();
 
   const totalStars = 5;
   const fullStars = Math.floor(rating);
@@ -70,7 +70,7 @@ const ProductReviewCard = ({
               <Typography
                 sizeVariant="medium"
                 variant="xs"
-                color={colors.white}
+                color={baseColors.white}
               >
                 {getInitials(userName)}
               </Typography>
@@ -87,7 +87,9 @@ const ProductReviewCard = ({
                     height={12}
                     type="StarIcon"
                     fill={
-                      index < fullStars ? colors.yellow[500] : colors.gray[200]
+                      index < fullStars
+                        ? baseColors.yellow[500]
+                        : baseColors.gray[200]
                     }
                   />
                 );
@@ -96,7 +98,7 @@ const ProductReviewCard = ({
             <Typography
               variant="xs"
               sizeVariant="medium"
-              color={colors.gray[600]}
+              color={baseColors.gray[600]}
             >
               {timeElapsed(date)}
             </Typography>
@@ -106,7 +108,7 @@ const ProductReviewCard = ({
           <Typography
             variant="xs"
             sizeVariant="regular"
-            color={colors.gray[600]}
+            color={baseColors.gray[600]}
           >
             {review}
           </Typography>
@@ -126,9 +128,9 @@ const ProductReviewCard = ({
               textSizeVariant="semiBold"
               textVariant="xs"
               onPress={onLikePress}
-              textColor={colors.black}
+              textColor={baseColors.black}
               style={{
-                backgroundColor: colors.white,
+                backgroundColor: baseColors.white,
                 borderRadius: 8,
               }}
               customIcon={
@@ -137,7 +139,7 @@ const ProductReviewCard = ({
                   height={16}
                   type="LikeIcon"
                   strokeWidth={2}
-                  stroke={colors.green[700]}
+                  stroke={baseColors.green[700]}
                 />
               }
             >
@@ -151,9 +153,9 @@ const ProductReviewCard = ({
               onPress={onDislikePress}
               textSizeVariant="semiBold"
               textVariant="xs"
-              textColor={colors.black}
+              textColor={baseColors.black}
               style={{
-                backgroundColor: colors.white,
+                backgroundColor: baseColors.white,
                 borderRadius: 8,
               }}
               customIcon={
@@ -162,7 +164,7 @@ const ProductReviewCard = ({
                   height={16}
                   type="DeslikeIcon"
                   strokeWidth={2}
-                  stroke={colors.red[500]}
+                  stroke={baseColors.red[500]}
                 />
               }
             >
@@ -182,12 +184,12 @@ const ProductReviewCard = ({
                 width={20}
                 height={20}
                 type="StarCircleIcon"
-                stroke={colors.green[700]}
+                stroke={baseColors.green[700]}
               />
               <Typography
                 variant="xs"
                 sizeVariant="medium"
-                color={colors.green[700]}
+                color={baseColors.green[700]}
               >
                 Recomenda!
               </Typography>

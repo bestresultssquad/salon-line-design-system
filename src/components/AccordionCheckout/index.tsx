@@ -66,7 +66,7 @@ function AccordionCheckout({
 }: Readonly<AccordionCheckoutProps>) {
   const openInternal = useSharedValue(false);
   const open = props.open ?? openInternal;
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
 
   const handlePressAccordion = () => {
     if (open && !withoutOpen) {
@@ -80,7 +80,7 @@ function AccordionCheckout({
       <TitleContainer onPress={() => !disabled && handlePressAccordion()}>
         <View
           style={{
-            flex:1,
+            flex: 1,
             justifyContent: 'space-between',
             flexDirection: 'row',
             paddingVertical: subtitle ? 16 : 24,
@@ -99,7 +99,7 @@ function AccordionCheckout({
               <Typography
                 variant="sm"
                 sizeVariant="semiBold"
-                color={disabled ? colors.gray[500] : colors.gray[900]}
+                color={disabled ? baseColors.gray[500] : baseColors.gray[900]}
               >
                 {title}
               </Typography>
@@ -107,7 +107,7 @@ function AccordionCheckout({
                 <Typography
                   variant="xs"
                   sizeVariant="regular"
-                  color={disabled ? colors.gray[500] : colors.gray[600]}
+                  color={disabled ? baseColors.gray[500] : baseColors.gray[600]}
                 >
                   {subtitle}
                 </Typography>

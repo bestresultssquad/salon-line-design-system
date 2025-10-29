@@ -24,7 +24,7 @@ const ProductExibition = ({ onPress }: ProductExibitionProps) => {
 
   const [selectedTab, setSelectedTab] = useState(2);
   const [dimensions, setDimensions] = useState({ height: 20, width: 48 });
-  const { colors } = useTheme();
+  const { baseColors } = useTheme();
 
   const buttonWidth = dimensions.width / buttons.length;
 
@@ -51,7 +51,7 @@ const ProductExibition = ({ onPress }: ProductExibitionProps) => {
             width: buttonWidth,
             marginHorizontal: 4,
             height: dimensions.height - 6,
-            backgroundColor: colors.gray[900],
+            backgroundColor: baseColors.gray[900],
             borderRadius: 8,
           },
         ]}
@@ -59,7 +59,7 @@ const ProductExibition = ({ onPress }: ProductExibitionProps) => {
       {buttons.map((button, index) => {
         const selected = selectedTab === button.id;
 
-        const iconColor = selected ? colors.white : colors.black;
+        const iconColor = selected ? baseColors.white : baseColors.black;
 
         return (
           <IconContainer

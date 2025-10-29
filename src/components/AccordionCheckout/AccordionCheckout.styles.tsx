@@ -5,7 +5,7 @@ export const AccordionContainer = styled.View`
   width: 100%;
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[200]};
+    theme.baseColors.gray[200]};
 `;
 
 export const TitleContainer = styled.TouchableOpacity`

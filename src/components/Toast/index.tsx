@@ -36,26 +36,26 @@ const ToastCustom = ({
     () => ({
       width: '80%' as const,
       padding: 12,
-      backgroundColor: theme.colors.white,
+      backgroundColor: theme.baseColors.white,
       borderWidth: 1,
-      borderColor: theme.colors.gray[200],
+      borderColor: theme.baseColors.gray[200],
       borderRadius: 12,
-      shadowColor: theme.colors.black,
+      shadowColor: theme.baseColors.black,
       shadowOffset: { width: 0, height: 1 },
       shadowOpacity: 0.18,
       shadowRadius: 40,
     }),
-    [theme.colors.white, theme.colors.gray, theme.colors.black]
+    [theme.baseColors.white, theme.baseColors.gray, theme.baseColors.black]
   );
 
   const separatorStyle = useMemo(
     () => ({
       height: 1,
       width: '100%' as const,
-      backgroundColor: theme.colors.gray[200],
+      backgroundColor: theme.baseColors.gray[200],
       marginVertical: 8,
     }),
-    [theme.colors.gray]
+    [theme.baseColors.gray]
   );
 
   const handleHideAll = useCallback(() => {

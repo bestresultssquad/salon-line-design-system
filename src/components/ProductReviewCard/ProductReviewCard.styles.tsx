@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Card = styled.View`
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[100]};
+    theme.baseColors.gray[100]};
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
   flex-direction: row;
@@ -36,7 +36,7 @@ export const StarsFilledContainer = styled.View`
 export const UserAvatar = styled.View`
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.pink[600]};
+    theme.baseColors.pink[600]};
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;
 

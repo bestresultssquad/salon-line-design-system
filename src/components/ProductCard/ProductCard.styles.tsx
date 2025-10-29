@@ -51,7 +51,7 @@ export const ButtonContainer = styled.View``;
 
 export const OldPrice = styled(Typography).attrs(
   ({ theme }: { theme: DefaultTheme }) => ({
-    color: theme.colors.gray[500],
+    color: theme.baseColors.gray[500],
   })
 )<{ disabled?: boolean }>`
   text-decoration-line: ${({ disabled }: { disabled: boolean }) =>
@@ -61,10 +61,10 @@ export const OldPrice = styled(Typography).attrs(
 const cardStyle = css<{
   elevation?: 'md';
 }>`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.themed.background};
   border-radius: 16px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray[200]};
+  border-color: ${({ theme }) => theme.baseColors.gray[200]};
   ${({ theme, elevation = 'md' }) => css`
     elevation: 6;
     shadow-color: ${Platform.OS === 'ios'

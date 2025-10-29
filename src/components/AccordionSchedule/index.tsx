@@ -20,7 +20,7 @@ function AccordionSchedule({
   checked,
   ...props
 }: Readonly<AccordionProps>) {
-  const { colors } = useTheme();
+  const { baseColors, themed } = useTheme();
   const openInternal = useSharedValue(false);
   const open = props.open ?? openInternal;
 
@@ -49,7 +49,7 @@ function AccordionSchedule({
                 width: 24,
                 height: 24,
                 borderRadius: 999,
-                backgroundColor: colors.black,
+                backgroundColor: themed.background,
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
@@ -57,7 +57,7 @@ function AccordionSchedule({
               <Typography
                 variant="sm"
                 sizeVariant={'semiBold'}
-                color={colors.white}
+                color={themed.text}
               >
                 {number}
               </Typography>

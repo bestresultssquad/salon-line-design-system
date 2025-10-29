@@ -9,7 +9,7 @@ export const ProductExibitionContainer = styled.View`
   border-radius: ${({ theme }: { theme: DefaultTheme }) =>
     theme.spacing.nano}px;
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.colors.gray[100]};
+    theme.baseColors.gray[100]};
 `;
 
 export const TabBg = styled(Animated.View)``;
