@@ -37,7 +37,7 @@ const lightTheme = {
       400: '#DAB2FF',
       500: '#BA4DDE',
       800: '#804FE8',
-      900: '#660EBA',
+      900: '#5D0EC0',
     },
     pink: {
       600: '#DB2777',
@@ -50,6 +50,7 @@ const lightTheme = {
     },
     red: {
       500: '#FF0000',
+      600: '#C10007',
     },
   },
   ...defaultTheme,

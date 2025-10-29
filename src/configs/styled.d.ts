@@ -49,6 +49,7 @@ export type Colors = {
   };
   red: {
     500: string;
+    600: string;
   };
 };
 

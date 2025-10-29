@@ -123,6 +123,10 @@ import { MailSendIcon } from './IconComponents/MailSend.icon';
 import { TickDoubleIcon } from './IconComponents/TickDouble.icon';
 import { MailIcon } from './IconComponents/Mail.icon';
 import { InformativeIcon } from './IconComponents/Informative.icon';
+import { TiktokIcon } from './IconComponents/Tiktok.icon';
+import { InstagramIcon } from './IconComponents/Instagran.icon';
+import { FacebookIcon } from './IconComponents/Facebook.icon';
+import { GoogleIcon } from './IconComponents/Google.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -250,4 +254,8 @@ export const IconsComponent = {
   TickDoubleIcon,
   MailIcon,
   InformativeIcon,
+  TiktokIcon,
+  InstagramIcon,
+  FacebookIcon,
+  GoogleIcon,
 };

@@ -1,4 +1,5 @@
-import { TouchableOpacity, View } from 'react-native';
+import { memo, useCallback, useMemo } from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { stylesByType, ToastContainer } from './Toast.styles';
 import { useTheme } from 'styled-components/native';
 import { useToast } from 'react-native-toast-notifications';
@@ -7,6 +8,13 @@ import Typography from '../Typography';
 import type { ToastType } from './Toast.types';
 import type { IconTypes } from '../Icon/Icon.types';
 import FastImage from '@d11/react-native-fast-image';
+
+const iconByType = {
+  success: 'CheckIcon',
+  error: 'AlertCircleIcon',
+  warning: 'AlertIcon',
+  notificationtoast: 'NotificationIcon',
+} as const;
 
 const ToastCustom = ({
   type,
@@ -24,41 +32,46 @@ const ToastCustom = ({
   const theme = useTheme();
   const toast = useToast();
 
-  const iconByType = {
-    success: 'CheckIcon',
-    error: 'AlertCircleIcon',
-    warning: 'AlertIcon',
-    notificationtoast: 'NotificationIcon',
-  };
+  const notificationToastStyle = useMemo(
+    () => ({
+      width: '80%' as const,
+      padding: 12,
+      backgroundColor: theme.colors.white,
+      borderWidth: 1,
+      borderColor: theme.colors.gray[200],
+      borderRadius: 12,
+      shadowColor: theme.colors.black,
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.18,
+      shadowRadius: 40,
+    }),
+    [theme.colors.white, theme.colors.gray, theme.colors.black]
+  );
+
+  const separatorStyle = useMemo(
+    () => ({
+      height: 1,
+      width: '100%' as const,
+      backgroundColor: theme.colors.gray[200],
+      marginVertical: 8,
+    }),
+    [theme.colors.gray]
+  );
+
+  const handleHideAll = useCallback(() => {
+    toast.hideAll();
+  }, [toast]);
+
+  const styles = useMemo(() => stylesByType(theme)[type], [theme, type]);
 
   if (type === 'notificationtoast') {
     return (
-      <TouchableOpacity
-        onPress={handlePress}
-        style={{
-          width: '80%',
-          padding: 12,
-          backgroundColor: theme.colors.white,
-          borderWidth: 1,
-          borderColor: theme.colors.gray[200],
-          borderRadius: 12,
-          shadowColor: theme.colors.black,
-          shadowOffset: { width: 0, height: 1 },
-          shadowOpacity: 0.18,
-          shadowRadius: 40,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
+      <TouchableOpacity onPress={handlePress} style={notificationToastStyle}>
+        <View style={localStyles.headerRow}>
+          <View style={localStyles.headerLeft}>
             <FastImage
               source={require('../../../assets/icon.png')}
-              style={{ width: 28, height: 28, borderRadius: 10 }}
+              style={localStyles.icon}
             />
             <Typography sizeVariant="semiBold" variant="sm">
               Nova notificação
@@ -72,14 +85,7 @@ const ToastCustom = ({
             strokeWidth={1.5}
           />
         </View>
-        <View
-          style={{
-            height: 1,
-            width: '100%',
-            backgroundColor: theme.colors.gray[200],
-            marginVertical: 8,
-          }}
-        />
+        <View style={separatorStyle} />
         <Typography variant="sm" sizeVariant="semiBold">
           {title}
         </Typography>
@@ -103,15 +109,15 @@ const ToastCustom = ({
           type={iconType ?? (iconByType[type] as IconTypes)}
           width={20}
           height={20}
-          stroke={stylesByType(theme)[type].titleColor}
+          stroke={styles.titleColor}
           strokeWidth={2}
         />
       </View>
-      <View style={{ flex: 1 }}>
+      <View style={localStyles.contentContainer}>
         <Typography
           variant="sm"
           sizeVariant="semiBold"
-          color={stylesByType(theme)[type].titleColor}
+          color={styles.titleColor}
         >
           {title}
         </Typography>
@@ -121,15 +127,12 @@ const ToastCustom = ({
           </Typography>
         )}
       </View>
-      <TouchableOpacity
-        style={{ alignSelf: 'center' }}
-        onPress={() => toast.hideAll()}
-      >
+      <TouchableOpacity style={localStyles.closeButton} onPress={handleHideAll}>
         <Icon
           type="CancelIcon"
           width={20}
           height={20}
-          stroke={stylesByType(theme)[type].titleColor}
+          stroke={styles.titleColor}
           viewBox="0 0 20 20"
           strokeWidth={1.5}
         />
@@ -138,4 +141,28 @@ const ToastCustom = ({
   );
 };
 
-export default ToastCustom;
+const localStyles = StyleSheet.create({
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerLeft: {
+    flexDirection: 'row',
+    gap: 8,
+    alignItems: 'center',
+  },
+  icon: {
+    width: 28,
+    height: 28,
+    borderRadius: 10,
+  },
+  contentContainer: {
+    flex: 1,
+  },
+  closeButton: {
+    alignSelf: 'center',
+  },
+});
+
+export default memo(ToastCustom);

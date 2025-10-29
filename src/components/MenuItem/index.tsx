@@ -12,6 +12,9 @@ const MenuItem = ({
   useSwitch = false,
   strokeWidth = 1.5,
   removeBorderBottom,
+  strokeColor,
+  rightIcon,
+  rightIconSize,
 }: MenuItemProps) => {
   const [switchActive, setSwitchActive] = useState(false);
   const [pressed, setPressed] = useState(false);
@@ -31,7 +34,7 @@ const MenuItem = ({
           testID="icon-left-menu-item"
           height={20}
           width={20}
-          stroke="black"
+          stroke={strokeColor ?? 'black'}
           type={leftIcon}
           strokeWidth={strokeWidth}
         />
@@ -52,10 +55,10 @@ const MenuItem = ({
       {!useSwitch && (
         <Icon
           testID="icon-right-menu-item"
-          height={24}
-          width={24}
-          type="ChevronRightIcon"
-          stroke="black"
+          height={rightIconSize ?? 24}
+          width={rightIconSize ?? 24}
+          type={rightIcon ?? 'ChevronRightIcon'}
+          stroke={strokeColor ?? 'black'}
           strokeWidth={1.5}
         />
       )}

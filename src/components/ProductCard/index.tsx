@@ -20,6 +20,7 @@ import FavoriteButton from '../FavoriteButton';
 import ProductCardSkeleton from './ProductCard.skeleton';
 import { useTheme } from 'styled-components/native';
 import { View } from 'react-native';
+import { memo, useMemo } from 'react';
 
 const ProductCard = ({
   imageUri,
@@ -39,51 +40,74 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const { colors } = useTheme();
 
+  const imageStyle = useMemo(
+    () => ({ opacity: disabled ? 0.5 : 1 }),
+    [disabled]
+  );
+
+  const chipStyle = useMemo(
+    () => ({ position: 'absolute' as const, top: 12, left: 5 }),
+    []
+  );
+
+  const visibleTags = useMemo(
+    () => tags?.filter((tag) => tag.visible) ?? [],
+    [tags]
+  );
+
+  const filledStars = useMemo(
+    () => Array.from({ length: rating }, (_, index) => index),
+    [rating]
+  );
+
+  const emptyStars = useMemo(
+    () => Array.from({ length: 5 - rating }, (_, index) => index),
+    [rating]
+  );
+
+  const titleColor = useMemo(
+    () => (disabled ? colors.gray[500] : colors.black),
+    [disabled, colors.gray, colors.black]
+  );
+
   return (
     <Card onPress={onCardPress} delayPressIn={100}>
       <Container>
         <ImageContainer>
-          {chipText && (
-            <Chip
-              label={chipText}
-              style={{ position: 'absolute', top: 12, left: 5 }}
-            />
-          )}
+          {chipText && <Chip label={chipText} style={chipStyle} />}
           <FavoriteButton onPress={onFavoritePress} favorited={favorited} />
           <ImageCustom
             source={{ uri: imageUri, cache: 'immutable' }}
-            style={{ opacity: disabled ? 0.5 : 1 }}
+            style={imageStyle}
           />
           <View
             style={{ flexDirection: 'row', gap: 4, padding: 4, height: 28 }}
           >
-            {tags
-              ?.filter((tag) => tag.visible)
-              .map((tag, index) => (
-                <Chip
-                  key={index}
-                  label={tag.text}
-                  style={{
-                    backgroundColor: tag.color,
-                  }}
-                />
-              ))}
+            {visibleTags.map((tag, index) => (
+              <Chip
+                key={index}
+                label={tag.text}
+                style={{
+                  backgroundColor: tag.color,
+                }}
+              />
+            ))}
           </View>
         </ImageContainer>
         <DescriptionContainer>
           <StarContainer>
-            {Array.from({ length: rating }).map((_, index) => (
+            {filledStars.map((index) => (
               <Icon
-                key={index}
+                key={`filled-${index}`}
                 width={12}
                 height={12}
                 type="StarIcon"
                 fill={colors.yellow[500]}
               />
             ))}
-            {Array.from({ length: 5 - rating }).map((_, index) => (
+            {emptyStars.map((index) => (
               <Icon
-                key={index}
+                key={`empty-${index}`}
                 width={12}
                 height={12}
                 type="StarIcon"
@@ -99,7 +123,7 @@ const ProductCard = ({
               variant="xs"
               sizeVariant="semiBold"
               numberOfLines={2}
-              color={disabled ? colors.gray[500] : colors.black}
+              color={titleColor}
             >
               {title}
             </Typography>
@@ -141,4 +165,4 @@ const ProductCard = ({
 
 ProductCard.Skeleton = ProductCardSkeleton;
 
-export default ProductCard;
+export default memo(ProductCard);

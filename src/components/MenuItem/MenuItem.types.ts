@@ -7,4 +7,7 @@ export interface MenuItemProps {
   useSwitch?: boolean;
   strokeWidth?: number;
   removeBorderBottom?: boolean;
+  strokeColor?: string;
+  rightIcon?: IconTypes;
+  rightIconSize?: number;
 }
