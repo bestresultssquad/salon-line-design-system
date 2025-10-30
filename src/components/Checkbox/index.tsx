@@ -16,7 +16,7 @@ const Checkbox = ({
   disabled,
   checkedColor,
 }: CheckboxProps) => {
-  const { baseColors, themed } = useTheme();
+  const { baseColors } = useTheme();
 
   const animatedValue = useRef(new Animated.Value(0)).current;
 

@@ -64,7 +64,7 @@ const cardStyle = css<{
   background-color: ${({ theme }) => theme.themed.background};
   border-radius: 16px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.baseColors.gray[200]};
+  border-color: ${({ theme }) => theme.themed.borderColor};
   ${({ theme, elevation = 'md' }) => css`
     elevation: 6;
     shadow-color: ${Platform.OS === 'ios'

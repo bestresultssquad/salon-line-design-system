@@ -20,7 +20,7 @@ const getStylesByVariant = (
     borderWidth: 1,
     radius: 0,
     paddingHorizontal: 0,
-    borderColor: theme.baseColors.white,
+    borderColor: theme.themed.borderColor,
     backgrounColor: theme.themed.background,
   },
   reviews: {
@@ -36,7 +36,7 @@ const getStylesByVariant = (
     borderWidth: 1,
     radius: theme.spacing.xxxxs,
     paddingHorizontal: theme.spacing.nano,
-    borderColor: theme.baseColors.gray[200],
+    borderColor: theme.themed.borderColor,
     backgrounColor: theme.themed.background,
   },
   categories: {

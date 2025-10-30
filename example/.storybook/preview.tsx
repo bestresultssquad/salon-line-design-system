@@ -20,7 +20,7 @@ const preview: Preview = {
       <View
         style={{
           flex: 1,
-          backgroundColor: 'white',
+          backgroundColor: 'black',
         }}
       >
         <ThemeProvider theme={dark}>

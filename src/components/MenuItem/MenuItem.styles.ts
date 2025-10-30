@@ -14,7 +14,7 @@ export const Container = styled.Pressable<{
     removeBorderBottom: boolean;
   }) => (removeBorderBottom ? 0 : 1)}px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.baseColors.gray[200]};
+    theme.themed.borderColor};
   padding: ${({ theme }: { theme: DefaultTheme }) =>
     `${theme.spacing.xxxxs}px 0`};
   opacity: ${({ pressed }: { pressed: boolean }) => (pressed ? 0.5 : 1)};

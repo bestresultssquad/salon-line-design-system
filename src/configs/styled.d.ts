@@ -124,6 +124,8 @@ export type Themed = {
   text: string;
   inputBackground: string;
   inverseBackground: string;
+  shadowColor: string;
+  borderColor: string;
 };
 
 export interface DefaultThemeDesignSystem {

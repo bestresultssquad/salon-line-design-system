@@ -20,7 +20,7 @@ function AccordionSchedule({
   checked,
   ...props
 }: Readonly<AccordionProps>) {
-  const { baseColors, themed } = useTheme();
+  const { themed } = useTheme();
   const openInternal = useSharedValue(false);
   const open = props.open ?? openInternal;
 

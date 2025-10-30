@@ -7,6 +7,8 @@ const lightTheme = {
     inputBackground: baseColors.white,
     inverseBackground: baseColors.black,
     text: baseColors.black,
+    shadowColor: baseColors.black,
+    borderColor: baseColors.gray[200],
   },
   ...defaultTheme,
 };
