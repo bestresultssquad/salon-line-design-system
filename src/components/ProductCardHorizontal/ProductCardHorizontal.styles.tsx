@@ -12,7 +12,7 @@ export const TitleMainContainer = styled.View`
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.baseColors.gray[200]};
+    theme.themed.borderColor};
   margin-bottom: ${({ theme }: { theme: DefaultTheme }) =>
     theme.spacing.nano}px;
 `;
@@ -53,7 +53,7 @@ const cardStyle = css<{
   background-color: ${({ theme }) => theme.themed.background};
   border-radius: 16px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.baseColors.gray[200]};
+  border-color: ${({ theme }) => theme.themed.borderColor};
 
   ${({ theme, elevation = 'md' }) => css`
     elevation: 6;
@@ -68,7 +68,7 @@ const cardStyle = css<{
 `;
 
 const cardSearchStyle = css`
-  border-bottom-color: ${({ theme }) => theme.baseColors.gray[200]};
+  border-bottom-color: ${({ theme }) => theme.themed.borderColor};
   border-bottom-width: 1px;
   background-color: ${({ theme }) => theme.themed.background};
 `;

@@ -67,7 +67,7 @@ export const CheckboxComponent = styled.View<{
   }: {
     theme: DefaultTheme;
     disabled: boolean;
-  }) => (disabled ? theme.baseColors.gray[400] : theme.baseColors.gray[900])};
+  }) => (disabled ? theme.baseColors.gray[400] : theme.themed.borderColor)};
   border-width: 1px;
   padding: ${({
     theme,

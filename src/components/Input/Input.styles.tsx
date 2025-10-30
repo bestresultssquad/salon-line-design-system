@@ -38,10 +38,10 @@ const getBorder = (
     return `1px solid ${theme.baseColors.red[500]}`;
   }
   if (focused) {
-    return `1px solid  ${theme.baseColors.black}`;
+    return `1px solid  ${theme.themed.inverseBackground}`;
   }
 
-  return `1px solid  ${theme.baseColors.gray[200]}`;
+  return `1px solid  ${theme.themed.borderColor}`;
 };
 
 export const Container = styled.View``;
@@ -121,5 +121,5 @@ export const TextInput = styled(MaskInput)<{
     theme: DefaultTheme;
     rightIcon: boolean;
   }) => (rightIcon ? theme.spacing.xxxxs : 0)}px;
-  color: ${({ theme }: { theme: DefaultTheme }) => theme.baseColors.black};
+  color: ${({ theme }: { theme: DefaultTheme }) => theme.themed.text};
 `;

@@ -5,7 +5,7 @@ import Icon from '../Icon';
 import Typography from '../Typography';
 
 const SelectUnits = ({ value, onSelectPress }: Props) => {
-  const { baseColors, themed } = useTheme();
+  const { themed } = useTheme();
   return (
     <TouchableOpacity
       onPress={onSelectPress}
@@ -13,7 +13,7 @@ const SelectUnits = ({ value, onSelectPress }: Props) => {
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 1,
-        borderColor: baseColors.gray[200],
+        borderColor: themed.borderColor,
         borderRadius: 8,
         padding: 12,
         gap: 8,

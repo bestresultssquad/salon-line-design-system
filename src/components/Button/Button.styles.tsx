@@ -26,7 +26,7 @@ const paddingHorizontalBySize = (theme: DefaultTheme) => ({
 
 const colorByVariant = (theme: DefaultTheme) => ({
   primary: {
-    backgroundColor: theme.baseColors.gray[900],
+    backgroundColor: theme.themed.inverseBackground,
     borderColor: 'transparent',
   },
   outline: {

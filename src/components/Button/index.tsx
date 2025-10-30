@@ -24,7 +24,7 @@ const Button = ({
   iconFill = 'none',
   ...props
 }: Props) => {
-  const { baseColors } = useTheme();
+  const { baseColors, themed } = useTheme();
   const animation = useRef<LottieView>(null);
 
   const renderLeftIcon = () => {
@@ -74,8 +74,8 @@ const Button = ({
       fullRounded={fullRounded}
     >
       {(onlyIcon || leftIcon) && !loading && renderLeftIcon()}
-      {loading ? (
-        variant === 'outline' ? (
+      {loading &&
+        (variant === 'outline' || themed.text !== baseColors.black ? (
           <LottieView
             autoPlay
             ref={animation}
@@ -95,13 +95,15 @@ const Button = ({
             }}
             source={require('../../lottie/loading-white.json')}
           />
-        )
-      ) : (
+        ))}
+      {!loading && !onlyIcon && (
         <>
           <Typography
             color={
               textColor ??
-              (variant !== 'outline' ? baseColors.white : baseColors.gray[900])
+              (variant !== 'outline'
+                ? themed.inverseText
+                : baseColors.gray[900])
             }
             sizeVariant={textSizeVariant ?? 'regular'}
             variant={textVariant ?? '3xs'}

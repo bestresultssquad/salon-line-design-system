@@ -126,6 +126,7 @@ export type Themed = {
   inverseBackground: string;
   shadowColor: string;
   borderColor: string;
+  inverseText: string;
 };
 
 export interface DefaultThemeDesignSystem {

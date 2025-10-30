@@ -153,7 +153,7 @@ const ProductCard = ({
                 size="nano"
                 iconType="BagIcon"
                 iconSize={16}
-                iconStrokeColor={themed.text}
+                iconStrokeColor={themed.inverseText}
               />
             </ButtonContainer>
           </PriceContainer>
