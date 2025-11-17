@@ -127,6 +127,7 @@ import { TiktokIcon } from './IconComponents/Tiktok.icon';
 import { InstagramIcon } from './IconComponents/Instagran.icon';
 import { FacebookIcon } from './IconComponents/Facebook.icon';
 import { GoogleIcon } from './IconComponents/Google.icon';
+import { BlackFridayIcon } from './IconComponents/BlackFriday.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -258,4 +259,5 @@ export const IconsComponent = {
   InstagramIcon,
   FacebookIcon,
   GoogleIcon,
+  BlackFridayIcon,
 };

@@ -160,6 +160,7 @@ const ProductCardHorizontal = ({
                     onPress={onPress}
                     variant="primary"
                     iconType="BagIcon"
+                    iconStrokeColor={themed.inverseText}
                   />
                 )}
               </View>

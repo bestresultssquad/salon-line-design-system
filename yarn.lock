@@ -1963,8 +1963,10 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.5
     react-native-builder-bob: ^0.30.2
+    react-native-gesture-handler: ~2.24.0
     react-native-mask-input: ^1.2.3
     react-native-reanimated: ~3.17.4
+    react-native-reanimated-carousel: ^4.0.3
     react-native-svg: ^15.7.1
     react-native-svg-transformer: ^1.5.0
     react-native-toast-notifications: ^3.4.0
@@ -5270,6 +5272,7 @@ __metadata:
     react-native-builder-bob: ^0.30.2
     react-native-gesture-handler: ~2.24.0
     react-native-reanimated: ~3.17.1
+    react-native-reanimated-carousel: ^4.0.3
     react-native-safe-area-context: 5.4.0
     react-native-svg: 15.11.2
     react-native-svg-transformer: ^1.5.0
@@ -17295,6 +17298,18 @@ __metadata:
   dependencies:
     prop-types: ^15.5.10
   checksum: c7b00ebceb6fe15e025ef1655483bc98fdb150453fb27e71d17a282a87317c5b1e242a1108f5247fac99594e6778470513d19c21e02eb2ce81f80688dd616419
+  languageName: node
+  linkType: hard
+
+"react-native-reanimated-carousel@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "react-native-reanimated-carousel@npm:4.0.3"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-native: ">=0.70.3"
+    react-native-gesture-handler: ">=2.9.0"
+    react-native-reanimated: ">=3.0.0"
+  checksum: 32a6077dcea27ff8edc6c5c3001cafd384d2c5a0f56606cfabfe898d12f57b9b994c485ad2241a9a9de2ae39ead278862c6ef4af2a9ea1cbc0311c30e571c025
   languageName: node
   linkType: hard
 

@@ -1,6 +1,6 @@
 {
   "name": "@bestresultssquad/salon-line-design-system",
-  "version": "0.2.23",
+  "version": "0.2.29",
   "description": "Salon Line Design System",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -197,8 +197,10 @@
     "date-fns-tz": "^3.2.0",
     "lottie-react-native": "^7.2.2",
     "moti": "^0.29.0",
+    "react-native-gesture-handler": "~2.24.0",
     "react-native-mask-input": "^1.2.3",
     "react-native-reanimated": "~3.17.4",
+    "react-native-reanimated-carousel": "^4.0.3",
     "react-native-svg": "^15.7.1",
     "react-native-svg-transformer": "^1.5.0",
     "react-native-toast-notifications": "^3.4.0",

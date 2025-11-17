@@ -97,7 +97,10 @@ export const AccordionContainer = styled.View<{ variant: AccordionVariant }>`
   }: {
     theme: DefaultTheme;
     variant: AccordionVariant;
-  }) => getStylesByVariant(theme)[variant].borderWidth}px;
+  }) =>
+    variant === 'default'
+      ? 0
+      : getStylesByVariant(theme)[variant].borderWidth}px;
   border-radius: ${({
     variant,
     theme,
