@@ -79,12 +79,14 @@ const BannerImageMd = ({
           dotStyle={{
             backgroundColor: baseColors.gray[600],
             borderRadius: 50,
-            width: 24,
+            height: 6,
+            width: 16,
           }}
           activeDotStyle={{
             backgroundColor: themed.text,
             borderRadius: 999,
-            width: 12,
+            width: 6,
+            height: 6,
           }}
           containerStyle={{ gap: 5, marginTop: 10 }}
           onPress={onPressPagination}
