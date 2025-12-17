@@ -77,6 +77,26 @@ BannerCarroussel.args = {
       altText: 'Banner Image',
       action: () => console.log('Banner Image Clicked'),
     },
+    {
+      imageUrl: 'https://picsum.photos/200/300',
+      altText: 'Banner Image',
+      action: () => console.log('Banner Image Clicked'),
+    },
+    {
+      imageUrl: 'https://picsum.photos/200/300',
+      altText: 'Banner Image',
+      action: () => console.log('Banner Image Clicked'),
+    },
+    {
+      imageUrl: 'https://picsum.photos/200/300',
+      altText: 'Banner Image',
+      action: () => console.log('Banner Image Clicked'),
+    },
+    {
+      imageUrl: 'https://picsum.photos/200/300',
+      altText: 'Banner Image',
+      action: () => console.log('Banner Image Clicked'),
+    },
   ],
 };
 

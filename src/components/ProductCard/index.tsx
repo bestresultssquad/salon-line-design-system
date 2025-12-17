@@ -65,11 +65,6 @@ const ProductCard = ({
     [rating]
   );
 
-  const titleColor = useMemo(
-    () => (disabled ? baseColors.gray[500] : themed.text),
-    [disabled, baseColors.gray, baseColors.black]
-  );
-
   return (
     <Card onPress={onCardPress} delayPressIn={100}>
       <Container>
@@ -123,7 +118,7 @@ const ProductCard = ({
               variant="xs"
               sizeVariant="semiBold"
               numberOfLines={2}
-              color={titleColor}
+              color={disabled ? baseColors.gray[500] : themed.text}
             >
               {title}
             </Typography>

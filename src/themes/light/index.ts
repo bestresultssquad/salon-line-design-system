@@ -4,6 +4,7 @@ import baseColors from '../default/baseColors';
 const lightTheme = {
   themed: {
     background: baseColors.white,
+    backgroundSecondary: baseColors.gray[100],
     inputBackground: baseColors.white,
     inverseBackground: baseColors.black,
     text: baseColors.black,

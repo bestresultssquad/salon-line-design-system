@@ -3,7 +3,6 @@ import { BannerImageContainer } from './BannerImageMd.styles';
 import { useRef } from 'react';
 import type { BannerImageProps } from './BannerImageMd.types';
 import BannerImageSkeleton from '../BannerImage/BannerImage.skeleton';
-import BannerImg from './BannerImgWithCounter';
 import BannerImgWithCounter from './BannerImgWithCounter';
 import Carousel, {
   type ICarouselInstance,
@@ -35,18 +34,6 @@ const BannerImageMd = ({
   };
 
   const renderBannerImage: CarouselRenderItem<any> = ({ item, index }) => {
-    if (!item.date) {
-      return (
-        <BannerImg
-          removeBorder={removeBorder}
-          index={index}
-          item={item}
-          fullWidth={fullWidth}
-          width={width}
-          height={height}
-        />
-      );
-    }
     return (
       <BannerImgWithCounter
         removeBorder={removeBorder}
@@ -70,7 +57,7 @@ const BannerImageMd = ({
         renderItem={renderBannerImage}
         onProgressChange={progress}
         width={screenWidth}
-        height={height || 350}
+        height={height ?? (screenWidth / 4) * 3}
       />
       {isCarrousel && (
         <Pagination.Custom

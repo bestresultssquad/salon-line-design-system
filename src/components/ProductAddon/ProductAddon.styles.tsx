@@ -58,7 +58,7 @@ export const Card = styled(TouchableOpacity)`
     theme.spacing.xxxxs}px;
   width: 100%;
   border-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.baseColors.gray[200]};
+    theme.themed.borderColor};
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
     theme.themed.background};
 `;

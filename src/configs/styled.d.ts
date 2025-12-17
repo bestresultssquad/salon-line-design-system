@@ -123,6 +123,7 @@ export type Themed = {
   background: string;
   text: string;
   inputBackground: string;
+  backgroundSecondary: string;
   inverseBackground: string;
   shadowColor: string;
   borderColor: string;
