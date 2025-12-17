@@ -49,7 +49,7 @@ const TabSwitch = ({
             width: buttonWidth,
             marginHorizontal: 4,
             height: dimensions.height - 8,
-            backgroundColor: themed.inverseBackground,
+            backgroundColor: themed.backgroundSecondary,
             borderRadius: 16,
           },
         ]}
@@ -71,7 +71,7 @@ const TabSwitch = ({
               <Typography
                 sizeVariant="semiBold"
                 variant="sm"
-                color={selected ? themed.inverseText : themed.text}
+                color={selected ? themed.text : themed.inverseText}
               >
                 {tab.text}
               </Typography>

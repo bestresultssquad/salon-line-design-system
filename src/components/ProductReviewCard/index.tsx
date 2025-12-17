@@ -1,4 +1,4 @@
-import { Pressable, Text } from 'react-native';
+import { Pressable } from 'react-native';
 import {
   ButtonContainer,
   Card,
@@ -31,7 +31,7 @@ const ProductReviewCard = ({
   userName,
   image,
 }: ProductReviewCardProps) => {
-  const { baseColors, spacing } = useTheme();
+  const { baseColors, spacing, themed } = useTheme();
 
   const totalStars = 5;
   const fullStars = Math.floor(rating);
@@ -75,7 +75,9 @@ const ProductReviewCard = ({
                 {getInitials(userName)}
               </Typography>
             </UserAvatar>
-            <Text>{userName}</Text>
+            <Typography sizeVariant="medium" variant="sm" color={themed.text}>
+              {userName}
+            </Typography>
           </NameContainer>
           <StarsContainer>
             <StarsFilledContainer>
@@ -95,21 +97,13 @@ const ProductReviewCard = ({
                 );
               })}
             </StarsFilledContainer>
-            <Typography
-              variant="xs"
-              sizeVariant="medium"
-              color={baseColors.gray[600]}
-            >
+            <Typography variant="xs" sizeVariant="medium" color={themed.text}>
               {timeElapsed(date)}
             </Typography>
           </StarsContainer>
         </View>
         <DescriptionContainer>
-          <Typography
-            variant="xs"
-            sizeVariant="regular"
-            color={baseColors.gray[600]}
-          >
+          <Typography variant="xs" sizeVariant="regular" color={themed.text}>
             {review}
           </Typography>
         </DescriptionContainer>
@@ -128,9 +122,9 @@ const ProductReviewCard = ({
               textSizeVariant="semiBold"
               textVariant="xs"
               onPress={onLikePress}
-              textColor={baseColors.black}
+              textColor={themed.text}
               style={{
-                backgroundColor: baseColors.white,
+                backgroundColor: themed.backgroundTertiary,
                 borderRadius: 8,
               }}
               customIcon={
@@ -153,9 +147,9 @@ const ProductReviewCard = ({
               onPress={onDislikePress}
               textSizeVariant="semiBold"
               textVariant="xs"
-              textColor={baseColors.black}
+              textColor={themed.text}
               style={{
-                backgroundColor: baseColors.white,
+                backgroundColor: themed.backgroundTertiary,
                 borderRadius: 8,
               }}
               customIcon={
@@ -184,12 +178,12 @@ const ProductReviewCard = ({
                 width={20}
                 height={20}
                 type="StarCircleIcon"
-                stroke={baseColors.green[700]}
+                stroke={themed.success}
               />
               <Typography
                 variant="xs"
                 sizeVariant="medium"
-                color={baseColors.green[700]}
+                color={themed.success}
               >
                 Recomenda!
               </Typography>

@@ -5,7 +5,7 @@ import Typography from '../Typography';
 
 const getStylesByVariant = (theme: DefaultTheme) => ({
   default: {
-    backgroundColor: theme.themed.background,
+    backgroundColor: theme.themed.backgroundSecondary,
     selected: theme.baseColors.gray[900],
     borderWidth: 1,
     borderColor: theme.themed.borderColor,

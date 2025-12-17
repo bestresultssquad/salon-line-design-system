@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Card = styled.View`
   background-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.baseColors.gray[100]};
+    theme.themed.backgroundSecondary};
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.nano}px;
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
   flex-direction: row;

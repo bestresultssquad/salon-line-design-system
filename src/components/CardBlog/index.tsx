@@ -68,6 +68,7 @@ const CardBlog = ({
                 width={16}
                 height={16}
                 stroke={themed.text}
+                strokeWidth={2}
               />
               <Typography sizeVariant="regular" variant="2xs">
                 {timeElapsed(date)}

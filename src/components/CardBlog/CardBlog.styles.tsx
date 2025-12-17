@@ -11,7 +11,7 @@ const CARD_WIDTH_HORIZONTAL = DEVICE_WIDTH - 24;
 const cardStyle = css<{
   elevation?: 'md';
 }>`
-  background-color: ${({ theme }) => theme.themed.background};
+  background-color: ${({ theme }) => theme.themed.backgroundSecondary};
   border-radius: 16px;
 
   ${({ theme, elevation = 'md' }) => css`
@@ -52,6 +52,7 @@ export const Container = styled.TouchableOpacity<{ variant: CardBlogVariant }>`
     getSizeByVariant()[variant].flexDirection};
   width: ${({ variant }: { variant: CardBlogVariant }) =>
     getSizeByVariant()[variant].width}px;
+  align-items: center;
 `;
 
 export const ImageContainer = styled.View<{ variant: CardBlogVariant }>`

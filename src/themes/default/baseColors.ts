@@ -2,6 +2,7 @@ const baseColors = {
   black: '#000000',
   white: '#FFFFFF',
   gray: {
+    50: '#F9FAFB',
     100: '#F3F4F6',
     200: '#E5E7EB',
     300: '#D1D5DB',
@@ -14,6 +15,7 @@ const baseColors = {
   green: {
     100: '#DCFCE7',
     200: '#BBF7D0',
+    500: '#00C950',
     700: '#15803D',
     800: '#047857',
   },

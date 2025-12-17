@@ -5,7 +5,7 @@ export const AccordionContainer = styled.View`
   width: 100%;
   border-width: 1px;
   border-color: ${({ theme }: { theme: DefaultTheme }) =>
-    theme.baseColors.gray[200]};
+    theme.themed.borderColor};
   padding: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxxxs}px;
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
 `;

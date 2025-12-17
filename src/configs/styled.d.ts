@@ -4,6 +4,7 @@ export type BaseColors = {
   black: string;
   white: string;
   gray: {
+    50: string;
     100: string;
     200: string;
     300: string;
@@ -16,6 +17,7 @@ export type BaseColors = {
   green: {
     100: string;
     200: string;
+    500: string;
     700: string;
     800: string;
   };
@@ -124,10 +126,12 @@ export type Themed = {
   text: string;
   inputBackground: string;
   backgroundSecondary: string;
+  backgroundTertiary: string;
   inverseBackground: string;
   shadowColor: string;
   borderColor: string;
   inverseText: string;
+  success: string;
 };
 
 export interface DefaultThemeDesignSystem {
