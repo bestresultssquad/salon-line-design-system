@@ -29,6 +29,8 @@ export const Container = styled.TouchableOpacity<{
     variant: ProductCardHorizontalVariant;
   }) => (variant === 'cart' ? `${theme.spacing.nano}px` : 0)};
   border-radius: ${({ theme }: { theme: DefaultTheme }) => theme.spacing.xxs}px;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.themed.backgroundSecondary};
 `;
 
 export const ImageContainer = styled.View`

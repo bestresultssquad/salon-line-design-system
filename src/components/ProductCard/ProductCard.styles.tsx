@@ -10,6 +10,8 @@ const CARD_WIDTH = DEVICE_WIDTH / 2 - 32;
 export const Container = styled.View`
   flex-direction: column;
   width: ${CARD_WIDTH}px;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.themed.backgroundSecondary};
 `;
 export const ImageContainer = styled.View`
   position: relative;
@@ -21,6 +23,8 @@ export const ImageCustom = styled(FastImage)`
   height: 160px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 `;
 
 export const DescriptionContainer = styled.View`

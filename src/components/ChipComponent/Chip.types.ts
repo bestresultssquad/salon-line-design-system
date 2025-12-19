@@ -13,4 +13,5 @@ export interface ChipProps extends ViewProps {
   textSizeVariant?: SizeVariants;
   variant?: ChipVariant;
   size?: ChipSize;
+  textColor?: string;
 }

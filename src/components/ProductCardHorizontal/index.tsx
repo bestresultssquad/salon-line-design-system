@@ -101,12 +101,21 @@ const ProductCardHorizontal = ({
                     key={index}
                     label={chipText.text}
                     variant={chipText.variant}
+                    textColor={
+                      chipText.variant === 'outlined'
+                        ? themed.text
+                        : themed.inverseText
+                    }
                     style={{
                       position: 'relative',
                       backgroundColor:
                         chipText.variant === 'outlined'
                           ? undefined
-                          : baseColors.black,
+                          : themed.inverseBackground,
+                      borderColor:
+                        chipText.variant === 'outlined'
+                          ? themed.text
+                          : undefined,
                       top: undefined,
                       left: undefined,
                     }}

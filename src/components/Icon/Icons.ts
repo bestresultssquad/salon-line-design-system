@@ -130,6 +130,8 @@ import { GoogleIcon } from './IconComponents/Google.icon';
 import { BlackFridayIcon } from './IconComponents/BlackFriday.icon';
 import { PaintBoardIcon } from './IconComponents/PaintBoard.icon';
 import { SmartPhoneIcon } from './IconComponents/SmartPhone.icon';
+import { MoonIcon } from './IconComponents/Moon.icon';
+import { SunIcon } from './IconComponents/Sun.icon';
 
 export const IconsComponent = {
   AlertIcon,
@@ -264,4 +266,6 @@ export const IconsComponent = {
   BlackFridayIcon,
   PaintBoardIcon,
   SmartPhoneIcon,
+  MoonIcon,
+  SunIcon,
 };

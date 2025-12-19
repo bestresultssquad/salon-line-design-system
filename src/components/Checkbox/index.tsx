@@ -68,17 +68,13 @@ const Checkbox = ({
           >
             {variant === 'rounded' && (
               <Animated.View
-                style={[
-                  {
-                    transform: [{ scale: displayIcon }],
-                    width: 6,
-                    height: 6,
-                    padding: 3.5,
-                    backgroundColor: baseColors.white,
-                    borderRadius: 100,
-                    borderColor: baseColors.black,
-                  },
-                ]}
+                style={{
+                  transform: [{ scale: displayIcon }],
+                  width: 6,
+                  height: 6,
+                  backgroundColor: themed.background,
+                  borderRadius: 100,
+                }}
               />
             )}
           </CheckboxChecked>

@@ -3,12 +3,15 @@ import Icon from '../Icon';
 import { FavoriteCustomButton } from './FavoriteButton.styles';
 import { useCallback, useEffect, useRef } from 'react';
 import type { FavoriteButtonProps } from './FavoriteButton.types';
+import { useTheme } from 'styled-components/native';
 
 const FavoriteButton = ({
   onPress,
   favorited = false,
+  fullRounded = true,
   ...props
 }: FavoriteButtonProps) => {
+  const { themed } = useTheme();
   const animatedValue = useRef(new Animated.Value(0)).current;
 
   const displayIcon = animatedValue.interpolate({
@@ -48,9 +51,9 @@ const FavoriteButton = ({
       onlyIcon
       variant="favorite"
       size="nano"
-      fullRounded
       delayPressIn={100}
       onPress={onPress}
+      fullRounded={fullRounded}
       {...props}
       testID="favorite-button"
       customIcon={
@@ -85,7 +88,7 @@ const FavoriteButton = ({
               type={'FavoriteIcon'}
               width={16}
               height={16}
-              stroke="black"
+              stroke={themed.text}
               strokeWidth={1.5}
             />
           </Animated.View>
