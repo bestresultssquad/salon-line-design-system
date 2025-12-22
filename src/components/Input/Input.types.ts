@@ -15,4 +15,6 @@ export interface InputProps extends MaskInputProps {
   loading?: boolean;
   loadingText?: string;
   endLoadingText?: string;
+  success?: boolean;
+  loadingColor?: string;
 }

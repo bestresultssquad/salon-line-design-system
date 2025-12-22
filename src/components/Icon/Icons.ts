@@ -132,6 +132,27 @@ import { PaintBoardIcon } from './IconComponents/PaintBoard.icon';
 import { SmartPhoneIcon } from './IconComponents/SmartPhone.icon';
 import { MoonIcon } from './IconComponents/Moon.icon';
 import { SunIcon } from './IconComponents/Sun.icon';
+import {
+  AccountSettingIcon,
+  AffiliateIcon,
+  AlbumIcon,
+  FilePinIcon,
+  FrameIcon,
+  LegalDocumentMigsIcon,
+  Location04Icon,
+  LocationMigsIcon,
+  LogoutIcon,
+  NewsIcon,
+  PlayListMigsIcon,
+  RankingIcon,
+  SecurityLockIcon,
+  StarUpIcon,
+  StoreIcon,
+  TicketStarIcon,
+  TiktokMigsIcon,
+  UserListIcon,
+  VideoIcon,
+} from './IconComponents/MigsIcons';
 
 export const IconsComponent = {
   AlertIcon,
@@ -268,4 +289,23 @@ export const IconsComponent = {
   SmartPhoneIcon,
   MoonIcon,
   SunIcon,
+  AccountSettingIcon,
+  AffiliateIcon,
+  AlbumIcon,
+  FilePinIcon,
+  FrameIcon,
+  LegalDocumentMigsIcon,
+  Location04Icon,
+  LocationMigsIcon,
+  LogoutIcon,
+  NewsIcon,
+  PlayListMigsIcon,
+  RankingIcon,
+  SecurityLockIcon,
+  StarUpIcon,
+  StoreIcon,
+  TicketStarIcon,
+  TiktokMigsIcon,
+  UserListIcon,
+  VideoIcon,
 };

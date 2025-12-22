@@ -23,6 +23,8 @@ const Input = ({
   loading = false,
   loadingText,
   endLoadingText,
+  success,
+  loadingColor,
   ...props
 }: InputProps) => {
   const { baseColors, themed } = useTheme();
@@ -82,9 +84,36 @@ const Input = ({
                   source={require('../../lottie/loading-white.json')}
                 />
               ))}
-            <Typography sizeVariant="medium" variant="3xs">
-              {loading ? loadingText : endLoadingText}
-            </Typography>
+            {loadingText && endLoadingText && (
+              <>
+                {!loading && (
+                  <>
+                    {success && !loading ? (
+                      <Icon
+                        type="TickDoubleIcon"
+                        width={16}
+                        height={16}
+                        stroke={loadingColor || themed.success}
+                      />
+                    ) : (
+                      <Icon
+                        type="ErrorIcon"
+                        width={16}
+                        height={16}
+                        stroke={loadingColor}
+                      />
+                    )}
+                  </>
+                )}
+                <Typography
+                  sizeVariant="medium"
+                  variant="3xs"
+                  color={loadingColor}
+                >
+                  {loading ? loadingText : endLoadingText}
+                </Typography>
+              </>
+            )}
           </View>
         </View>
       )}
