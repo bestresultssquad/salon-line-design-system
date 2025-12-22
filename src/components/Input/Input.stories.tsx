@@ -19,11 +19,13 @@ const Component: Meta<typeof Input> = {
     leftIcon: { control: { type: 'text' } },
     rightIcon: { control: { type: 'text' } },
     placeholder: { control: { type: 'text' } },
+    inputLabel: { control: { type: 'text' } },
     value: { control: { type: 'text' } },
     secureTextEntry: { control: { type: 'boolean' } },
     onChangeText: { action: 'changed' },
     editable: { control: { type: 'boolean' } },
     clickable: { control: { type: 'boolean' } },
+    loading: { control: { type: 'boolean' } },
   },
 
   decorators: [
@@ -76,6 +78,19 @@ export const ErrorState: StoryObj<typeof Input> = {};
 ErrorState.args = {
   placeholder: 'Error',
   value: '',
+  secureTextEntry: false,
+  editable: true,
+  error: 'Error message',
+  rightIcon: (
+    <Icon type="PasswordIcon" width={24} height={24} color={'black'} />
+  ),
+};
+
+export const LoadingState: StoryObj<typeof Input> = {};
+ErrorState.args = {
+  placeholder: 'Error',
+  value: '',
+  inputLabel: 'Input Label',
   secureTextEntry: false,
   editable: true,
   error: 'Error message',

@@ -12,4 +12,7 @@ export interface InputProps extends MaskInputProps {
   clickable?: boolean;
   variant?: InputVariant;
   inputRef?: any;
+  loading?: boolean;
+  loadingText?: string;
+  endLoadingText?: string;
 }

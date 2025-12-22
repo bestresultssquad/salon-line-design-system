@@ -124,6 +124,7 @@ export type Elevation = {
 export type Themed = {
   background: string;
   text: string;
+  textSecondary: string;
   inputBackground: string;
   backgroundSecondary: string;
   backgroundTertiary: string;

@@ -9,6 +9,7 @@ const darkTheme = {
     inputBackground: baseColors.gray[800],
     inverseBackground: baseColors.white,
     text: baseColors.white,
+    textSecondary: baseColors.gray[400],
     inverseText: baseColors.black,
     shadowColor: baseColors.white,
     borderColor: baseColors.gray[800],

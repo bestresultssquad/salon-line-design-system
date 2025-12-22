@@ -20,10 +20,9 @@ const preview: Preview = {
       <View
         style={{
           flex: 1,
-          backgroundColor: 'black',
         }}
       >
-        <ThemeProvider theme={dark}>
+        <ThemeProvider theme={light}>
           <Story />
         </ThemeProvider>
       </View>
