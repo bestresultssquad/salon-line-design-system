@@ -7,6 +7,7 @@ import type { MenuItemProps } from './MenuItem.types';
 import { useState } from 'react';
 
 const MenuItem = ({
+  leftIconSize = 20,
   leftIcon,
   onPress,
   title,
@@ -34,8 +35,8 @@ const MenuItem = ({
       <LeftContainer>
         <Icon
           testID="icon-left-menu-item"
-          height={20}
-          width={20}
+          height={leftIconSize}
+          width={leftIconSize}
           stroke={strokeColor ?? themed.text}
           type={leftIcon}
           strokeWidth={strokeWidth}

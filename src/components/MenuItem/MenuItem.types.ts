@@ -10,4 +10,5 @@ export interface MenuItemProps {
   strokeColor?: string;
   rightIcon?: IconTypes;
   rightIconSize?: number;
+  leftIconSize?: number;
 }

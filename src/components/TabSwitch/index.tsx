@@ -18,7 +18,9 @@ const TabSwitch = ({
 }: TabSwitchProps) => {
   const [selectedTab, setSelectedTab] = useState(1);
   const [dimensions, setDimensions] = useState({ height: 55, width: 365 });
-  const { themed } = useTheme();
+  const { themed, baseColors } = useTheme();
+
+  const isDark = () => themed.background === '#030712';
 
   const buttonWidth = dimensions.width / 2;
 
@@ -49,7 +51,9 @@ const TabSwitch = ({
             width: buttonWidth,
             marginHorizontal: 4,
             height: dimensions.height - 8,
-            backgroundColor: themed.backgroundSecondary,
+            backgroundColor: isDark()
+              ? themed.backgroundSecondary
+              : baseColors.black,
             borderRadius: 16,
           },
         ]}
@@ -71,7 +75,7 @@ const TabSwitch = ({
               <Typography
                 sizeVariant="semiBold"
                 variant="sm"
-                color={selected ? themed.text : themed.inverseText}
+                color={selected ? baseColors.white : baseColors.black}
               >
                 {tab.text}
               </Typography>
